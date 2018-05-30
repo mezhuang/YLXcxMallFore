@@ -1,0 +1,34 @@
+/* pages/reportList/reportList.wxss */
+.customerReportTable{
+   margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+}
+.customerRePhone{
+  border-style: ridge; 
+     border-width: 2px;
+    width:  300rpx;
+    background-color: #B9D3EE
+}
+.customerGuide{
+  border-style: ridge; 
+     border-width: 2px;
+    width:  270rpx;
+    background-color: #B9D3EE
+}
+.customerReportTime{
+  border-style: ridge; 
+     border-width: 2px;
+    width:  270rpx;
+    
+    background-color: #B9D3EE
+}
+.customerReportListItem{
+  width: 250rpx;
+    border-style: ridge; 
+     border-width: 2px;
+
+}
+.customerReportList{
+  display: flex;
+}

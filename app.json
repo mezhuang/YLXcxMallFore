@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/report/report",
+    "pages/coustomerManager/coustomerManager",
+    "pages/test/test",
+    "pages/myhome/myhome",
+    "pages/reportList/reportList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "优致工坊",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/reportList/reportList",
+        "text": "报备"
+      },
+      {
+        "pagePath": "pages/coustomerManager/coustomerManager",
+        "text": "判客管理"
+      },
+      {
+        "pagePath": "pages/myhome/myhome",
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "测试新增"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

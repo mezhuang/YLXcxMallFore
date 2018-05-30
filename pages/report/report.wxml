@@ -1,0 +1,65 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="addReportCoustomer">
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'>客户姓名 :</text>
+        <input class='coustomerNameInput' name='customerName'  ></input>
+      </view>
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'>客户电话 :</text>
+        <input class='coustomerNameInput'  name='customerPhone'  ></input>
+      </view>
+      <view class="coustomer-name-flex-isTask" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'  >是否带看 :</text><label class='coustomerNameInput'><radio-group class='radio-group-Id' name="isTask">
+      <label><radio value="1"/>是</label>
+      <label><radio  value="0"/>否</label>
+    </radio-group></label>
+      </view> 
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'>带看人姓名:</text>
+        <input class='coustomerNameInput'  name='taskName' ></input>
+      </view>
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <text class='coustomerNameText'>带看人电话:</text>
+        <input class='coustomerNameInput'  name='taskPhone'></input>
+      </view>
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'>带看日期 :</text>
+        <!-- <input class='coustomerNameInput3' name='visitTime' maxlength="10" placeholder="到访时间"></input> -->
+        <view class="coustomerNameInput">
+        <picker  mode="date" value="{{dates}}" name='visitTime' start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+          <view class="picker">  
+            {{dates}}  
+          </view>  
+        </picker>
+        </view>  
+
+      </view>
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='joinGuide'>对接导购 :</text>
+         <picker bindchange="bindGuideInfoChange" value="{{guideInfoList[guideIndex]}}" range="{{guideInfoList}}" name="guidePhone">
+          <view class="picker">
+            {{guideInfoList[guideIndex]}}
+          </view>
+        </picker>     
+      </view> 
+
+      <view class="coustomer-name-flex" style="flex-direction:row;">    
+        <!-- <image class='coustomerNameIcon' src='../../images/icon/coustomerName.png' ></image> -->
+        <text class='coustomerNameText'>备         注:</text>
+        <input class='coustomerNameInput' name='remark' maxlength="10" ></input>
+      </view> 
+      
+  </view>
+
+
+  <view class="addCoustomerBtnArea">
+      <button class ="addcoustomerBtn" formType="submit">提交</button>
+ 
+  </view>
+</form>

@@ -1,0 +1,24 @@
+<!--pages/reportList/reportList.wxml-->
+<view class='customerReportTable'>
+       <view class ='customerReportList' style="flex-direction:row;">
+          <view class='customerRePhone'>客户电话</view>        
+          <view class='customerReportTime'>报备日期</view>
+          <view class='customerGuide'>对接导购</view>
+          <view class='customerGuide'>是否带看</view>
+      </view>
+    <block  wx:for="{{customerReportList}}" >
+      <!-- <view  style="flex-direction:row;">  -->
+            <view  class ='customerReportList' style="flex-direction:row;"> 
+                   <view class='customerReportListItem'>{{item.customer_phone}}</view>  
+                   <view class='customerReportListItem'>{{item.visit_time}}</view> 
+                   <view class='customerReportListItem'>{{item.guide_phone}}</view> 
+                   <view  class='customerReportListItem' wx:if="{{item.is_task==1}}">是</view>
+<view wx:elif="{{item.is_task==0}}">否</view>
+            
+                  <!-- <textarea class='customerReportListItem'>{{item.customer_phone}}</textarea>  
+                  <textarea class='customerReportListItem'>{{item.guide_phone}}</textarea>
+                  <textarea class='customerReportListItem'>{{item.visit_time}}</textarea>  -->
+            </view>
+      <!-- </view> -->
+    </block >
+</view>
