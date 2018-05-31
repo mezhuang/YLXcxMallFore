@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/find/find",
     "pages/logs/logs",
     "pages/report/report",
     "pages/coustomerManager/coustomerManager",
@@ -17,8 +17,8 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "首页"
+        "pagePath": "pages/find/find",
+        "text": "发现"
       },
       {
         "pagePath": "pages/reportList/reportList",
@@ -30,7 +30,7 @@
       },
       {
         "pagePath": "pages/myhome/myhome",
-        "text": "我的"
+        "text": "个人中心"
       },
       {
         "pagePath": "pages/report/report",
