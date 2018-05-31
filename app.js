@@ -5,6 +5,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     var APP_ID ="wx3e71fb7bb3e423a3";
     var APP_SECRET ="f8f8772ffc502bbf72ac0fcf3521ce45";
+    var dataBaseHostIp="127.0.0.1";
     // var OPEN_ID="";
     // var SESSION_KEY="";
     logs.unshift(Date.now())

@@ -50,5 +50,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  sysMangerChange:function(e)
+  {
+    wx.navigateTo({
+      url: '',
+    })
   }
 })

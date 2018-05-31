@@ -11,6 +11,6 @@
   <view>
         <view class="refereeCenter">分销中心</view>       
         <view class="saleManger">销售管理</view>
-        <view class="systemManger">系统管理</view>
+        <view class="systemManger" bindchange="sysMangerChange">系统管理</view>
     </view>
 </view>
