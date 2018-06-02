@@ -1,4 +1,5 @@
 // pages/report/report.js
+const app = getApp()
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
     wx.request({
       method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://203.195.200.199/springmvc_demo/getGuideInfoList.do', //接口地址
+      url: 'http://' + app.globalData.serviceIp +'/YLXcxMallBack/getGuideInfoList.do', //接口地址
       data: {
       },
       header: { 'content-type': 'application/json' },
@@ -103,7 +104,7 @@ Page({
     wx.request({
       method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://203.195.200.199/springmvc_demo/addCustomerReport.do', //接口地址
+      url: 'http://' + app.globalData.serviceIp +'/YLXcxMallBack/addCustomerReport.do', //接口地址
       data: {
         'customerName':customerName,
         'customerPhone':customerPhone,

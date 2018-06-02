@@ -8,7 +8,8 @@
       </block>
     </view>
 
-  <view>
+  <view class="container_manager">
+     <view class="refereeCenter">申请分销</view>  
         <view class="refereeCenter">分销中心</view>       
         <view class="saleManger">销售管理</view>
         <view class="systemManger" bindchange="sysMangerChange">系统管理</view>

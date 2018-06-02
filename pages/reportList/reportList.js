@@ -26,7 +26,7 @@ Page({
     wx.request({
       method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://203.195.200.199/springmvc_demo/getCustomerReportList.do', //接口地址
+      url: 'http://' + app.globalData.serviceIp +'/YLXcxMallBack/getCustomerReportList.do', //接口地址
       data: {
         'openId': getApp().globalData.openId,
         'startIndex':0,

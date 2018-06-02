@@ -59,6 +59,7 @@ App({
   globalData: {
     userInfo: null,
     openId:null,
-    sessionKey:null
+    sessionKey:null,
+    serviceIp:"localhost:80"
   }
 })
