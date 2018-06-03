@@ -9,6 +9,40 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+  /**
+     * 生命周期函数--监听页面加载
+     */
+  onLoad: function (options) {
+
+    console.log('进去个人中心');
+    var that = this;
+    // var tokend = wx.getStorageSync('tokend')
+    var openIp = app.globalData.openId;
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserPowerList.do', //接口地址
+      data: {
+        'openId': openIp
+      },
+      header:
+      {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
+      success: function (res) {
+        console.log("用户权限接口数据：");
+        console.log(res.data);
+       
+
+      },
+      fail: function (res) {
+        console.log('用户权限数据' + ':' + res)
+      }
+    })
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -61,7 +95,7 @@ Page({
   {
     console.log(e.query)
     console.log("进入申请分销页面");
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/applyReferee/applyReferee',
     })
   }

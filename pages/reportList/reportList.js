@@ -1,4 +1,5 @@
 // pages/reportList/reportList.js
+const app = getApp()
 var reportListData = "";
 Page({
 
@@ -100,4 +101,6 @@ Page({
   onShareAppMessage: function () {
   
   }
+
+
 })

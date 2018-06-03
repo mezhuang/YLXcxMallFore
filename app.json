@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/find/find",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/report/report",
     "pages/coustomerManager/coustomerManager",
@@ -18,7 +18,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/index/index",
         "text": "发现"
       },
       {

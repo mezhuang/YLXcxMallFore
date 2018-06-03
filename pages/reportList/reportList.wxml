@@ -1,5 +1,6 @@
 <!--pages/reportList/reportList.wxml-->
 <view class='customerReportTable'>
+<view bindtap='onchangeBindAddReport'>新增报备</view>
        <view class ='customerReportList' style="flex-direction:row;">
           <view class='customerRePhone'>客户电话</view>        
           <view class='customerReportTime'>报备日期</view>

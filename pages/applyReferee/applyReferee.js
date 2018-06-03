@@ -97,11 +97,11 @@ Page({
         })
         setTimeout(function () {
           wx.switchTab({
-            url: '../index/index',
+            url: '../reportList/reportList',
           })
         }, 2000)
         //跳转至报备客户列表
-        wx.navigateTo({
+        wx.redirectTo({
           url: "../reportList/reportList"
         })
 

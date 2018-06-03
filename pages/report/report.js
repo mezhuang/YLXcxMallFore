@@ -1,5 +1,6 @@
 // pages/report/report.js
 const app = getApp()
+var isCommited=false;
 Page({
 
   /**
@@ -89,6 +90,18 @@ Page({
   },
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    if (isCommited)
+    {
+      wx.showToast({
+        title: '已提交',
+        image: '../../images/suess.png',
+        duration: 4000
+      })
+      //跳转至报备客户列表
+      wx.navigateTo({
+        url: "../reportList/reportList"
+      })
+    }
     var that = this;
     // var tokend = wx.getStorageSync('tokend')
     var customerName  = e.detail.value.customerName;         //获取input初始值
@@ -132,7 +145,7 @@ Page({
         })
         setTimeout(function () {
           wx.switchTab({
-            url: '../index/index',
+            url: '../reportList/reportList',
           })
         }, 2000)
       //跳转至报备客户列表
@@ -140,6 +153,7 @@ Page({
           url: "../reportList/reportList"
         })
 
+      isCommited=true;
       },
       fail: function (res) {
         console.log('fail-res' + ':' + res)
