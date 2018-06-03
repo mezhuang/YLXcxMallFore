@@ -56,5 +56,17 @@ Page({
     wx.navigateTo({
       url: '',
     })
+  },
+  applyRefereeChange:function(e)
+  {
+    console.log(e.query)
+    console.log("进入申请分销页面");
+    wx.redirectTo({
+      url: '/pages/applyReferee/applyReferee',
+    })
   }
+
+
+
+
 })

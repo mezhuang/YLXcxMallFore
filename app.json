@@ -6,7 +6,8 @@
     "pages/coustomerManager/coustomerManager",
     "pages/test/test",
     "pages/myhome/myhome",
-    "pages/reportList/reportList"
+    "pages/reportList/reportList",
+    "pages/applyReferee/applyReferee"
   ],
   "window": {
     "backgroundTextStyle": "light",
