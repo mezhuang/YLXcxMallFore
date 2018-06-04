@@ -7,14 +7,18 @@ Page({
     motto: '优致工坊欢迎您!',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isGeneral:true,
+    isReferee:false,
+    isGuide:false,
+    isSysManger:false
+    
   },
-
   /**
-     * 生命周期函数--监听页面加载
+     * 生命周期函数--监听页面显示
      */
-  onLoad: function (options) {
-
+  onShow: function () {
+    console.log("test1 onLoad");
     console.log('进去个人中心');
     var that = this;
     // var tokend = wx.getStorageSync('tokend')
@@ -34,13 +38,51 @@ Page({
       success: function (res) {
         console.log("用户权限接口数据：");
         console.log(res.data);
-       
+        for (var i = 0; res.data.length; i++) {
+          console.log(res.data[i].power_code);
+          switch (res.data[i].power_code) {
+            case "10001":
+              console.log("系统管理员");
+              that.setData({
+
+                isSysManger: true,
+
+              })
+              break;
+            case "10002":
+              console.log("家居顾问");
+              that.setData({
+
+                isGuide: true,
+                isGeneral: false
+              })
+              break;
+            case "10003":
+              console.log("分销商");
+              that.setData({
+                isReferee: true,
+                isGeneral: false
+              })
+              break;
+            default:
+              console.log("没有匹配的权限！");
+          }
+        }
+
+
 
       },
       fail: function (res) {
         console.log('用户权限数据' + ':' + res)
       }
     })
+  },
+
+  /**
+     * 生命周期函数--监听页面加载
+     */
+  onLoad: function (options) {
+    
   },
 
   //事件处理函数
