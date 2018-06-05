@@ -1,0 +1,6 @@
+<view>
+   <view class="addInfoInput"> <text>客户姓名:</text><input></input></view>
+   <view class="addInfoInput"> <text>客户电话:</text><input></input></view>
+   <view class="addInfoInput"> <text>产品型号:</text><input></input></view>
+   <view class="addInfoInput"> <text>成交金额:</text><input></input></view>
+</view>

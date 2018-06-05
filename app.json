@@ -7,7 +7,10 @@
     "pages/test/test",
     "pages/myhome/myhome",
     "pages/reportList/reportList",
-    "pages/applyReferee/applyReferee"
+    "pages/applyReferee/applyReferee",
+    "pages/saleManager/saleManager",
+    "pages/refereeCenter/refereeCenter",
+    "pages/saleAddInfo/saleAddInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,8 +37,8 @@
         "text": "个人中心"
       },
       {
-        "pagePath": "pages/report/report",
-        "text": "测试新增"
+        "pagePath": "pages/saleAddInfo/saleAddInfo",
+        "text": "测试页面"
       }
     ]
   },

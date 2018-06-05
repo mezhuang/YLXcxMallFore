@@ -9,9 +9,9 @@
     </view>
 
   <view class="container_manager">
-     <view class="refereeCenter" bindtap="applyRefereeChange" wx:if="{{isGeneral}}">申请分销</view>  
-        <view class="refereeCenter" wx:if="{{isReferee}}">分销中心</view>       
-        <view class="saleManger" wx:if="{{isGuide}}">销售管理</view>
-        <view class="systemManger" bindchange="sysMangerChange" wx:if="{{isSysManger}}">系统管理</view>
+     <button class="refereeCenter" bindtap="applyRefereeChange" types="primary" wx:if="{{isGeneral}}">申请分销</button>  
+        <button class="refereeCenter" bindtap="onRefereeCenter" wx:if="{{isReferee}}"><text>分销中心</text></button>       
+        <button class="saleManger" bindtap="onSaleManger" wx:if="{{isGuide}}"><text>销售管理</text></button>
+        <button class="systemManger" bindchange="sysMangerChange" wx:if="{{isSysManger}}">系统管理</button>
     </view>
 </view>

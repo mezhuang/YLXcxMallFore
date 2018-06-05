@@ -100,7 +100,13 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  onchangeBindAddReport:function(){
+  wx.navigateTo({
+    url: '../applyReferee/applyReferee',
+  })
+
+  }  
 
 
 })

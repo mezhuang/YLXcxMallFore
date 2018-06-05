@@ -82,7 +82,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
   onLoad: function (options) {
-    
+    this.onShow();
   },
 
   //事件处理函数
@@ -135,10 +135,25 @@ Page({
   },
   applyRefereeChange:function(e)
   {
-    console.log(e.query)
+
     console.log("进入申请分销页面");
     wx.navigateTo({
-      url: '/pages/applyReferee/applyReferee',
+      url: '/pages/applyReferee/applyReferee'
+    })
+  },
+  onRefereeCenter:function()
+  {
+ 
+    console.log("进入分销中心");
+    wx.navigateTo({
+      url: '../refereeCenter/refereeCenter'
+    })
+  },
+  onSaleManger: function () {
+
+    console.log("进入销售管理中心");
+    wx.navigateTo({
+      url: '../saleManager/saleManager'
     })
   }
 

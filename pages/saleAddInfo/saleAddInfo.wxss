@@ -1,0 +1,8 @@
+/* pages/saleAddInfo/saleAddInfo.wxss */
+.addInfoInput{
+  display:flex;
+  flex-direction:row;
+  width: 90%;
+  border-style: ridge; 
+  border-width: 2px;
+}

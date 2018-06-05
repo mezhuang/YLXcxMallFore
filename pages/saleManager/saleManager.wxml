@@ -1,0 +1,3 @@
+<view>
+<button bindtap="onSaleAddInfo">信息录入</button>
+</view>

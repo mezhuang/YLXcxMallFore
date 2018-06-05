@@ -1,0 +1,5 @@
+<view>
+      <button   bindtap="onAddReport" >新增报备</button>
+      <button bindtap="onReportList">报备列表</button>
+      <button>佣金结算</button>
+</view>
