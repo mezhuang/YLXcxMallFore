@@ -1,0 +1,26 @@
+<view>
+ <view class ='customerReportList' style="flex-direction:row;">
+           <view class='customerName'>客户姓名</view>   
+          <view class='customerPhone'>客户电话</view>        
+          <view class='productInfo'>产品信息</view>
+          <view class='transMoney'>成交金额</view>
+          <view class='transTime'>成交时间</view>
+          <view class='remark'>备注</view>
+      </view>
+      <block  wx:for="{{saleInfoListData}}" >
+      <!-- <view  style="flex-direction:row;">  -->
+            <view  class ='customerReportList' style="flex-direction:row;"> 
+                   <view class='customerReportListItem'>{{item.customer_name}}</view>  
+                   <view class='customerReportListItem'>{{item.customer_phone}}</view> 
+                   <view class='customerReportListItem'>{{item.product_info}}</view> 
+                   <view class='customerReportListItem'>{{item.trans_money}}</view> 
+                   <view class='customerReportListItem'>{{item.trans_time}}</view> 
+            
+            </view>
+    </block >
+
+
+
+
+
+</view>

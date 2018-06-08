@@ -10,7 +10,9 @@
     "pages/applyReferee/applyReferee",
     "pages/saleManager/saleManager",
     "pages/refereeCenter/refereeCenter",
-    "pages/saleAddInfo/saleAddInfo"
+    "pages/saleAddInfo/saleAddInfo",
+    "pages/commission/commission",
+    "pages/saleInfoList/saleInfoList"
   ],
   "window": {
     "backgroundTextStyle": "light",

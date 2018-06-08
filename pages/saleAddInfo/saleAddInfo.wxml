@@ -1,6 +1,29 @@
+<form bindsubmit="formSubmit" >
 <view>
-   <view class="addInfoInput"> <text>客户姓名:</text><input></input></view>
-   <view class="addInfoInput"> <text>客户电话:</text><input></input></view>
-   <view class="addInfoInput"> <text>产品型号:</text><input></input></view>
-   <view class="addInfoInput"> <text>成交金额:</text><input></input></view>
+   <view class="addInfoInput" > <text>客户姓名:</text><input name="customerName"></input></view>
+   <view class="addInfoInput">  <text>客户电话:</text><input name="customerPhone"></input></view>
+   <view class="addInfoInput">  <text>产品信息:</text><input name="productInfo"></input></view>
+   <view class="addInfoInput"> <text>是否带看:</text>
+   <view name="isTask">
+        <radio-group class='radio-group-Id' name="isTask">
+        <label ><radio  value="1"/>是</label>
+        <label><radio  value="0"/>否</label>
+        </radio-group>
+        </view>
+    </view>
+   <view class="addInfoInput" > <text>成交金额:</text><input name="transMoney"></input></view>
+   <view class="addInfoInput" > <text>成交时间:</text>
+        <picker  mode="date" value="{{dates}}" name='transTime' start="1978-01-01" end="2017-1-23" bindchange="bindDateChange">  
+          <view class="picker">  
+            {{dates}}  
+          </view>  
+        </picker>
+ 
+  </view>
+   <view class="addInfoInput" name="remark"> <text>备注:</text><input></input></view>
+    <view class="addCoustomerBtnArea">
+      <button class ="addcoustomerBtn" formType="submit">提交</button>
+ 
+  </view>
 </view>
+</form>
