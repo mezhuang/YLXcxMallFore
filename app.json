@@ -7,12 +7,15 @@
     "pages/test/test",
     "pages/myhome/myhome",
     "pages/reportList/reportList",
-    "pages/applyReferee/applyReferee",
+    "pages/refereeApply/refereeApply",
     "pages/saleManager/saleManager",
     "pages/refereeCenter/refereeCenter",
     "pages/saleAddInfo/saleAddInfo",
     "pages/commission/commission",
-    "pages/saleInfoList/saleInfoList"
+    "pages/saleInfoList/saleInfoList",
+    "pages/sysManager/sysManager",
+    "pages/refereeAgentList/refereeAgentList",
+    "pages/refereeManagerList/refereeManagerList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,20 +30,12 @@
         "text": "发现"
       },
       {
-        "pagePath": "pages/reportList/reportList",
-        "text": "报备"
-      },
-      {
         "pagePath": "pages/coustomerManager/coustomerManager",
         "text": "判客管理"
       },
       {
         "pagePath": "pages/myhome/myhome",
         "text": "个人中心"
-      },
-      {
-        "pagePath": "pages/saleAddInfo/saleAddInfo",
-        "text": "测试页面"
       }
     ]
   },

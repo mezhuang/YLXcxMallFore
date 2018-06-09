@@ -1,0 +1,11 @@
+<view style="display:flex;flex-direction:row;">
+      <view>
+      <text>姓名</text><text>电话</text><text>操作</text>
+      </view>
+      <block wx:for="{{refereeAgentListData}}">
+      <text>{{item.user_name}}</text><text>{{item.user_phone}}</text>
+      
+      <text name="userId" value="{{item.user_id}}" bindtap='onSetrefereeManager'>置为分销经理</text>
+      </block>
+      
+</view>

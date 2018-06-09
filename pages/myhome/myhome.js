@@ -138,7 +138,7 @@ Page({
 
     console.log("进入申请分销页面");
     wx.navigateTo({
-      url: '/pages/applyReferee/applyReferee'
+      url: '/pages/refereeApply/refereeApply'
     })
   },
   onRefereeCenter:function()
@@ -154,6 +154,12 @@ Page({
     console.log("进入销售管理中心");
     wx.navigateTo({
       url: '../saleManager/saleManager'
+    })
+  },
+  onSysMangerChange:function(){
+    console.log("进入系统管理");
+    wx.navigateTo({
+      url: '../sysManager/sysManager'
     })
   }
 

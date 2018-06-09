@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    salesInfoList:null
   
   },
 
@@ -22,7 +23,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
@@ -63,18 +64,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("come in onLoad~")
     var that = this;
-    wx.login({
-      success: function (res) {
-
-
-      }
-    })
-
+    
     wx.request({
       method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getCustomerReportList.do', //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getSaleInfoListByGuideOpenId.do', //接口地址
       data: {
         'openId': getApp().globalData.openId,
         'startIndex': 0,
@@ -82,9 +78,10 @@ Page({
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
-        console.log('success-res' + ':' + res.data)
+        console.log("销售列表:");
+        console.log(res.data)
         that.setData({
-          customerReportList: res.data
+          salesInfoList: res.data
         });
 
         //跳转至报备客户列表
@@ -94,7 +91,7 @@ Page({
 
       },
       fail: function (res) {
-        console.log('fail-res' + ':' + res)
+        console.log(res.data);
       }
     })
 

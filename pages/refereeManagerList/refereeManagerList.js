@@ -1,4 +1,4 @@
-// pages/saleManager/saleManager.js
+// pages/refereeManagerList/refereeManagerList.js
 Page({
 
   /**
@@ -62,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  onSaleAddInfo:function(){
-    console.log("录入销售信息");
-    wx.navigateTo({
-      url: '../saleAddInfo/saleAddInfo',
-    })
-  },
-  onSaleInfoRecords:function(){
-    console.log("进入销售列表页");
-      wx.navigateTo({
-        url: '../saleInfoList/saleInfoList',
-      })
   }
-
 })

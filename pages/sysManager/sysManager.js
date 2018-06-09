@@ -1,4 +1,4 @@
-// pages/saleManager/saleManager.js
+// pages/sysManager/sysManager.js
 Page({
 
   /**
@@ -63,17 +63,16 @@ Page({
   onShareAppMessage: function () {
   
   },
-  onSaleAddInfo:function(){
-    console.log("录入销售信息");
+  onTapRefereeAgent:function(){
     wx.navigateTo({
-      url: '../saleAddInfo/saleAddInfo',
+      url: '../refereeAgentList/refereeAgentList',
     })
   },
-  onSaleInfoRecords:function(){
-    console.log("进入销售列表页");
-      wx.navigateTo({
-        url: '../saleInfoList/saleInfoList',
-      })
+  onTapCustomerManger:function(){
+    wx.navigateTo({
+      url: '../refereeManagerList/refereeManagerList',
+    })
   }
+
 
 })

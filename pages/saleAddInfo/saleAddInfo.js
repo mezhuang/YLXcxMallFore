@@ -100,7 +100,7 @@ Page({
     // var name = that.data.name ? that.data.name : name2    //三元运算，如果用户没修改信息，直接提交原来的信息，如果用户修改了信息，就将修改了的信息和未修改过的信息一起提交
     // var ID_num = that.data.ID_num ? that.data.ID_num : ID_num2
     wx.request({
-      method: 'POST',
+      method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/addSaleInfoAndCommi.do', //接口地址
       data: {

@@ -1,5 +1,5 @@
 <view>
- <view class ='customerReportList' style="flex-direction:row;">
+ <view class ='customerReportList' style="display:flex;flex-direction:row;">
            <view class='customerName'>客户姓名</view>   
           <view class='customerPhone'>客户电话</view>        
           <view class='productInfo'>产品信息</view>
@@ -7,9 +7,9 @@
           <view class='transTime'>成交时间</view>
           <view class='remark'>备注</view>
       </view>
-      <block  wx:for="{{saleInfoListData}}" >
+      <block  wx:for="{{salesInfoList}}" >
       <!-- <view  style="flex-direction:row;">  -->
-            <view  class ='customerReportList' style="flex-direction:row;"> 
+            <view  class ='customerReportList' style="display:flex;flex-direction:row;"> 
                    <view class='customerReportListItem'>{{item.customer_name}}</view>  
                    <view class='customerReportListItem'>{{item.customer_phone}}</view> 
                    <view class='customerReportListItem'>{{item.product_info}}</view> 
