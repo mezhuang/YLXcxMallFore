@@ -1,0 +1,14 @@
+.userManFlex{
+ border-style: ridge; 
+  border-width: 2rpx;
+
+
+}
+.userManagerBt{
+ 
+  width: 20%;
+  border-style: ridge; 
+  border-width: 3rpx;
+ 
+
+}

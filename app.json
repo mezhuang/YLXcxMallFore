@@ -15,7 +15,8 @@
     "pages/saleInfoList/saleInfoList",
     "pages/sysManager/sysManager",
     "pages/refereeAgentList/refereeAgentList",
-    "pages/refereeManagerList/refereeManagerList"
+    "pages/refereeManagerList/refereeManagerList",
+    "pages/refereeDirectorList/refereeDirectorList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,8 +31,8 @@
         "text": "发现"
       },
       {
-        "pagePath": "pages/coustomerManager/coustomerManager",
-        "text": "判客管理"
+        "pagePath": "pages/refereeApply/refereeApply",
+        "text": "申请分销"
       },
       {
         "pagePath": "pages/myhome/myhome",

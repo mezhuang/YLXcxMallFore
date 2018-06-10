@@ -1,0 +1,10 @@
+<template name="userManagerItem">
+        <view class="userManFlex" style="display:flex;flex-direction:row;">
+              <view class= "userManagerText"><text >{{item.user_name}}</text></view>
+              <text class= "userManagerBt">{{item.user_phone}}</text>
+              
+              <text class= "userManagerBt" name="userId"  bindtap='onUpgrade' data-userId="{{item.user_id}}">升职</text>
+              <text class= "userManagerBt" name="userId"  bindtap='oncomeDownChange' data-userId="{{item.user_id}}">降职</text>
+              <text class= "userManagerBt" name="userId"  bindtap='onCannelChange' data-userId="{{item.user_id}}">删除</text>
+        </view>
+</template>

@@ -9,3 +9,16 @@
   box-sizing: border-box;
   background-color: #F8F8F8;
 } 
+/*用户管理模板样式  */
+.userManFlex{
+ border-style: ridge; 
+  border-width: 2rpx;
+  background-color: #E0EEEE;
+
+}
+.userManagerBt{
+  border-style: ridge; 
+  border-width: 2rpx;
+  background-color: #E0EEEE;
+
+}

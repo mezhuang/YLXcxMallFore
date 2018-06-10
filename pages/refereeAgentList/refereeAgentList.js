@@ -27,12 +27,39 @@ Page({
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserInfoByGroupCode.do', //接口地址
       data: {
+        'groupCode':"10003",
         'startIndex': 0,
         'indexSize': 5
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
-        console.log('success-res' + ':' + res.data)
+        console.log(res.data)
+        that.setData({
+          refereeAgentListData: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserInfoByGroupCode.do', //接口地址
+      data: {
+        'groupCode':"10003",
+        'startIndex': 0,
+        'indexSize': 5
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log(res.data)
         that.setData({
           refereeAgentListData: res.data
         });
@@ -98,9 +125,113 @@ Page({
   onShareAppMessage: function () {
   
   },
-  onSetrefereeManager:function(e){
+  onUpgrade:function(e){
     console.log("用户id:");
-    console.log(e.detail.value.userId);
+    console.log(e.currentTarget.dataset.userid);
+    var userId = e.currentTarget.dataset.userid;
+    var that = this;
+  
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/setUserPosistionByUserIdAndGroupId.do', //接口地址
+      data: {
+        'userId': userId,
+        'groupCode':"10004",
+        'startIndex': 0,
+        'indexSize': 5
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          refereeAgentListData: res.data
+        });
+        wx.showToast({
+          title: '操作成功！',
+          image: '../../images/suess.png',
+          duration: 4000
+        })
+        //跳转至报备客户列表
+        // wx.navigateTo({
+        //   url: "../refereeManagerList/refereeManagerList"
+        // })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
+  },
+  oncomeDownChange: function (e) {
+    console.log("用户id:");
+    console.log(e.currentTarget.dataset.userid);
+    var userId = e.currentTarget.dataset.userid;
+    var that = this;
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/setUserPosistionByUserIdAndGroupId.do', //接口地址
+      data: {
+        'userId': userId,
+        'groupCode': "10003",
+        'startIndex': 0,
+        'indexSize': 5
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          refereeAgentListData: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
+      
+  },
+  onCannelChange: function (e) {
+    console.log("用户id:");
+    console.log(e.currentTarget.dataset.userid);
+    var userId = e.currentTarget.dataset.userid;
+    var that = this;
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/delUserPosistionByUserIdAndGroupId.do', //接口地址
+      data: {
+        'userId': userId,
+        'groupCode': "10003",
+        'startIndex': 0,
+        'indexSize': 5
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          refereeAgentListData: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
 
   }
+
 })

@@ -1,7 +1,8 @@
 <view>
       <form  bindsubmit="formSubmit">
-          <view class="applyUserNameFlex"><text>姓名</text><input name="applyUserName"></input></view>
-          <view class="applyUserPhoneFlex"><text>电话</text><input name="applyUserPhone"></input></view>
+          <view class="applyUserNameFlex"><text>姓名:</text><input name="applyUserName"></input></view>
+          <view class="applyUserPhoneFlex"><text>本人手机号:</text><input name="applyUserPhone"></input></view>
+          <view class="applyUserPhoneFlex"><text>推荐人手机：</text><input name="ManagerPhone"></input></view>
           <view class="applyRefereeBtnArea">
               <button class ="applyRefereeBtn" formType="submit">提交</button>
  

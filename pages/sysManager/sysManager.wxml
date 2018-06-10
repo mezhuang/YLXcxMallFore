@@ -1,7 +1,8 @@
-<view >
-<button bindtap="onTapCustomerManger">客户管理</button>
-<button bindtap="onTapRefereeAgent">分销经纪人管理</button>
-<button bindtap="onTapCustomerManger">分销经理管理</button>
+<view  class="sysManagerCenter">
 <button bindtap="onTapGuideManger">导购管理</button>
+<button bindtap="onTapRefereeAgent"><text>分销经纪人管理</text></button>
+<button bindtap="onTapRefereeManger">分销经理管理</button>
+<button bindtap="onTapDirectorManger">分销总监管理</button>
+<button class ="customerManger" bindtap="onTapCustomerManger"><text class ="customerMangerText">推荐客户管理</text></button>
 <button bindtap="onTapGeneralUser">普通用户管理</button>
 </view>

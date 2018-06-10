@@ -63,14 +63,24 @@ Page({
   onShareAppMessage: function () {
   
   },
+  onTapGuideManger: function () {
+    wx.navigateTo({
+      url: '../refereeAgentList/refereeAgentList',
+    })
+  },
   onTapRefereeAgent:function(){
     wx.navigateTo({
       url: '../refereeAgentList/refereeAgentList',
     })
   },
-  onTapCustomerManger:function(){
+  onTapRefereeManger:function(){
     wx.navigateTo({
       url: '../refereeManagerList/refereeManagerList',
+    })
+  },
+  onTapDirectorManger: function () {
+    wx.navigateTo({
+      url: '../refereeDirectorList/refereeDirectorList',
     })
   }
 

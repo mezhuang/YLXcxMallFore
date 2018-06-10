@@ -1,1 +1,10 @@
 /* pages/sysManager/sysManager.wxss */
+.sysManagerCenter{
+  margin-left: 5rpx;
+ text-align:left;
+
+}
+.customerMangerText{
+  width: 100%;
+  margin: left;
+}

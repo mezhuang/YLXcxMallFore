@@ -70,6 +70,7 @@ Page({
     // var tokend = wx.getStorageSync('tokend')
     var userName  = e.detail.value.applyUserName;         //获取input初始值
     var userPhone = e.detail.value.applyUserPhone;    //获取input初始值
+    var ManagerPhone = e.detail.value.ManagerPhone;//获取input初始值
     var openIp    = app.globalData.openId;
    
     wx.request({
@@ -79,6 +80,7 @@ Page({
       data: {
         'userName': userName,
         'userPhone': userPhone, 
+        'ManagerPhone':ManagerPhone,
         'openId': openIp     
       },
       header:

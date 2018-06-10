@@ -1,2 +1,12 @@
-<!--pages/refereeManagerList/refereeManagerList.wxml-->
-<text>pages/refereeManagerList/refereeManagerList.wxml</text>
+<import src="../userManagerTemplate/userManagerTemplate.wxml"/>
+
+
+
+        <view ><text>分销经理列表</text>
+            
+              <block wx:for="{{refereeManagerListData}}">
+              <!-- <template is="userManagerItem" data="{{.../item}}"/> -->
+              <template is="userManagerItem" data="{{item}}"/>
+              </block>
+              
+        </view>

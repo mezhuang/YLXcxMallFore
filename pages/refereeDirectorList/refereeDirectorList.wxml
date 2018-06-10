@@ -1,11 +1,12 @@
 <import src="../userManagerTemplate/userManagerTemplate.wxml"/>
+
+
+
+        <view ><text>分销总监列表</text>
        
-         <view ><text>分销经纪人列表</text>
-             
-              <block wx:for="{{refereeAgentListData}}">
+              <block wx:for="{{refereeDirectorListData}}">
               <!-- <template is="userManagerItem" data="{{.../item}}"/> -->
               <template is="userManagerItem" data="{{item}}"/>
               </block>
               
         </view>
-<!-- </template> -->

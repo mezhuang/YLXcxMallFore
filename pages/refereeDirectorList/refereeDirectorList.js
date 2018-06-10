@@ -1,4 +1,4 @@
-// pages/refereeManagerList/refereeManagerList.js
+// pages/refereeDirectList/refereeDirectList.js
 const app = getApp();
 Page({
 
@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    refereeManagerListData:null
+    refereeDirectorListData:null
   
   },
 
@@ -20,7 +20,7 @@ Page({
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserInfoByGroupCode.do', //接口地址
       data: {
-        'groupCode':"10004",
+        'groupCode': "10005",
         'startIndex': 0,
         'indexSize': 5
       },
@@ -28,7 +28,7 @@ Page({
       success: function (res) {
         console.log('success-res' + ':' + res.data)
         that.setData({
-          refereeManagerListData: res.data
+          refereeDirectorListData: res.data
         });
 
         //跳转至报备客户列表
@@ -54,7 +54,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+  
   },
 
   /**
@@ -103,7 +103,7 @@ Page({
       url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/setUserPosistionByUserIdAndGroupId.do', //接口地址
       data: {
         'userId': userId,
-        'groupCode': "10003",
+        'groupCode': "10004",
         'startIndex': 0,
         'indexSize': 5
       },
@@ -176,7 +176,7 @@ Page({
       url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/delUserPosistionByUserIdAndGroupId.do', //接口地址
       data: {
         'userId': userId,
-        'groupCode': "10004",
+        'groupCode': "10005",
         'startIndex': 0,
         'indexSize': 5
       },
@@ -186,20 +186,21 @@ Page({
         that.setData({
           refereeAgentListData: res.data
         });
-
-        //跳转至报备客户列表
-        //   wx.navigateTo({
-        //     url: "../reportList/reportList"
-        //   })
+        wx.showToast({
+          title: '操作成功！',
+          image: '../../images/suess.png',
+          duration: 4000
+        })
+        // 跳转至报备客户列表
+          wx.navigateTo({
+            url: "../reportList/reportList"
+          })
 
       },
       fail: function (res) {
         console.log('fail-res' + ':' + res)
       }
     })
-
-    // this.onLoad();
-
 
   }
 })
