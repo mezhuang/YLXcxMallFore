@@ -16,7 +16,8 @@
     "pages/sysManager/sysManager",
     "pages/refereeAgentList/refereeAgentList",
     "pages/refereeManagerList/refereeManagerList",
-    "pages/refereeDirectorList/refereeDirectorList"
+    "pages/refereeDirectorList/refereeDirectorList",
+    "pages/commissionList/commissionList"
   ],
   "window": {
     "backgroundTextStyle": "light",

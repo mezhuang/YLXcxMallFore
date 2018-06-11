@@ -99,13 +99,13 @@ Page({
         })
         setTimeout(function () {
           wx.switchTab({
-            url: '../reportList/reportList',
+            url: '../myhome/myhome',
           })
         }, 2000)
-        //跳转至报备客户列表
-        wx.redirectTo({
-          url: "../reportList/reportList"
-        })
+        // //跳转至报备客户列表
+        // wx.redirectTo({
+        //   url: "../reportList/reportList"
+        // })
 
       },
       fail: function (res) {

@@ -1,4 +1,4 @@
-// pages/refereeCenter/refereeCenter.js
+// pages/commissionList/commissionList.js
 Page({
 
   /**
@@ -62,28 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  onAddReport: function () {
-
-    console.log("新增报备");
-    wx.navigateTo({
-      url: '../report/report'
-    })
-  },
-  onReportList: function () {
-
-    console.log("报备列表");
-    wx.navigateTo({
-      url: '../reportList/reportList'
-    })
-  },
-  onCommissionList:function(){
-    console.log("佣金列表");
-    wx.navigateTo({
-      url: '../commissionList/commissionList'
-    })
-    
   }
-
-
 })

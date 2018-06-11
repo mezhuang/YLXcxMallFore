@@ -1,0 +1,16 @@
+<view>
+<block wx:for="{{commissionListData}}">
+    <view>
+        <text>客户姓名</text><text>{{}}</text>
+        <text>客户姓名</text><text>客户姓名</text>
+        <text>产品名称</text><text>产品名称</text>
+        <text>对接导购</text><text>对接导购</text>
+        <text>分销人员</text><text>分销人员</text>
+        <text>是否带看</text><text>是否带看</text>
+        <text>佣金比例</text><text>佣金比例</text>
+        <text>佣金金额</text><text>佣金金额</text>
+        <text>结佣状态</text><text>结佣状态</text>
+    </view>
+</block>
+
+</view>
