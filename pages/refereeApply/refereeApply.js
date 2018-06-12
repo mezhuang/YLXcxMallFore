@@ -1,11 +1,18 @@
 // pages/applyReferee/applyReferee.js
 const app = getApp()
+var interval = null //倒计时函数
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    date: '请选择日期',
+    fun_id: 2,
+    time: '获取验证码', //倒计时 
+    currentTime: 180,
+    retCode:null,
+    inputUserPhone:null
   
   },
 
@@ -112,6 +119,84 @@ Page({
         console.log('fail-res' + ':' + res)
       }
     })
+  },
+  onGetUserPhone:function(e){
+    console.log(e.detail.value);
+    this.setData(
+      {
+        inputUserPhone: e.detail.value
+      }
+    )
+    console.log(this.data.inputUserPhone);
+  },
+  getCode: function (options) {
+    var that = this;
+    var currentTime = that.data.currentTime
+    interval = setInterval(function () {
+      currentTime--;
+      that.setData({
+        time: currentTime + '秒'
+      })
+      if (currentTime <= 0) {
+        clearInterval(interval)
+        that.setData({
+          time: '重新发送',
+          currentTime: 180,
+          disabled: false
+        })
+      }
+    }, 1000)
+  },
+  getVerificationCode:function()
+  {
+      this.getCode();
+      var that = this
+      that.setData({
+        disabled: true
+      })
+
+
+      wx.request({
+        method: 'GET',
+        // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+        url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserPhoneVerification.do', //接口地址
+        data: {
+          'userPhone': this.data.inputUserPhone
+        },
+        header:
+        {
+          //'content-type': "application/x-www-form-urlencoded" // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          //'content-type': 'application/json'
+        },
+        success: function (res) {
+          console.log("success产生的验证码：");
+          console.log(res.data);
+          var successRetData = res.data;
+          var that = this
+          that.setData({
+            retCode: successRetData
+          })
+
+
+        }  ,
+        fail: function (res) {
+          console.log('fail产生的验证码：' + res.data)
+        }
+      })
+
+  },
+  
+  inputIdentiCode:function(e)
+  {
+    console.log("比对验证码");
+    console.log("this.data.retCode:"+this.data.retCode);
+    console.log("e.detail.value:" + e.detail.value);
+    if (this.data.retCode = e.detail.value)
+    {
+      console.log("验证码正确");
+    }
   }
+
 
 })

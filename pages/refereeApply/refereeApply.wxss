@@ -20,3 +20,9 @@
   margin:0 auto;
   
 }
+.mePhone{
+  width: 65%;
+}
+.identCodeBt{
+  size: 10rpx;
+}

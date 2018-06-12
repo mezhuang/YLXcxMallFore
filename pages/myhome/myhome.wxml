@@ -10,7 +10,7 @@
 
   <view class="container_manager">
      <button class="refereeCenter" bindtap="applyRefereeChange" types="primary" wx:if="{{isGeneral}}">申请分销</button>  
-        <button class="refereeCenter" bindtap="onRefereeCenter" wx:if="{{isReferee}}"><text>分销中心</text></button>       
+        <button class="refereeCenter" bindtap="onRefereeCenter" wx:if="{{isReferee}}"><text>分销中心</text></button>      
         <button class="saleManger" bindtap="onSaleManger" wx:if="{{isGuide}}"><text>销售管理</text></button>
         <button class="systemManger" bindtap="onSysMangerChange" wx:if="{{isSysManger}}">系统管理</button>
     </view>

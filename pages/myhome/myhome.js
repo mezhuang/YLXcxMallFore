@@ -8,10 +8,14 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isGeneral:true,
+    isSysManger: false,
+    isGuide: false,
     isReferee:false,
-    isGuide:false,
-    isSysManger:false
+    isReferManger:false,
+    isReferDicrector: false,
+    isGeneral: true,
+    groupCode:null
+    
     
   },
   /**
@@ -39,13 +43,14 @@ Page({
         console.log("用户权限接口数据：");
         console.log(res.data);
         for (var i = 0; res.data.length; i++) {
-          console.log(res.data[i].power_code);
-          switch (res.data[i].power_code) {
+          console.log(res.data[i].group_code);
+          switch (res.data[i].group_code) {
             case "10001":
               console.log("系统管理员");
               that.setData({
 
-                isSysManger: true,
+                isSysManger: true
+
 
               })
               break;
@@ -54,16 +59,20 @@ Page({
               that.setData({
 
                 isGuide: true,
-                isGeneral: false
+                isGeneral: false,
+                groupCode: res.data[i].group_code
               })
               break;
             case "10003":
-              console.log("分销商");
+            case "10004":
+            case "10005":
+              console.log("分销人员");
               that.setData({
                 isReferee: true,
                 isGeneral: false
               })
               break;
+           
             default:
               console.log("没有匹配的权限！");
           }
@@ -145,8 +154,9 @@ Page({
   {
  
     console.log("进入分销中心");
+    var groupCode = e.currentTarget.dataset.groupCode;
     wx.navigateTo({
-      url: '../refereeCenter/refereeCenter'
+      url: '../refereeCenter/refereeCenter?groupCode=' + groupCode
     })
   },
   onSaleManger: function () {
