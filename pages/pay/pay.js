@@ -76,29 +76,33 @@ Page({
   },
   onPay:function()
   {
-    // var sign = '';
-    // //<strong><span style="color:#ff0000;">顺序按照ASCII字典序排序</span></strong>  
-    // var signA = "appId=" + app.appId + "&nonceStr=" + res.data.nonceStr + "&package=prepay_id=" + res.data.prepayId + "&signType=MD5&timeStamp=" + res.data.timestamp;
-    // var signB = signA + "&key=" + app.key;
-    // sign = MD5Util.MD5(signB).toUpperCase();
+    
+    var timestamp = Date.parse(new Date());
+    console.info("timestamp:" + timestamp);
+    var paySignTemp = "appId=" + this.data.appid + "&nonceStr=LZdkMTXlSnb7F7AT&package=prepay_id=wx15180537240310a16ac4bb640728698939&signType=MD5&timeStamp=" + timestamp + "&key=" + this.data.apiKey;
 
+    // MD5加密
+    var paySign  = MD5Util.MD5(paySignTemp).toUpperCase();
+    console.log("paySign :" + paySign);
+    wx.requestPayment(
+      {
+        'timeStamp': timestamp.toString(),
+        'nonceStr': 'LZdkMTXlSnb7F7AT',
+        'package': 'prepay_id=wx15180537240310a16ac4bb640728698939',
+        'signType': 'MD5',
+        'paySign': paySign,
+        'success': function (res) { 
+          console.log("requestPayment-success返回:"+res.data);
+        },
+        'fail': function (res) { 
+          console.log("requestPayment-fail返回:" + res.data);
 
+        },
+        'complete': function (res) { 
+          console.log("requestPayment-complete返回:" + res.data);
 
-
-    // wx.requestPayment({
-    //   nonceStr: res.data.nonceStr,
-    //   package: "prepay_id=" + res.data.prepayId,
-    //   signType: 'MD5',
-    //   timeStamp: res.data.timestamp,
-    //   paySign: sign,//<strong><span style="color:#ff0000;">五个字段参与签名(区分大小写)：appId,nonceStr,package,signType,timeStamp（需要注意的是，这5个参数签名排序的顺序按照ASCII字典序排序）</span></strong>  
-    //   success: function (res) {
-    //     console.log("支付成功");
-    //   },
-    //   fail: function () {
-    //   },
-    //   complete: function () {
-    //   }
-    // }) 
+        }
+      })
   },
   // 预支付接口
   onPrepay:function(){
