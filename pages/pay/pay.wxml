@@ -2,4 +2,5 @@
 <view>
   <button bindtap='onPrepay'>调用预支付</button>
   <button bindtap='onPay'>发起支付</button>
+   <button bindtap='onYLTest'>测试</button>
 </view>

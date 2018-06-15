@@ -10,11 +10,15 @@
             <view>
                   <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000">
                   <block wx:for="{{imgUrls}}">
-                        <swiper-item class="index-swiper-item" >
-                            <view id='{{item.id}}' bindtap='onIndexSwiperDetail'>
-                                  <image src="{{item.imUrl}}" ></image>
-                            </view>
-                        </swiper-item>
+                        <view bindtap='test'>
+                            <swiper-item class="index-swiper-item"  >
+                                <view id='{{item.id}}'  >
+                                      <image src="{{item.imUrl}}" ></image>
+                                </view>
+                                <view name='totalFee' value='{{item.totalFee}}'></view>
+                                <view name='goodsCode' value='{{item.goodsCode}}'></view>
+                            </swiper-item>
+                        </view>
                       </block>
                   </swiper> 
             </view> 

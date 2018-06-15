@@ -8,10 +8,10 @@ Page({
    */
   data: {
     imgUrls: [
-      { id: "001",imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'},
-      { id: "002", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1002_shaf.png'},
-      { id: "003", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png'},
-      { id: "004", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png'}
+      { id: "001", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png', totalFee: '1', goodsCode:'shafa001'},
+      { id: "002", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1002_shaf.png', totalFee: '2', goodsCode: 'shafa002'},
+      { id: "003", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png', totalFee: '3', goodsCode: 'shafa003'},
+      { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
     ],
   
   },
@@ -97,6 +97,20 @@ Page({
    */
   onIndexSwiperDetail:function(e){
     console.log(e.detail.id);
+    wx.setStorage({
+      key: "totalFee",
+      data: e.currentTarget.dataset.totalFee
+    });
+
+    wx.setStorage({
+      key: "goodsCode",
+      data: e.currentTarget.dataset.goodsCode
+    });
+
+wx.navigateTo({
+  url: '../pay/pay'
+});
+
     // wx.navigateTo({
     //   url: '',
     // })
@@ -116,6 +130,23 @@ Page({
     wx.navigateTo({
       url: '../indexSearch/indexSearch',
     })
+  },
+  test:function(e)
+  {
+    console.log("testss");
+    wx.setStorage({
+      key: "totalFee",
+      data: e.currentTarget.dataset.totalFee
+    });
+
+    wx.setStorage({
+      key: "goodsCode",
+      data: e.currentTarget.dataset.goodsCode
+    });
+    console.log("tesfftss");
+    wx.navigateTo({
+      url: '../pay/pay'
+    });
   }
 
 })
