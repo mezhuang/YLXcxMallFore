@@ -1,10 +1,18 @@
 // pages/myhome/myhome.js
+const app = getApp()
 Page({
 
+  
   /**
    * 页面的初始数据
    */
   data: {
+    imgUrls: [
+      { id: "001",imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'},
+      { id: "002", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1002_shaf.png'},
+      { id: "003", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png'},
+      { id: "004", imUrl:'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png'}
+    ],
   
   },
 
@@ -12,6 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
   },
   
 
@@ -61,6 +70,52 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: '这里是机智life小程序',
+      path: '/page/index/index?id=123',
+      success: function (res) {
+        console.log(res.shareTickets[0])
+        // console.log
+        wx.getShareInfo({
+          shareTicket: res.shareTickets[0],
+          success: function (res) { console.log(res) },
+          fail: function (res) { console.log(res) },
+          complete: function (res) { console.log(res) }
+        })
+      },
+      fail: function (res) {
+        // 分享失败
+        console.log(res)
+      }
+    }
+
+
+
+  },
+  /**
+   *首页轮播详情 
+   */
+  onIndexSwiperDetail:function(e){
+    console.log(e.detail.id);
+    // wx.navigateTo({
+    //   url: '',
+    // })
+    // wx.showToast({
+    //   title: '成功',
+    //   icon: 'success',
+    //   duration: 2000
+    // })
+    // wx.showLoading({
+    //   title:'现金优惠卷',
+    //   mask:true
+      
+    // })
+ 
+  },
+  onIndexSearch:function(){
+    wx.navigateTo({
+      url: '../indexSearch/indexSearch',
+    })
   }
+
 })

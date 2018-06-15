@@ -1,5 +1,5 @@
 <view  class="sysManagerCenter">
-<button bindtap="onTapGuideManger">导购管理</button>
+<button bindtap="onTapGuideManger">家居顾问管理</button>
 <button bindtap="onTapRefereeAgent"><text>分销经纪人管理</text></button>
 <button bindtap="onTapRefereeManger">分销经理管理</button>
 <button bindtap="onTapDirectorManger">分销总监管理</button>

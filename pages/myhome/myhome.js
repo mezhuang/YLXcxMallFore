@@ -150,7 +150,7 @@ Page({
       url: '/pages/refereeApply/refereeApply'
     })
   },
-  onRefereeCenter:function()
+  onRefereeCenter:function(e)
   {
  
     console.log("进入分销中心");

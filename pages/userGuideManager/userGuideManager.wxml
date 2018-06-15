@@ -1,0 +1,5 @@
+<view>
+
+    <button>新增导购</button>
+    <button>导购列表</button>
+</view>

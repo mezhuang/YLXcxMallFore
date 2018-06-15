@@ -1,8 +1,42 @@
-<!--pages/myhome/myhome.wxml-->
-<!-- <text>pages/myhome/myhome.wxml</text> -->
-<view class="container">
 
+  <!-- <view class="search">  
+                    <view class="df search_arr">  
+                      <icon class="searchcion" size='20' type='search'></icon>  
+                      <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}" bindtap='onIndexSearch'/>  
+                    </view>  
+  </view>  -->
+  <scroll-view>
+            <!-- 轮播图-->
+            <view>
+                  <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000">
+                  <block wx:for="{{imgUrls}}">
+                        <swiper-item class="index-swiper-item" >
+                            <view id='{{item.id}}' bindtap='onIndexSwiperDetail'>
+                                  <image src="{{item.imUrl}}" ></image>
+                            </view>
+                        </swiper-item>
+                      </block>
+                  </swiper> 
+            </view> 
+            <!--菜单栏  -->
+            <view class="index-menu" >
+                    <view style='width:25%;'>优惠套餐</view>
+                    <view style='width:25%;'>线下体验</view>
+                    <view style='width:25%;'>晒家实景</view>
+                    <view style='width:25%;'>购物车</view>
+            </view>
+            <!--限时秒杀  -->
+
+
+            <!--热门推荐  -->
+  
+
+  </scroll-view>
+        
+    <!-- </view> -->
+    <!-- <view>
+    <button hidden='false' open-type='share'>分享赚钱</button>
+    </view> -->
     
-    
-</view>
+
 

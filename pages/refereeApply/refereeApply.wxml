@@ -5,7 +5,7 @@
           <view  class="mePhone" style="display: flex;"><text style="width:200rpx;" >手机号:</text><input name="applyUserPhone" bindblur="onGetUserPhone"></input></view>
            <button class='identCodeBt'  size="mini" disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode">{{time}}</button> 
           </view>
-         <view class="applyUserNameFlex" ><text>验证码:</text><input name="applyUserName" bindblur="inputIdentiCode"></input></view>
+         <view class="applyUserNameFlex" ><text>验证码:</text><input  bindblur="inputIdentiCode"></input></view>
           <view class="applyUserPhoneFlex"><text >推荐人手机：</text><input name="ManagerPhone"  placeholder="选填"></input></view>
           <view class="applyRefereeBtnArea">
               <button class ="applyRefereeBtn" formType="submit">提交</button>

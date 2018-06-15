@@ -1,10 +1,5 @@
-/* pages/index/index.wxss */
-
-
-/*搜索功能  */
 .search{  
-  width: 90%;  
-  margin: center;
+  width: 80%;  
 }  
 .search_arr {  
   border: 1px solid #d0d0d0;  
@@ -30,14 +25,9 @@
   border: 1px solid #d0d0d0;  
   border-radius: 10rpx;  
 }  
-.page_row{ 
-
-    position: absolute;
-  left: 30px;
-  top: 1r px;
+.page_row{  
   display: flex;  
   flex-direction: row  
-
 }  
 .searchcion {  
   margin: 10rpx 10rpx 10rpx 10rpx;  
@@ -47,22 +37,32 @@
   width: 20px;  
   height: 20px;  
   text-align: center;  
+} 
+
+.searchcion{  
+    width: 24px;  
+    height: 24px;  
+    text-align: center;  
+    margin-top: 5rpx  
 }  
-/*轮播功能  */
-.index-swiper{
-position: relative;
-left: 0rpx;
-top: 10rpx;
-width: 100%;
-
-}
-.index-swiper-item{
-  width: 100%;
-margin-top: 1rpx;
-}
-.index-menu{
-  display: flex;
-  margin-top:20rpx;
-  margin-left: 5%;
-
-}
+.search{  
+    padding: 1% 3%;  
+    background: #D0D0D0;  
+}  
+.search input{  
+    width: 85%;  
+    border-radius: 5px;  
+    background: #fff;  
+    border: none;  
+    font-size: 12px;  
+    padding:1% 2.5%;  
+    margin-right: 5px;  
+    }  
+.search button{  
+    line-height:30px;  
+  
+    text-align: center;  
+    border: none;  
+    font-size: 28rpx;  
+    background: white  
+} 

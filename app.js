@@ -55,6 +55,27 @@ App({
         }
       }
     })
+
+    // wx.showModal({
+    //   title: '新会员福利',
+    //   showCancel: true,
+    //   confirmText: '领取',
+    //   cancelText: '跳过',
+    //   content: '500元现金抵用卷',
+
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //       //获取分享人的open_id
+
+    //       //用户领取，则挂到分销人名下
+
+          
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
   },
   globalData: {
     userInfo: null,

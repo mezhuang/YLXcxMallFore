@@ -17,7 +17,11 @@
     "pages/refereeAgentList/refereeAgentList",
     "pages/refereeManagerList/refereeManagerList",
     "pages/refereeDirectorList/refereeDirectorList",
-    "pages/commissionList/commissionList"
+    "pages/commissionList/commissionList",
+    "pages/indexSwiperdetail/indexSwiperdetail",
+    "pages/indexSearch/indexSearch",
+    "pages/userGuideManager/userGuideManager",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,11 +37,19 @@
       },
       {
         "pagePath": "pages/refereeApply/refereeApply",
-        "text": "申请分销"
+        "text": "特卖"
+      },
+      {
+        "pagePath": "pages/refereeApply/refereeApply",
+        "text": "到店"
       },
       {
         "pagePath": "pages/myhome/myhome",
-        "text": "个人中心"
+        "text": "我的"
+      },
+      {
+        "pagePath": "pages/pay/pay",
+        "text": "测试"
       }
     ]
   },
