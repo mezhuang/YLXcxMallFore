@@ -92,61 +92,33 @@ Page({
 
 
   },
-  /**
-   *首页轮播详情 
-   */
-  onIndexSwiperDetail:function(e){
-    console.log(e.detail.id);
+  onIndexSwiperItem: function (event) {
+    console.log("e.currentTarget.dataset.totalFee:");
+    console.log(event.target.dataset.totalfee);
+    console.log("e.currentTarget.dataset.goodscode:");
+    console.log(event.target.dataset.goodscode);
     wx.setStorage({
       key: "totalFee",
-      data: e.currentTarget.dataset.totalFee
+      data: event.target.dataset.totalfee
     });
 
     wx.setStorage({
       key: "goodsCode",
-      data: e.currentTarget.dataset.goodsCode
-    });
-
-wx.navigateTo({
-  url: '../pay/pay'
-});
-
-    // wx.navigateTo({
-    //   url: '',
-    // })
-    // wx.showToast({
-    //   title: '成功',
-    //   icon: 'success',
-    //   duration: 2000
-    // })
-    // wx.showLoading({
-    //   title:'现金优惠卷',
-    //   mask:true
-      
-    // })
- 
-  },
-  onIndexSearch:function(){
-    wx.navigateTo({
-      url: '../indexSearch/indexSearch',
-    })
-  },
-  test:function(e)
-  {
-    console.log("testss");
-    wx.setStorage({
-      key: "totalFee",
-      data: e.currentTarget.dataset.totalFee
-    });
-
-    wx.setStorage({
-      key: "goodsCode",
-      data: e.currentTarget.dataset.goodsCode
+      data: event.target.dataset.goodscode
     });
     console.log("tesfftss");
     wx.navigateTo({
       url: '../pay/pay'
     });
+  },
+  /**
+   *首页轮播详情 
+   */
+  onIndexSearch:function(){
+    wx.navigateTo({
+      url: '../indexSearch/indexSearch',
+    })
   }
+  
 
 })

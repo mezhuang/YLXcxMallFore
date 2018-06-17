@@ -1,6 +1,5 @@
 <!--pages/pay/pay.wxml-->
 <view>
-  <button bindtap='onPrepay'>调用预支付</button>
-  <button bindtap='onPay'>发起支付</button>
+  <button bindtap='onPrepay'>立即购买</button>
    <button bindtap='onYLTest'>测试</button>
 </view>

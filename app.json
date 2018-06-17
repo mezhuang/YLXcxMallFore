@@ -46,10 +46,6 @@
       {
         "pagePath": "pages/myhome/myhome",
         "text": "我的"
-      },
-      {
-        "pagePath": "pages/pay/pay",
-        "text": "测试"
       }
     ]
   },

@@ -78,15 +78,20 @@ Page({
   // 调用统一下单接口，获取预支付ID
   onPrepay:function(e){
 
-    var currtTotalFee = wx.getStorageSync("totalFee");
+    var currtTotalFee =null; 
+    var currtGoodsCode =null;
+    currtTotalFee= wx.getStorageSync("totalFee");
     var currtGoodsCode = wx.getStorageSync("goodsCode");
-    console.log("currtTotalFee:" + currtTotalFee);
-    console.log("currtGoodsCode:" + currtGoodsCode);
+
+    console.log(currtTotalFee);
+    console.log(currtGoodsCode);
     //获取预支付金额
-    this.setData({
-      total_fee: currtTotalFee,
-      body: currtGoodsCode
-    })
+    // this.setData({
+    //   total_fee: currtTotalFee,
+    //   body: currtGoodsCode
+    // });
+    this.data.total_fee = currtTotalFee;
+    this.data.body = currtGoodsCode;
 
     var nonceNum = Math.floor(Math.random() * 100000000000000 + 1);
     console.log("nonce_str随机数:" + "yljj" + nonceNum.toString());
@@ -160,7 +165,7 @@ Page({
         console.log(res.data.nonce_str);
         console.log(res.data.prepay_id)
         that.setData({
-          ret_noce_str :ret.data.nonce_str,
+          ret_noce_str :res.data.nonce_str,
           prepay_id :res.data.prepay_id
 
 
@@ -187,7 +192,7 @@ Page({
 
       },
       fail: function (res) {
-        console.log('fail-res' + ':' + res)
+        console.log('fail-res' + ':' + res.data)
       }
     }) 
   },

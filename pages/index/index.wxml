@@ -8,17 +8,15 @@
   <scroll-view>
             <!-- 轮播图-->
             <view>
-                  <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000">
-                  <block wx:for="{{imgUrls}}">
-                        <view bindtap='test'>
+                  <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000" bindtap='onIndexSwiperItem'>
+                  <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx">
                             <swiper-item class="index-swiper-item"  >
                                 <view id='{{item.id}}'  >
-                                      <image src="{{item.imUrl}}" ></image>
+                                      <image src="{{item.imUrl}}" data-totalFee="{{item.totalFee}}" data-goodsCode="{{item.goodsCode}}"></image>
                                 </view>
                                 <view name='totalFee' value='{{item.totalFee}}'></view>
                                 <view name='goodsCode' value='{{item.goodsCode}}'></view>
                             </swiper-item>
-                        </view>
                       </block>
                   </swiper> 
             </view> 
