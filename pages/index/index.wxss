@@ -62,7 +62,73 @@ margin-top: 1rpx;
 }
 .index-menu{
   display: flex;
-  margin-top:20rpx;
+  margin-top:10rpx;
   margin-left: 5%;
+   height: 200rpx; 
+    border-style: ridge; 
+  border-width: 1rpx;
 
+}
+.index-menu-image{
+   margin-top:20rpx;
+ width: 60%;
+ height: 90rpx; 
+}
+.index-menu-text{
+  /* margin-left: 20rpx; */
+  margin-top:-30rpx;
+  font-size: 28rpx;
+}
+/*首页热销爆品布局  */
+.hotSaleProducts{
+  border-style: ridge; 
+  border-width: 1rpx;
+}
+.hostSalesImages{
+  display: flex;
+  width: 100%;
+  height: 90rpx;
+
+}
+/*热销爆品，商品两列布局  */
+ .hot_goods_container01{
+  flex-direction:row;
+   display: flex; 
+   font-size: 24rpx;
+   margin-left: 5%;
+} 
+.hotSaleProducts01{
+    width: 50%;
+  height: 250rpx;
+}
+.hotSaleProducts01-image{
+  
+  width: 90%;
+  height: 150rpx;
+}
+.hotSaleProducts01_01_image{
+  
+  width: 95%;
+  height: 150rpx;
+}
+
+/*热销商品三列布局  */
+.hot_goods_container02{
+  margin-top: 5%;
+  flex-direction:row;
+   display: flex; 
+} 
+.hotSaleProducts02{
+    width: 30%;
+  height: 150rpx;
+}
+.hotSaleProducts02-image{
+  margin-left: 5%;
+  width: 90%;
+  height: 150rpx;
+}
+.hotSaleProducts02_01_image{
+   margin-left: 5%;
+  width: 90%;
+  height: 150rpx;
 }

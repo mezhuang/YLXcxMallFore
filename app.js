@@ -77,6 +77,21 @@ App({
     //   }
     // })
   },
+  onLaunch: function (options) {
+    // Do something initial when launch.
+  },
+  onShow: function (options) {
+    // Do something when show.
+    console.log("Path: " + options.path)
+    console.log("Path: " + options.query)
+    console.log("Path: " + options.scene)
+  },
+  onHide: function () {
+    // Do something when hide.
+  },
+  onError: function (msg) {
+    console.log(msg)
+  },
   globalData: {
     userInfo: null,
     openId:null,

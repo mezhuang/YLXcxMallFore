@@ -21,7 +21,8 @@
     "pages/indexSwiperdetail/indexSwiperdetail",
     "pages/indexSearch/indexSearch",
     "pages/userGuideManager/userGuideManager",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/payCart/payCart"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,22 +31,41 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#858585",
+    "selectedColor": "#f0145a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "#000",
     "list": [
       {
+        "iconPath": "images/icon/tabBar/home.png",
+        "selectedIconPath": "images/icon/tabBar/home_select.png",
         "pagePath": "pages/index/index",
         "text": "发现"
       },
       {
+        "iconPath": "images/icon/tabBar/classify.png",
+        "selectedIconPath": "images/icon/tabBar/classify_select.png",
         "pagePath": "pages/refereeApply/refereeApply",
-        "text": "特卖"
+        "text": "分类"
       },
+        {
+          "iconPath": "images/icon/tabBar/tabBar_01_001.png",
+          "selectedIconPath": "images/icon/tabBar/tabBar_01_001.png",
+          "pagePath": "pages/refereeApply/refereeApply",
+          "text": "限时秒杀"
+        }
+        ,
+        {
+          "pagePath": "pages/payCart/payCart",
+          "iconPath": "images/icon/tabBar/cart.png",
+          "selectedIconPath": "images/icon/tabBar/cart_select.png",
+          "text": "购物车"
+        },
       {
-        "pagePath": "pages/refereeApply/refereeApply",
-        "text": "到店"
-      },
-      {
+        "iconPath": "images/icon/tabBar/mine.png",
+        "selectedIconPath": "images/icon/tabBar/mine_select.png",
         "pagePath": "pages/myhome/myhome",
-        "text": "我的"
+        "text": "个人中心"
       }
     ]
   },

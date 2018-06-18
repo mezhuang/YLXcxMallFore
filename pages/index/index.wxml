@@ -22,15 +22,37 @@
             </view> 
             <!--菜单栏  -->
             <view class="index-menu" >
-                    <view style='width:25%;'>优惠套餐</view>
-                    <view style='width:25%;'>线下体验</view>
-                    <view style='width:25%;'>晒家实景</view>
-                    <view style='width:25%;'>购物车</view>
+                    <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/tiyandian.png'></image><view class ="index-menu-image" ><text class="index-menu-text">线下体验</text></view></view> 
+                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02.png'></image><view class ="index-menu-image" ><text class="index-menu-text">精选套餐</text></view></view> 
+                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/1521759934613549145.png'></image><view class ="index-menu-image" ><text class="index-menu-text">实景美图</text></view></view> 
+                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02_004.png'></image><view class ="index-menu-image" ><text class="index-menu-text">品牌专卖</text></view></view> 
             </view>
+            <!--爆销热品  -->
+<view class="hotSaleProducts">
+            <view >
+                  <image class="hostSalesImages" src="/images/index/index_02_001.png"></image>
+                
+            </view> 
+       <!--两列产品  -->
+       <view class="hot_goods_container01">
+            <view class ="hotSaleProducts01">
+                  <image class ="hotSaleProducts01-image" src='/images/index/hotsgoods/hot_goods001.png'></image>
+                   <view > <text style='color:#F00' >￥18888</text></view>
+                   <view><text>中深宅配 胡桃木 1.8m卧房套床</text></view>
+                  </view>
+              <view class ="hotSaleProducts01"><image class ="hotSaleProducts01_01_image" src='/images/index/hotsgoods/hot_goods002.png'></image></view> 
+        </view>
+        <!--三列产品  -->
+
+           <view class="hot_goods_container02">
+            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='/images/index/hotsgoods/hot_goods001.png'></image></view>
+            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='/images/index/hotsgoods/hot_goods001.png'></image></view>
+              <view class ="hotSaleProducts02"><image class ="hotSaleProducts02_01_image" src='/images/index/hotsgoods/hot_goods002.png'></image></view> 
+            
+        </view>
+
+</view>
             <!--限时秒杀  -->
-
-
-            <!--热门推荐  -->
   
 
   </scroll-view>
