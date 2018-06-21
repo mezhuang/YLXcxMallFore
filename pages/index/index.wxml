@@ -5,7 +5,8 @@
                       <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}" bindtap='onIndexSearch'/>  
                     </view>  
   </view>  -->
-  <scroll-view>
+  <scroll-view  class='scrollViewId' style="height: 1208rpx" scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+  
             <!-- 轮播图-->
             <view>
                   <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000" bindtap='onIndexSwiperItem'>
@@ -52,8 +53,22 @@
         </view>
 
 </view>
-            <!--限时秒杀  -->
-  
+
+
+<!--精选推荐(加载更多)  -->
+
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+</view>
+
+<view class="item" wx:for="{{recommends}}" wx:key="index">
+        <view class="left">
+          <image src="{{item.imageurl}}"></image>
+        </view>
+        <view class="right">{{item.name}}</view>
+  </view>
+
 
   </scroll-view>
         

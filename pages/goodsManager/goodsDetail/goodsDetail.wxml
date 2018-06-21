@@ -1,0 +1,52 @@
+<!-- banner -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<scroll-view scroll-y="true">
+  <view class="detail">
+    <text class="title">LANCOME兰蔻小黑瓶精华肌底液</text>
+    <text class="price">￥500</text>
+  </view>
+  
+<view>
+  <!-- <view class="separate"></view> -->
+  <!-- sku选择 -->
+  <text>请选择类型</text>  <text class="goods_type">1人位+两人位+三人位+贵妃</text>
+    <text >产品规格</text>
+    <text>餐桌：长1300*宽800*高740mm；</text>
+     
+ 
+         
+   </view>  
+   <view><text>请选择数量</text>
+      <!-- 主容器 -->  
+<view class="stepper">  
+    <!-- 减号 -->  
+    <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual" value="{{num}}" />  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus">+</text>  
+</view>
+   
+   </view>  
+  
+
+
+  <block wx:for-items="{{detailImg}}" wx:key="name">
+    <image class="image_detail" src="{{item}}" />
+  </block>
+  <view class="temp"></view>
+</scroll-view>
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+  <image bindtap="toCar" src="../../../images/icon/tabBar/cart.png" />
+  <view class="line_nav"></view>
+  <image bindtap="addLike" src="{{isLike?'../../../images/icon/sp2.png':'../../../images/icon/sp1.png'}}" />
+  <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
+  <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
+</view>

@@ -1,4 +1,5 @@
 <view>
 <button bindtap="onSaleAddInfo">信息录入</button>
 <button bindtap="onSaleInfoRecords">销售详情</button>
+<button bindtap="onSaleInfoRecords">商品管理</button>
 </view>

@@ -13,6 +13,8 @@ Page({
       { id: "003", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png', totalFee: '3', goodsCode: 'shafa003'},
       { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
     ],
+    isHideLoadMore:false,
+    recommends:null
   
   },
 
@@ -118,7 +120,56 @@ Page({
     wx.navigateTo({
       url: '../indexSearch/indexSearch',
     })
+  },
+  // 上拉加载更多
+  //加载更多
+  onReachBottom: function () {
+    console.log('加载更多')
+    setTimeout(() => {
+      this.setData({
+        isHideLoadMore: true,
+        recommends: [
+          {
+            goodId: 7,
+            name: 'OLAY玉兰油精油沐浴露玫瑰滋养二合一450ml',
+            url: 'bill',
+            imageurl: 'http://203.195.200.199/YLXcxMallBack/images/a.png',
+            newprice: "￥36.60",
+            oldprice: "￥40.00",
+          },
+          {
+            goodId: 10,
+            name: '兰蔻玫瑰清滢保湿柔肤水嫩肤水化妆水400ml补水保湿温和不刺激',
+            url: 'bill',
+            imageurl: 'http://203.195.200.199/YLXcxMallBack/images/a.png',
+            newprice: "￥30.00",
+            oldprice: "￥80.00",
+          }, {
+            goodId: 11,
+            name: 'Lancome/兰蔻清莹柔肤爽肤水/粉水400ml补水保湿玫瑰水化妆水',
+            url: 'bill',
+            imageurl: 'http://203.195.200.199/YLXcxMallBack/images/a.png',
+            newprice: "￥30.00",
+            oldprice: "￥80.00",
+          },
+          {
+            goodId: 12,
+            name: '美国CLINIQUE倩碧黄油无油/特效润肤露125ml',
+            url: 'bill',
+            imageurl: 'http://203.195.200.199/YLXcxMallBack/images/a.png',
+            newprice: "￥239.00",
+            oldprice: "￥320.00",
+          },
+          {
+            goodId: 13,
+            name: '法国LANCOME兰蔻柔皙轻透隔离防晒乳霜50ML2017年3月到期',
+            url: 'bill',
+            imageurl: 'http://203.195.200.199/YLXcxMallBack/images/a.png',
+            newprice: "￥130.00",
+            oldprice: "￥180.00",
+          },
+        ],
+      })
+    }, 2000)
   }
-  
-
 })
