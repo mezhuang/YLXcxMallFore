@@ -46,7 +46,7 @@
 <view class="detail-nav">
   <image bindtap="toCar" src="../../../images/icon/tabBar/cart.png" />
   <view class="line_nav"></view>
-  <image bindtap="addLike" src="{{isLike?'../../../images/icon/sp2.png':'../../../images/icon/sp1.png'}}" />
+  <image bindtap="addLike" src="{{isLike?'../../../images/icon/cart/sp2.png':'../../../images/icon/cart/sp1.png'}}" />
   <button class="button-green" bindtap="addCar" formType="submit">加入购物车</button>
   <button class="button-red" bindtap="immeBuy" formType="submit">立即购买</button>
 </view>
