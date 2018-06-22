@@ -8,20 +8,23 @@
       <image class="item-image" src="{{item.pic}}"></image>
 
       <view class="column">
-        <text class="title">{{item.name}}</text>
-        <view class="row">
+             <view>
+              <text class="title">{{item.name}}</text>
+              </view>
+          <view class="row">
           <text class="sku-price">￥</text>
           <text class="sku-price">{{item.price}}</text>
+          
           <view class="sku">
             <!-- <template is="quantity" data="{{ ...item.count, componentId: index }}" /> -->
              <!-- 主容器 -->  
-                <view class="stepper">  
+                <view class="stepper" >  
                     <!-- 减号 -->  
-                    <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+                    <text class="{{minusStatus}}" bindtap="bindMinus" data-index="{{index}}">-</text>  
                     <!-- 数值 -->  
-                    <input type="number" bindchange="bindManual" value="{{num}}" />  
+                    <input type="number" bindchange="bindManual" value="{{item.num}}" />  
                     <!-- 加号 -->  
-                    <text class="normal" bindtap="bindPlus">+</text>  
+                    <text class="normal" bindtap="bindPlus" data-index="{{index}}">+</text>  
                 </view>
           </view>
         </view>
