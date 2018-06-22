@@ -23,7 +23,8 @@
     "pages/userGuideManager/userGuideManager",
     "pages/pay/pay",
     "pages/payCart/payCart",
-    "pages/goodsManager/goodsDetail/goodsDetail"
+    "pages/goodsManager/goodsDetail/goodsDetail",
+    "pages/goodsManager/goodsCate/goodsCate"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,16 +47,13 @@
       {
         "iconPath": "images/icon/tabBar/classify.png",
         "selectedIconPath": "images/icon/tabBar/classify_select.png",
-        "pagePath": "pages/goodsManager/goodsDetail/goodsDetail",
+        "pagePath": "pages/goodsManager/goodsCate/goodsCate",
         "text": "分类"
       },
       {
         "iconPath": "images/icon/tabBar/tabBar_01_001.png",
         "selectedIconPath": "images/icon/tabBar/tabBar_01_001.png",
-                
-   
-         "pagePath": "pages/test/test",
-                
+        "pagePath": "pages/test/test",
         "text": "限时秒杀"
       },
       {

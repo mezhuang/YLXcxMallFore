@@ -8,10 +8,70 @@
       </block>
     </view>
 
+
+ <view class="separate"></view>
+
+  <view class="order" catchtap="toOrder">
+    <image class="item-image" src="'../../images/icon/myhome/myorder.png"></image>
+    <text class="myorder-text">我的订单</text>
+    <text class="myorderlook-text">查看全部订单</text>
+    <image class="next-image" src="../../images/icon/next.png"></image>
+  </view>
+  <view class="line"></view>
+
+  <view class="navs">
+    <block wx:for-items="{{orderItems}}" wx:key="name">
+      <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <image src="{{item.imageurl}}" class="nav-image" />
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+
+<!--线上交易相关  -->
+  <view class="separate"></view>
+  <view class="person-list">
+    <view class="list-item">
+      <image class="item-image" src="../../images/person/personal_favorite.png"></image>
+      <text class="item-text">我的收藏</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="../../images/person/personal_site.png"></image>
+      <text class="item-text">收货地址</text>
+    </view>
+    <!-- <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="../../images/person/personal_sale_record.png"></image>
+      <text class="item-text">售后记录</text>
+    </view> -->
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="../../images/person/personal_evaluated.png"></image>
+      <text class="item-text">我的评价</text>
+    </view>
+    <view class="person-line"></view>
+    <view class="list-item">
+      <image class="item-image" src="../../images/person/personal_share.png"></image>
+      <text class="item-text">推广邀请</text>
+    </view>
+
+    <view class="person-line"></view>
+    <view class="list-item" class="refereeCenter" bindtap="applyRefereeChange"  wx:if="{{isGeneral}}">
+      <image class="item-image" src="../../images/person/personal_share.png"></image>
+      <text class="item-text" >申请分销</text>
+    </view>
+  </view>
+  <view class="separate"></view>
+
+
+
+<!--分销管理  -->
   <view class="container_manager">
-     <button class="refereeCenter" bindtap="applyRefereeChange" types="primary" wx:if="{{isGeneral}}">申请分销</button>  
+     <!-- <button class="refereeCenter" bindtap="applyRefereeChange" types="primary" wx:if="{{isGeneral}}">申请分销</button>   -->
         <button class="refereeCenter" bindtap="onRefereeCenter" wx:if="{{isReferee}}"><text>分销中心</text></button>      
         <button class="saleManger" bindtap="onSaleManger" wx:if="{{isGuide}}"><text>销售管理</text></button>
         <button class="systemManger" bindtap="onSysMangerChange" wx:if="{{isSysManger}}">系统管理</button>
     </view>
+
 </view>
