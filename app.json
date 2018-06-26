@@ -29,7 +29,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "优致工坊",
+    "navigationBarTitleText": "远联家居商城",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -53,8 +53,8 @@
       {
         "iconPath": "images/icon/tabBar/tabBar_01_001.png",
         "selectedIconPath": "images/icon/tabBar/tabBar_01_001.png",
-        "pagePath": "pages/test/test",
-        "text": "限时秒杀"
+        "pagePath": "pages/refereeApply/refereeApply",
+        "text": "申请分销"
       },
       {
         "pagePath": "pages/payCart/payCart",

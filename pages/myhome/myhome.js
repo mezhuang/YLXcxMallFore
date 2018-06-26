@@ -59,7 +59,7 @@ Page({
     wx.request({
       method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getUserPowerList.do', //接口地址
+      url:   app.globalData.serviceIp + '/YLXcxMallBack/getUserPowerList.do', //接口地址
       data: {
         'openId': openIp
       },

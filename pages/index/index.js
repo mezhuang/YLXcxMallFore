@@ -22,7 +22,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log("转发人员信息zfopenid:");
+    console.log(options.shareOpenid);
+
+ 
   },
   
 
@@ -69,28 +72,62 @@ Page({
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击右上角分享或者自定义按钮转发功能
    */
   onShareAppMessage: function () {
+    // return {
+    //   title: '远联家居商城',
+    //   path: '/pages/index/index?id=123',
+    //   success: function (res) {
+    //     console.log(res.shareTickets[0])
+    //     // console.log
+    //     wx.getShareInfo({
+    //       shareTicket: res.shareTickets[0],
+    //       success: function (res) { console.log(res) },
+    //       fail: function (res) { console.log(res) },
+    //       complete: function (res) { console.log(res) }
+    //     })
+    //   },
+    //   fail: function (res) {
+    //     // 分享失败
+    //     console.log(res)
+    //   }
+    // }
     return {
-      title: '这里是机智life小程序',
-      path: '/page/index/index?id=123',
-      success: function (res) {
-        console.log(res.shareTickets[0])
-        // console.log
-        wx.getShareInfo({
-          shareTicket: res.shareTickets[0],
-          success: function (res) { console.log(res) },
-          fail: function (res) { console.log(res) },
-          complete: function (res) { console.log(res) }
-        })
-      },
-      fail: function (res) {
-        // 分享失败
-        console.log(res)
-      }
-    }
 
+      title: '转发',// 转发标题（默认：当前小程序名称）
+
+      path: '/pages/index/index?shareOpenid=' + app.globalData.openId,// 转发路径（当前页面 path ），必须是以 / 开头的完整路径
+
+      success(e) {
+
+        // shareAppMessage: ok,
+
+        // shareTickets 数组，每一项是一个 shareTicket ，对应一个转发对象
+
+        // 需要在页面onLoad()事件中实现接口
+
+        wx.showShareMenu({
+
+          // 要求小程序返回分享目标信息
+
+          withShareTicket: true
+
+        });
+
+      },
+
+      fail(e) {
+
+        // shareAppMessage:fail cancel
+
+        // shareAppMessage:fail(detail message)
+
+      },
+
+      complete() { }
+
+    }
 
 
   },
