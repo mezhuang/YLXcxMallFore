@@ -4,7 +4,7 @@
     "pages/logs/logs",
     "pages/report/report",
     "pages/coustomerManager/coustomerManager",
-    "pages/test/test",
+    "pages/test/testChoose/testChoose",
     "pages/myhome/myhome",
     "pages/reportList/reportList",
     "pages/refereeApply/refereeApply",
@@ -53,11 +53,11 @@
       {
         "iconPath": "images/icon/tabBar/tabBar_01_001.png",
         "selectedIconPath": "images/icon/tabBar/tabBar_01_001.png",
-        "pagePath": "pages/refereeApply/refereeApply",
+        "pagePath": "pages/test/testChoose/testChoose",
         "text": "申请分销"
       },
       {
-        "pagePath": "pages/payCart/payCart",
+        "pagePath": "pages/goodsManager/goodsDetail/goodsDetail",
         "iconPath": "images/icon/tabBar/cart.png",
         "selectedIconPath": "images/icon/tabBar/cart_select.png",
         "text": "购物车"

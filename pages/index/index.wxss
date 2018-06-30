@@ -68,8 +68,8 @@ margin-top: 1rpx;
   margin-top:10rpx;
   margin-left: 5%;
    height: 200rpx; 
-    border-style: ridge; 
-  border-width: 1rpx;
+    /* border-style: ridge; 
+  border-width: 1rpx; */
 
 }
 .index-menu-image{
@@ -80,7 +80,7 @@ margin-top: 1rpx;
 .index-menu-text{
   /* margin-left: 20rpx; */
   margin-top:-30rpx;
-  font-size: 28rpx;
+  font-size: 24rpx;
 }
 /*首页热销爆品布局  */
 .hotSaleProducts{
