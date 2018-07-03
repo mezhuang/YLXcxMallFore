@@ -24,7 +24,8 @@
     "pages/pay/pay",
     "pages/payCart/payCart",
     "pages/goodsManager/goodsDetail/goodsDetail",
-    "pages/goodsManager/goodsCate/goodsCate"
+    "pages/goodsManager/goodsCate/goodsCate",
+    "pages/goodsManager/goodsClass/goodsClass"
   ],
   "window": {
     "backgroundTextStyle": "light",

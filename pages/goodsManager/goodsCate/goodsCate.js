@@ -8,13 +8,13 @@ Page({
     cateItems: [
       {
         cate_id: 1,
-        cate_name: "护肤",
+        cate_name: "品类",
         ishaveChild: true,
         children:
         [
           {
             child_id: 1,
-            name: '洁面皂',
+            name: '风格',
             image: "http://mz.djmall.xmisp.cn/files/logo/20161208/148117972563.jpg"
           },
           {
@@ -36,7 +36,7 @@ Page({
       },
       {
         cate_id: 2,
-        cate_name: "彩妆",
+        cate_name: "风格",
         ishaveChild: true,
         children:
         [
@@ -84,7 +84,7 @@ Page({
       },
       {
         cate_id: 3,
-        cate_name: "香水/香氛",
+        cate_name: "空间",
         ishaveChild: true,
         children:
         [
@@ -112,7 +112,7 @@ Page({
       },
       {
         cate_id: 4,
-        cate_name: "个人护理",
+        cate_name: "工艺品",
         ishaveChild: false,
         children: []
       }
