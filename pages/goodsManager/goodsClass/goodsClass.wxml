@@ -1,2 +1,25 @@
-<!--pages/goodsManager/goodsClass/goodsClass.wxml-->
-<text>pages/goodsManager/goodsClass/goodsClass.wxml</text>
+
+<view>
+
+     <view class="nav_right">
+    <!--如果有数据，才遍历项-->
+    <!-- <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}"> -->
+      <block wx:for="{{goodsItems}}">
+        <view class="nav_right_items">
+        <!--界面跳转 -->
+          <navigator url="../goodsDetail/goodsDetail?goodsId={{item.goods_id}}">
+            <view><image src="{{item.goods_image_url}}"></image><text class="tileText">{{item.goods_tile}}</text></view>
+
+             <view >
+                   <view  class="currpriceText"><text>¥{{item.curr_price}}</text>  </view>
+                   <view class="salesText"><text >已售105</text></view>
+                   
+              </view>
+          </navigator>
+        </view>
+      </block>
+    <!-- </view> -->
+    <!--如果无数据，则显示数据-->
+    <!-- <view class="nodata_text" wx:else>该分类暂无数据</view> -->
+  </view>
+</view>

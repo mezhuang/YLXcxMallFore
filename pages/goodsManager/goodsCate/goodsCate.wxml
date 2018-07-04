@@ -5,19 +5,19 @@
     <block wx:for="{{cateItems}}">
       <!--当前项的id等于item项的id，那个就是当前状态-->
       <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-      <view class="nav_left_items {{curNav == item.cate_id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}">{{item.cate_name}}</view>
+      <view class="nav_left_items {{curNav == item.onelevel_code ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.twolevel_code}}"  data-onelevelcode="{{item.onelevel_code}}">{{item.onelevel_name}}</view>
     </block>
   </view>
   <!--右侧栏-->
   <view class="nav_right">
     <!--如果有数据，才遍历项-->
-    <view wx:if="{{cateItems[curIndex].ishaveChild}}">
-      <block wx:for="{{cateItems[curIndex].children}}">
+    <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}">
+      <block wx:for="{{cateItems[curIndex].twoClassList}}">
         <view class="nav_right_items">
         <!--界面跳转 -->
-          <navigator url="../../detail/detail}}">
-            <image src="{{item.image}}"></image>
-            <text>{{item.name}}</text>
+          <navigator url="../goodsClass/goodsClass?twolevelCode={{item.twolevel_code}}">
+            <image src="{{item.class_image_url}}"></image>
+            <!-- <text>{{item.twolevel_name}}</text> -->
           </navigator>
         </view>
       </block>

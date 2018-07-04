@@ -1,18 +1,62 @@
 // pages/goodsManager/goodsClass/goodsClass.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    selectedGoodsItem: 1,
+    curIndex: 0,
+    goodsItems:null,
+ 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    //获取二级分类编码
+
+    var twolevelCode = options.twolevelCode;
+
+
+    
+    var that = this;
+    wx.login({
+      success: function (res) {
+
+
+      }
+    })
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getGoodsInfoBytwolevelCode.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId,
+        'startIndex': 0,
+        'indexSize': 5,
+        "twolevelCode": twolevelCode
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          goodsItems: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res.data)
+      }
+    })
   },
 
   /**

@@ -58,7 +58,7 @@
         "text": "申请分销"
       },
       {
-        "pagePath": "pages/goodsManager/goodsDetail/goodsDetail",
+        "pagePath": "pages/payCart/payCart",
         "iconPath": "images/icon/tabBar/cart.png",
         "selectedIconPath": "images/icon/tabBar/cart_select.png",
         "text": "购物车"

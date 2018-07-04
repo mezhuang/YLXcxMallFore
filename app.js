@@ -96,7 +96,7 @@ App({
     userInfo: null,
     openId:null,
     sessionKey:null,
-    serviceIp:"https://localhost",
+    serviceIp:"https://192.168.1.104/YLXcxMallBack/",
     shareOpenid:null
   }
 })
