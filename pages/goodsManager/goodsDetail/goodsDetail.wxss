@@ -24,7 +24,7 @@ swiper-item image {
   color: black;
   text-align: justify;
 }
-.detail .price {
+.price {
   color: red;
   font-size: 40rpx;
   margin: 10rpx;
@@ -57,6 +57,11 @@ swiper-item image {
   z-index: 1;
   width: 100%;
   height: 100rpx;
+}
+.nextImage{
+width: 3%;
+  height: 20rpx;
+  margin-right: 1rpx;
 }
 .button-green {
   background-color: #4caf50; /* Green */
@@ -165,4 +170,15 @@ margin-left: 1rpx;
 .goods_type{
   width: 60%;
   border: 1px solid #f44336; 
+}
+
+ .catalog_item{
+  padding:15rpx;
+  border:1px dashed #b0b0b0;
+  margin-top:15rpx;
+  margin-right: 20rpx;
+}
+.active{
+  border:1px solid #ff6700;
+  color:#ff6700 !important;
 }

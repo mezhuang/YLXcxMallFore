@@ -7,7 +7,7 @@
       <block wx:for="{{goodsItems}}">
         <view class="nav_right_items">
         <!--界面跳转 -->
-          <navigator url="../goodsDetail/goodsDetail?goodsId={{item.goods_id}}">
+          <navigator url="../goodsDetail/goodsDetail?id={{item.goods_id}}">
             <view><image src="{{item.goods_image_url}}"></image><text class="tileText">{{item.goods_tile}}</text></view>
 
              <view >

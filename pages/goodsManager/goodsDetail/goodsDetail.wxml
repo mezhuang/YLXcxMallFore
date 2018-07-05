@@ -1,27 +1,30 @@
 <!-- banner -->
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
-    </swiper-item>
+ <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{goodsDetail[0].goodsImageList}}">
+     <view wx:if="{{item.position_code==swerposition}}"> 
+              <swiper-item>
+                <image src="{{item.goods_image_url}}" data-src="{{item.goods_image_url}}" bindtap="previewImage"></image>
+              </swiper-item>
+    </view>
   </block>
-</swiper>
+</swiper> 
+
 <scroll-view scroll-y="true">
   <view class="detail">
-    <text class="title">LANCOME兰蔻小黑瓶精华肌底液</text>
-    <text class="price">￥500</text>
-  </view>
-  
-<view>
-  <!-- <view class="separate"></view> -->
-  <!-- sku选择 -->
-  <text>请选择类型</text>  <text class="goods_type">1人位+两人位+三人位+贵妃</text>
-    <text >产品规格</text>
-    <text>餐桌：长1300*宽800*高740mm；</text>
-     
+    <text class="title">{{goodsDetail[0].goods_tile}}</text>
+    </view>
+               <text class="price">￥{{curDiplayPrice}}</text>
+                <text>请选择规格尺寸:</text>
+            <block wx:for="{{goodsDetail[0].goodsFormatList}}">
+                      <text  data-formatpriceid="{{item.format_price_id}}" data-currprice="{{item.curr_price}}"
+                          class="{{item.format_price_id == formatSelectId ? 'active':''}} catalog_item" 
+                          bindtap="chooseGoodsFormat">{{item.format_name}}
+                      </text>
+           
+          </block>
+    <view>
+</view>  
  
-         
-   </view>  
    <view><text>请选择数量</text>
       <!-- 主容器 -->  
 <view class="stepper">  
@@ -36,9 +39,11 @@
    </view>  
   
 
-
-  <block wx:for-items="{{detailImg}}" wx:key="name">
-    <image class="image_detail" src="{{item}}" />
+<!--商品详情图片  -->
+  <block wx:for="{{goodsDetail[0].goodsImageList}}" >
+   <view wx:if="{{item.position_code==detailposition}}"> 
+          <image class="image_detail" src="{{item.goods_image_url}}"></image>
+    </view>
   </block>
   <view class="temp"></view>
 </scroll-view>
