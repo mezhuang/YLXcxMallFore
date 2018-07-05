@@ -23,7 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.onPrepay();
   },
 
   /**
@@ -37,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+  this.onLoad();
   },
 
   /**
@@ -80,7 +80,8 @@ Page({
 
     var currtTotalFee =null; 
     var currtGoodsCode =null;
-    currtTotalFee= wx.getStorageSync("totalFee");
+    // currtTotalFee= wx.getStorageSync("totalFee");
+    currtTotalFee=1;
     var currtGoodsCode = wx.getStorageSync("goodsCode");
 
     console.log(currtTotalFee);
@@ -147,7 +148,7 @@ Page({
     wx.request({
       method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: 'http://' + app.globalData.serviceIp + '/YLXcxMallBack/getPrePayIdByOrderInfo.do', //接口地址
+      url:  app.globalData.serviceIp + 'getPrePayIdByOrderInfo.do', //接口地址
       data: {
 
         'dataXml': dataXml,
@@ -245,5 +246,6 @@ Page({
   }
 
 
-
 })
+  
+

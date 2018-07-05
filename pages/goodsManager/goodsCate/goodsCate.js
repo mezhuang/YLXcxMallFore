@@ -28,7 +28,7 @@ Page({
     })
 
     wx.request({
-      method: 'POST',
+      method: 'GET',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: app.globalData.serviceIp + 'getGoodsClassList.do', //接口地址
       data: {

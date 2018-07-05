@@ -37,7 +37,7 @@
        <!--两列产品  -->
        <view class="hot_goods_container01">
             <view class ="hotSaleProducts01">
-                  <image class ="hotSaleProducts01-image" src='/images/index/hotsgoods/hot_goods001.png'></image>
+                  <image class ="hotSaleProducts01-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image>
                    <view style=' display:flex;flex-direction:row;' > 
                             <text style='color:#F00' >￥18888</text>
                             <button  class='shareBt' open-type='share'>分享赚钱</button>
@@ -46,14 +46,14 @@
                    </view>
                    <view><text>中深宅配 胡桃木 1.8m卧房套床</text></view>
                   </view>
-              <view class ="hotSaleProducts01"><image class ="hotSaleProducts01_01_image" src='/images/index/hotsgoods/hot_goods002.png'></image></view> 
+              <view class ="hotSaleProducts01"><image class ="hotSaleProducts01_01_image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view> 
         </view>
         <!--三列产品  -->
 
            <view class="hot_goods_container02">
-            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='/images/index/hotsgoods/hot_goods001.png'></image></view>
-            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='/images/index/hotsgoods/hot_goods001.png'></image></view>
-              <view class ="hotSaleProducts02"><image class ="hotSaleProducts02_01_image" src='/images/index/hotsgoods/hot_goods002.png'></image></view> 
+            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view>
+            <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view>
+              <view class ="hotSaleProducts02"><image class ="hotSaleProducts02_01_image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view> 
             
         </view>
 

@@ -10,7 +10,7 @@ App({
     // var SESSION_KEY="";
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    console.log("come in app onLaunch");
     // 登录
     wx.login({
       success: res => {
@@ -26,6 +26,7 @@ App({
           },
           method: 'GET',
           success: function (res) {
+            console.log("call login return");
             console.log(res.data)
             getApp().globalData.openId= res.data.openid;//获取到的openid
             getApp().globalData.sessionKey = res.data.session_key;//获取到session_key
@@ -77,14 +78,13 @@ App({
     //   }
     // })
   },
-  onLaunch: function (options) {
-    // Do something initial when launch.
-  },
+
   onShow: function (options) {
     // Do something when show.
-    console.log("Path: " + options.path)
-    console.log("Path: " + options.query)
-    console.log("Path: " + options.scene)
+    // this.onLaunch();
+    // console.log("Path: " + options.path)
+    // console.log("Path: " + options.query)
+    // console.log("Path: " + options.scene)
   },
   onHide: function () {
     // Do something when hide.
@@ -96,7 +96,7 @@ App({
     userInfo: null,
     openId:null,
     sessionKey:null,
-    serviceIp:"https://192.168.1.104/YLXcxMallBack/",
+    serviceIp:"https://www.yuanlianjj.com/YLXcxMallBack/",
     shareOpenid:null
   }
 })
