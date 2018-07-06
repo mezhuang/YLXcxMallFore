@@ -1,5 +1,4 @@
-
-  <!-- <view class="search">  
+ <!-- <view class="search">  
                     <view class="df search_arr">  
                       <icon class="searchcion" size='20' type='search'></icon>  
                       <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}" bindtap='onIndexSearch'/>  
@@ -10,13 +9,11 @@
             <!-- 轮播图-->
             <view>
                   <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000" bindtap='onIndexSwiperItem'>
-                  <block wx:for="{{imgUrls}}" wx:for-item="item" wx:for-index="idx">
+                  <block wx:for="{{swiperGoodsList}}" wx:for-item="item" wx:for-index="idx">
                             <swiper-item class="index-swiper-item"  >
                                 <view id='{{item.id}}'  >
-                                      <image src="{{item.imUrl}}" data-totalFee="{{item.totalFee}}" data-goodsCode="{{item.goodsCode}}"></image>
+                                      <image style='width:100%;' src="{{item.goods_image_url}}"  data-goodsid="{{item.goods_id}}"></image>
                                 </view>
-                                <view name='totalFee' value='{{item.totalFee}}'></view>
-                                <view name='goodsCode' value='{{item.goodsCode}}'></view>
                             </swiper-item>
                       </block>
                   </swiper> 
@@ -35,49 +32,100 @@
                 
             </view> 
        <!--两列产品  -->
-       <view class="hot_goods_container01">
-            <view class ="hotSaleProducts01">
-                  <image class ="hotSaleProducts01-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image>
-                   <view style=' display:flex;flex-direction:row;' > 
-                            <text style='color:#F00' >￥18888</text>
-                            <button  class='shareBt' open-type='share'>分享赚钱</button>
+        
+              <view class="hot_goods_container01">
+              <!-- <block wx:for="{{hotSaleGoodsList}}" wx:for-item="item" wx:for-index="idx"> -->
+                    <view class ="hotSaleProducts01">
+                          
+                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[0].goods_image_url}}'></image>
+                              <view class="imageAndText">
+                                    <view class="hotSaleProducttext"  > 
+                                              <text style='color:#F00' >￥{{hotSaleGoodsList[0].curr_price}}</text>
+                                              <!-- <button  class='shareBt' open-type='share'>分享赚钱</button> -->
 
-                   
-                   </view>
-                   <view><text>中深宅配 胡桃木 1.8m卧房套床</text></view>
-                  </view>
-              <view class ="hotSaleProducts01"><image class ="hotSaleProducts01_01_image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view> 
-        </view>
+                                    
+                                    </view>
+                                    <view class="hotSaleProducttext" ><text>{{hotSaleGoodsList[0].goods_tile}}</text></view>
+                                </view>
+                                
+                     </view>
+
+                    <view class ="hotSaleProducts01" style='margin-left: -20rpx;' >
+
+                              <view>  
+                                    <image class ="hotSaleProducts02-image" src='{{hotSaleGoodsList[1].goods_image_url}}'></image>
+                                    <view class="imageAndText">
+                                          <view class="hotSaleProducttext02"  > 
+                                                    <text style='color:#F00' >￥{{hotSaleGoodsList[1].curr_price}}</text>
+                                                    <!-- <button  class='shareBt' open-type='share'>分享赚钱</button> -->
+
+                                          
+                                          </view>
+                                          <view class="hotSaleProducttext02" ><text>{{hotSaleGoodsList[1].goods_tile}}</text></view>
+                                      </view>
+                               </view>     
+                                <view>  
+                                    <image class ="hotSaleProducts02-image" style='margin-top: 20rpx;' src='{{hotSaleGoodsList[2].goods_image_url}}'></image>
+                                    <view class="imageAndText">
+                                          <view class="hotSaleProducttext02"  > 
+                                                    <text style='color:#F00' >￥{{hotSaleGoodsList[2].curr_price}}</text>
+                                                    <!-- <button  class='shareBt' open-type='share'>分享赚钱</button> -->
+
+                                          
+                                          </view>
+                                          <view class="hotSaleProducttext02" ><text>{{hotSaleGoodsList[2].goods_tile}}</text></view>
+                                      </view>
+                               </view>     
+                     </view>
+                    
+                      <!-- <view class ="hotSaleProducts01"><image class ="hotSaleProducts01_01_image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view>  -->
+                      <!-- </block> -->
+                </view>
+          <view class ="hotSaleProducts04" >
+                          
+                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[3].goods_image_url}}'></image>
+                              <view class="imageAndText">
+                                    <view class="hotSaleProducttext04"  > 
+                                              <text style='color:#F00' >￥{{hotSaleGoodsList[3].curr_price}}</text>
+                                              <!-- <button  class='shareBt' open-type='share'>分享赚钱</button> -->
+
+                                    
+                                    </view>
+                                    <view class="hotSaleProducttext04" ><text>{{hotSaleGoodsList[3].goods_tile}}</text></view>
+                                </view>
+                                
+            </view>
         <!--三列产品  -->
 
-           <view class="hot_goods_container02">
+           <!-- <view class="hot_goods_container02">
             <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view>
             <view class ="hotSaleProducts02"><image class ="hotSaleProducts02-image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view>
               <view class ="hotSaleProducts02"><image class ="hotSaleProducts02_01_image" src='https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png'></image></view> 
             
-        </view>
+        </view> -->
 
 </view>
 
 
 <!--精选推荐(加载更多)  -->
 
+<view class="recommendImage">
+    <image class="hostSalesImages" src="/images/index/index_02_002.png"></image> 
+   <!-- <text >精选推荐</text> -->
+                
+</view> 
+
+<!-- <view class="item" wx:for="{{recommends}}" wx:key="index">
+        <view class="left">
+          <image src="{{item.imageurl}}"></image>
+        </view>
+        <view class="right">{{item.name}}</view>
+  </view> -->
+   <import src="../twoListTemple/twoListTemple.wxml" />
+   <template is="twolistTemplate" data="{{items}}" /> 
 <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
       <view class="weui-loading"></view>
       <view class="weui-loadmore__tips">正在加载</view>
 </view>
 
-<view class="item" wx:for="{{recommends}}" wx:key="index">
-        <view class="left">
-          <image src="{{item.imageurl}}"></image>
-        </view>
-        <view class="right">{{item.name}}</view>
-  </view>
-
-
   </scroll-view>
-        
-
-    
-
-

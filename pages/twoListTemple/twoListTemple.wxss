@@ -53,9 +53,10 @@ bottom: 3%;
 
 left: 0;
 
-width: 94%;
+width: 94.5%;
 
-text-align: center;
+text-align: left;
+
 
 font-size: 25rpx;
 

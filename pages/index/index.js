@@ -2,20 +2,25 @@
 const app = getApp()
 Page({
 
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      { id: "001", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png', totalFee: '1', goodsCode:'shafa001'},
-      { id: "002", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1002_shaf.png', totalFee: '2', goodsCode: 'shafa002'},
-      { id: "003", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png', totalFee: '3', goodsCode: 'shafa003'},
-      { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
-    ],
-    isHideLoadMore:false,
-    recommends:null
-  
+
+    swiperGoodsList: null,
+    hotSaleGoodsList: null,
+
+
+    // imgUrls: [
+    //   { id: "001", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1001_chuang.png', totalFee: '1', goodsCode:'shafa001'},
+    //   { id: "002", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_1002_shaf.png', totalFee: '2', goodsCode: 'shafa002'},
+    //   { id: "003", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_L09cantai.png', totalFee: '3', goodsCode: 'shafa003'},
+    //   { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
+    // ],
+    isHideLoadMore: false,
+    items: null//推荐列表
+
   },
 
   /**
@@ -25,50 +30,144 @@ Page({
     console.log("转发人员信息zfopenid:");
     console.log(options.shareOpenid);
 
- 
+    //获取首页轮播图片及产品信息
+    var swiperTwolevelCode = "06001";
+    var that = this;
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getGoodsInfoBytwolevelCode.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId,
+        'startIndex': 0,
+        'indexSize': 5,
+        "twolevelCode": swiperTwolevelCode
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          swiperGoodsList: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res.data)
+      }
+    })
+
+
+    //获取热销爆品商品信息
+    var hotgoodsTwoLevelCode = "06002";
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getGoodsInfoBytwolevelCode.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId,
+        'startIndex': 0,
+        'indexSize': 5,
+        "twolevelCode": hotgoodsTwoLevelCode
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          hotSaleGoodsList: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res.data)
+      }
+    })
+
+    //获取精品推荐
+
+    var recommendsTwolevelCode = "06003";
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getGoodsInfoBytwolevelCode.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId,
+        'startIndex': 0,
+        'indexSize': 5,
+        "twolevelCode": recommendsTwolevelCode
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          items: res.data
+        });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res.data)
+      }
+    })
+
   },
-  
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
@@ -135,25 +234,16 @@ Page({
     console.log("e.currentTarget.dataset.totalFee:");
     console.log(event.target.dataset.totalfee);
     console.log("e.currentTarget.dataset.goodscode:");
-    console.log(event.target.dataset.goodscode);
-    wx.setStorage({
-      key: "totalFee",
-      data: event.target.dataset.totalfee
-    });
+    console.log(event.target.dataset.goodsid);
 
-    wx.setStorage({
-      key: "goodsCode",
-      data: event.target.dataset.goodscode
-    });
-    console.log("tesfftss");
     wx.navigateTo({
-      url: '../pay/pay'
+      url: '../goodsManager/goodsDetail/goodsDetail'
     });
   },
   /**
-   *首页轮播详情 
+   *首页搜索功能
    */
-  onIndexSearch:function(){
+  onIndexSearch: function () {
     wx.navigateTo({
       url: '../indexSearch/indexSearch',
     })

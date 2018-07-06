@@ -10,9 +10,10 @@
               <view class="school-list-info" index="{{index}}">
 
                 <image class="school-list-photo" src="{{item.goods_image_url}}"/>
-
-                <!-- <text class="school-list-desc">{{item.goods_tile}}</text> -->
-
+                <view>
+                 <view><text class="school-list-desc">¥{{item.curr_price}}</text></view>
+               
+                </view>
               </view>
 
             </navigator>

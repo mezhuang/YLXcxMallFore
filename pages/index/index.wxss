@@ -1,4 +1,5 @@
 /* pages/index/index.wxss */
+@import "../twoListTemple/twoListTemple.wxss";
 .scrollViewId{
 
    height:1000rpx;
@@ -22,7 +23,7 @@
 .bc_text {  
   line-height: 68rpx;  
   height: 68rpx;  
-  margin-top: 34rpx;  
+  /* margin-top: 34rpx;   */
 }  
   
 .sousuo {  
@@ -37,7 +38,7 @@
 
     position: absolute;
   left: 30px;
-  top: 1r px;
+  /* top: 1r px; */
   display: flex;  
   flex-direction: row  
 
@@ -98,21 +99,58 @@ margin-top: 1rpx;
   flex-direction:row;
    display: flex; 
    font-size: 24rpx;
-   margin-left: 5%;
+   margin-left: 2%;
 } 
 .hotSaleProducts01{
+    width: 65%;
+  height: 450rpx;
+  
+}
+.hotSaleProducts02{
     width: 50%;
-  height: 250rpx;
+  height: 450rpx;
+  
 }
 .hotSaleProducts01-image{
   
-  width: 90%;
-  height: 150rpx;
-}
-.hotSaleProducts01_01_image{
-  
   width: 95%;
-  height: 150rpx;
+  height: 85%;
+  background-color: b2b2b2;
+}
+
+.hotSaleProducts02-image{
+  
+  width: 100%;
+  height: 225rpx;
+  background-color: b2b2b2;
+}
+.hotSaleProducts04{
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+    width: 100%;
+  height: 450rpx;
+  
+}
+.imageAndText{
+ margin-top: -5rpx; 
+ /* background-color: #b2b2b2; */
+
+}
+.hotSaleProducttext{
+  
+  background-color: #b2b2b2;
+  width: 95%;
+}
+.hotSaleProducttext02{
+  margin-left: 5%;
+  background-color: #b2b2b2;
+  width: 90%;
+}
+.hotSaleProducttext04{
+  margin-top: -10rpx;
+  background-color: #b2b2b2;
+  width: 95%;
+  font-size: 14px;
 }
 
 /*热销商品三列布局  */
@@ -134,6 +172,11 @@ margin-top: 1rpx;
    margin-left: 5%;
   width: 90%;
   height: 150rpx;
+}
+.recommendImage{
+  margin-top: 20rpx;
+
+
 }
 /* 精选推荐（加载更多） */
 /*  加载更多   */
