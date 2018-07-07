@@ -5,7 +5,7 @@
 
            <view class="school-list">
 
-            <navigator url="/pages/photo/photo?id={{item.goods_id}}">
+            <navigator url="../goodsManager/goodsDetail/goodsDetail?id={{item.goods_id}}">
 
               <view class="school-list-info" index="{{index}}">
 

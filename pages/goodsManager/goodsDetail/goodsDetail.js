@@ -79,6 +79,43 @@ Page({
   //     duration: 2000
   //   });
   // },
+  //加入购物车
+  addCar:function(event)
+  {
+    //获取购物车字段值
+
+    //加入购物车
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'addToShoppingCart.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId,
+        'startIndex': 0,
+        'indexSize': 5,
+        "goodsId": goodsId
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        // that.setData({
+        //   goodsDetail: res.data,
+        
+
+        // });
+
+        //跳转至报备客户列表
+        //   wx.navigateTo({
+        //     url: "../reportList/reportList"
+        //   })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res.data)
+      }
+    }) 
+
+  },
 // 立即购买
   immeBuy: function (event) {
     // console.log("e.currentTarget.dataset.totalFee:");
