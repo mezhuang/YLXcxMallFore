@@ -378,11 +378,14 @@ Page({
         case 1:
           twolevelCode = "02001";
         break;
-        case 2:
-          twolevelCode = "02002";
-        break
         case 3:
-          twolevelCode = "02003";
+          twolevelCode = "02001";
+        break
+        case 4:
+          twolevelCode = "02002";
+          break
+        case 5:
+          twolevelCode = "02002";
           break
         default:
         console.log("没有匹配的标签页");

@@ -6,10 +6,10 @@
   </view>  -->
    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">推荐</view>
-         <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">现代中式</view>
-        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">北欧</view> 
-        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">热销精选</view>
-        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">小户型</view>
+         <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">热销精选</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">小户型</view> 
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">现代中式</view>
+        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">北欧</view>
         <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">简美</view>
         <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">新中式</view>
         <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view>
@@ -18,7 +18,7 @@
      style="height:{{winHeight}}rpx">
 <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
 
-  <scroll-view  class='scrollViewId' hidden='{{isHideSrollView}}' style="height: 1208rpx" scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+  <scroll-view  class='scrollViewId' hidden='{{isHideSrollView}}'  scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
   
             <!-- 轮播图-->
             <view>
@@ -145,17 +145,17 @@
   </scroll-view>
 
 <!-- 横向滚动 开始第二个标签-->
-<scroll-view  class="nav_right" hidden="{{isHideOtherSrollView}}">
+<scroll-view  class="nav_right" hidden="{{isHideOtherSrollView}}"  scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
 
 
-     <view class="nav_right">
+
     <!--如果有数据，才遍历项-->
     <!-- <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}"> -->
 
       <block wx:for="{{goodsItems}}">
         <view class="nav_right_items">
         <!--界面跳转 -->
-          <navigator url="../goodsDetail/goodsDetail?id={{item.goods_id}}">
+          <navigator url="../goodsManager/goodsDetail/goodsDetail?id={{item.goods_id}}">
             <view><image src="{{item.goods_image_url}}"></image><text class="tileText">{{item.goods_tile}}</text></view>
 
              <view >
@@ -169,7 +169,7 @@
     <!-- </view> -->
     <!--如果无数据，则显示数据-->
     <!-- <view class="nodata_text" wx:else>该分类暂无数据</view> -->
-  </view>
+
 
 </scroll-view>
 
