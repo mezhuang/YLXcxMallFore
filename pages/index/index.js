@@ -19,7 +19,15 @@ Page({
     //   { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
     // ],
     isHideLoadMore: false,
-    items: null//推荐列表
+    items: null,//推荐列表
+    // 横向滚动
+     winHeight: "",//窗口高度
+    currentTab: 0, //预设当前项的值
+    scrollLeft: 0, //tab标题的滚动条位置
+    isHideSrollView:false,//首页显示
+    isHideOtherSrollView: true,//首页显示
+
+    goodsItems: null,//分类数据集合
 
   },
 
@@ -124,6 +132,22 @@ Page({
         console.log('fail-res' + ':' + res.data)
       }
     })
+
+    //初始化横向滚动标签
+    var that = this;
+    //  高度自适应
+    wx.getSystemInfo({
+      success: function (res) {
+        var clientHeight = res.windowHeight,
+          clientWidth = res.windowWidth,
+          rpxR = 750 / clientWidth;
+        var calc = clientHeight * rpxR - 180;
+        console.log(calc)
+        that.setData({
+          winHeight: calc
+        });
+      }
+    });
 
   },
 
@@ -298,5 +322,106 @@ Page({
         ],
       })
     }, 2000)
-  }
+  },
+
+
+//横向滚动标签
+
+ 
+  // 点击标题切换当前页时改变样式
+  swichNav: function (e) {
+    var cur = e.target.dataset.current;
+    if (this.data.currentTaB == cur) { return false; }
+    else {
+      this.setData({
+        currentTab: cur
+      })
+    }
+  },
+  //判断当前滚动超过一屏时，设置tab标题滚动条。
+  checkCor: function () {
+    if (this.data.currentTab > 4) {
+      this.setData({
+        scrollLeft: 300
+      })
+    } else {
+      this.setData({
+        scrollLeft: 0
+      })
+    }
+  },
+  // 滚动切换标签样式
+  switchTab: function (e) {
+    var that =this;
+    this.setData({
+      currentTab: e.detail.current
+    });
+    this.checkCor();
+
+    if (this.data.currentTab == 0) {
+  
+      //隐藏其他标签
+      this.setData({
+        isHideSrollView: false,
+        isHideOtherSrollView:true
+      });
+    } else {
+      //隐藏首页标签
+      this.setData({
+        isHideSrollView: true,
+        isHideOtherSrollView: false
+      });
+      //判断除首页之外的其他标签类型
+      var twolevelCode =null;
+      console.log(this.data.currentTab);
+      switch (this.data.currentTab){
+        case 1:
+          twolevelCode = "02001";
+        break;
+        case 2:
+          twolevelCode = "02002";
+        break
+        case 3:
+          twolevelCode = "02003";
+          break
+        default:
+        console.log("没有匹配的标签页");
+        break;
+
+      }
+      console.log(twolevelCode);
+  
+      wx.request({
+        method: 'GET',
+        // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+        url: app.globalData.serviceIp + 'getGoodsInfoBytwolevelCode.do', //接口地址
+        data: {
+          'openId': getApp().globalData.openId,
+          'startIndex': 0,
+          'indexSize': 5,
+          "twolevelCode": twolevelCode
+        },
+        header: { 'content-type': 'application/json' },
+        success: function (res) {
+          console.log('success-res' + ':' + res.data)
+          that.setData({
+            goodsItems: res.data
+          });
+
+          //跳转至报备客户列表
+          //   wx.navigateTo({
+          //     url: "../reportList/reportList"
+          //   })
+
+        },
+        fail: function (res) {
+          console.log('fail-res' + ':' + res.data)
+        }
+      })
+
+    }
+  },
+
+  footerTap: app.footerTap
+
 })
