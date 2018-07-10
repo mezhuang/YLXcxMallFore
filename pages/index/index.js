@@ -19,9 +19,9 @@ Page({
     //   { id: "004", imUrl: 'https://lg-6tg1iw6e-1256440429.cos.ap-shanghai.myqcloud.com/index_zszp_chaji.png', totalFee: '4', goodsCode: 'shafa004'}
     // ],
     isHideLoadMore: false,
-    items: null,//推荐列表
+     recommendsItems: null,//推荐列表
     // 横向滚动
-     winHeight: "",//窗口高度
+     winHeight: "1024",//窗口高度
     currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     isHideSrollView:false,//首页显示
@@ -119,7 +119,7 @@ Page({
       success: function (res) {
         console.log('success-res' + ':' + res.data)
         that.setData({
-          items: res.data
+          recommendsItems: res.data
         });
 
         //跳转至报备客户列表

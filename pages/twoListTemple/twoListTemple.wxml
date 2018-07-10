@@ -1,7 +1,7 @@
 <template name="twolistTemplate">
         <view class="schoollist">
 
-        <block wx:for="{{items}}" wx:key="item">
+        <block wx:for="{{recommendsItems}}" wx:key="item">
 
            <view class="school-list">
 
@@ -11,8 +11,9 @@
 
                 <image class="school-list-photo" src="{{item.goods_image_url}}"/>
                 <view>
-                 <view><text class="school-list-desc">¥{{item.curr_price}}</text></view>
-               
+                 
+               <view class="school-list-desc"><text>{{item.goods_tile}}</text><text class='school-list-desc-price'>¥{{item.curr_price}}</text></view>
+               <!-- <view><text class="school-list-desc">¥{{item.curr_price}}</text></view> -->
                 </view>
               </view>
 

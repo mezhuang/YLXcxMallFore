@@ -15,7 +15,7 @@
         <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view>
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
-     style="height:{{winHeight}}rpx">
+     style="height:1024rpx">
 <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
 
   <scroll-view  class='scrollViewId' hidden='{{isHideSrollView}}'  scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
@@ -32,6 +32,7 @@
                       </block>
                   </swiper> 
             </view> 
+            <view><image class='index_02_003' src="/images/index/index_02_003.png"></image></view>
             <!--菜单栏  -->
             <view class="index-menu" >
                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/tiyandian.png'></image><view class ="index-menu-image" ><text class="index-menu-text">线下体验</text></view></view> 
@@ -64,7 +65,7 @@
                                 
                      </view>
 
-                    <view class ="hotSaleProducts01" style='margin-left: -20rpx;' >
+                    <view class ="hotSaleProducts02"  >
 
                               <view>  
                                     <image class ="hotSaleProducts02-image" src='{{hotSaleGoodsList[1].goods_image_url}}'></image>
@@ -79,7 +80,7 @@
                                       </view>
                                </view>     
                                 <view>  
-                                    <image class ="hotSaleProducts02-image" style='margin-top: 20rpx;' src='{{hotSaleGoodsList[2].goods_image_url}}'></image>
+                                    <image class ="hotSaleProducts02-image"  src='{{hotSaleGoodsList[2].goods_image_url}}'></image>
                                     <view class="imageAndText">
                                           <view class="hotSaleProducttext02"  > 
                                                     <text style='color:#F00' >￥{{hotSaleGoodsList[2].curr_price}}</text>
@@ -123,24 +124,25 @@
 
 <!--精选推荐(加载更多)  -->
 
-<view class="recommendImage">
-    <image class="hostSalesImages" src="/images/index/index_02_002.png"></image> 
-   <!-- <text >精选推荐</text> -->
+<view class="recommendTile">
+    <!-- <image class="hostSalesImages" src="/images/index/index_02_002.png"></image>  -->
+    <text class="recommendText1">大牌制造商直供</text> <text class="recommendText2">查看全部</text>
                 
 </view> 
-
-<!-- <view class="item" wx:for="{{recommends}}" wx:key="index">
+ <!-- <view class="item" wx:for="{{recommendsItems}}" wx:key="index">
         <view class="left">
-          <image src="{{item.imageurl}}"></image>
+          <image src="{{item.goods_image_url}}"></image>
         </view>
-        <view class="right">{{item.name}}</view>
-  </view> -->
-   <import src="../twoListTemple/twoListTemple.wxml" />
-   <template is="twolistTemplate" data="{{items}}" /> 
-<view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+        <view class="right">{{item.goods_tile}}</view>
+  </view>  -->
+
+        <import src="../twoListTemple/twoListTemple.wxml" />
+        <template is="twolistTemplate" data="{{recommendsItems}}" /> 
+   
+ <!-- <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
       <view class="weui-loading"></view>
       <view class="weui-loadmore__tips">正在加载</view>
-</view>
+</view>  -->
 
   </scroll-view>
 

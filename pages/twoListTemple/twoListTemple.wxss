@@ -7,13 +7,14 @@
 
   padding: 20rpx;
 
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
 }
 
 .schoollist{
 
-  margin-top: 20rpx;
+   margin-top: 0rpx; 
+   margin-left: 10rpx; 
 
 }
 
@@ -21,9 +22,9 @@
 
 float: left;
 
-margin-left: 20rpx;
+margin-left: 10rpx;
 
-  margin-top: 20rpx;
+  margin-top: 5rpx;
 
   position: relative;
 
@@ -35,21 +36,22 @@ margin-left: 20rpx;
 
 width: 350rpx;
 
-height: 250rpx;
+height: 320rpx;
 
 }
 
 .school-list-desc{
+  /* margin-top: 30rpx; */
 
-display: block;
+/* display: block; */
 
-background-color: #000;
+ background-color: #fff; 
 
-color: #fff;
+color: black;
 
-position: absolute;
+ position: absolute; 
 
-bottom: 3%;
+ bottom: 0%; 
 
 left: 0;
 
@@ -60,8 +62,11 @@ text-align: left;
 
 font-size: 25rpx;
 
-padding: 10rpx;
+ padding: 10rpx; 
 
-opacity: 0.7;
+ opacity: 0.7; 
 
+}
+.school-list-desc-price{
+  color: red;
 }
