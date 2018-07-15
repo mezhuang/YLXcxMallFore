@@ -4,6 +4,16 @@
                       <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}" bindtap='onIndexSearch'/>  
                     </view>  
   </view>  -->
+<!-- 图片预加载 -->
+<block wx:for="{{swiperGoodsList}}" wx:for-item="item" wx:for-index="indexx" >
+      <text>{{indexx}}</text>
+                       
+
+</block>
+
+
+
+
    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">推荐</view>
          <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">热销精选</view>
@@ -16,17 +26,23 @@
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
      style="height:1024rpx">
-<swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
+<swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:for-item="item" wx:for-index="idx">
 
   <scroll-view  class='scrollViewId' hidden='{{isHideSrollView}}'  scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
   
             <!-- 轮播图-->
             <view>
                   <swiper class="index-swiper" indicator-dots="true" autoplay="true" duration="1000" bindtap='onIndexSwiperItem'>
-                  <block wx:for="{{swiperGoodsList}}" wx:for-item="item" wx:for-index="idx">
-                            <swiper-item class="index-swiper-item"  >
+                  <block wx:for="{{swiperGoodsList}}" wx:for-item="item" wx:for-index="indexx" >
+            
+                            <swiper-item class="index-swiper-item" >
+                       
+                            <!-- <text>{{i}}</text> -->
                                 <view id='{{item.id}}'  >
-                                      <image style='width:100%;' src="{{item.goods_image_url}}"  data-goodsid="{{item.goods_id}}"></image>
+                                      <image style='width:100%;' src="{{item.goods_image_url_sl}}"  data-goodsid="{{item.goods_id}}"></image>
+                                       <image hidden='true' lazy-load='true' src="{{item.goods_image_url}}"  data-id='{{indexx}}' bindload="swiperImageOnLoad" 
+                        binderror="imageOnLoadError"></image>
+                                      
                                 </view>
                             </swiper-item>
                       </block>

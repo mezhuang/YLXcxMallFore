@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/index/index",
     "pages/logs/logs",
     "pages/report/report",
@@ -26,6 +27,7 @@
     "pages/goodsManager/goodsDetail/goodsDetail",
     "pages/goodsManager/goodsCate/goodsCate",
     "pages/goodsManager/goodsClass/goodsClass"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

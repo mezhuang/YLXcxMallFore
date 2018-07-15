@@ -424,7 +424,31 @@ Page({
 
     }
   },
+  //预加载图片
+  swiperImageOnLoad: function (event)
+  {
+    var that = this;
+    console.log("come in imageOnLoad:");
+    console.log(this.data.swiperGoodsList);
+    var indexx = event.currentTarget.dataset.id;
+    // var indexx = event.detail.value;
+    // var indexx = event.currentTarget.id;
+    console.log("index:"+indexx);
 
+// 替换图片
+    var imageUrlValue = this.data.swiperGoodsList[indexx].goods_image_url;
+    var up = "swiperGoodsList[" + indexx + "].goods_image_url_sl";//先用一个变量，把(info[0].gMoney)用字符串拼接起来
+           that.setData({
+             [up]: imageUrlValue
+
+    })
+
+  },
+  imageOnLoadError: function (event)
+  {
+    console.log("come in imageOnLoadError");
+    var index =event.target.dataset.idx;
+  },
   footerTap: app.footerTap
 
 })
