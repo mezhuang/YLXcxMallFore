@@ -433,7 +433,7 @@ Page({
     var indexx = event.currentTarget.dataset.index;
     // var indexx = event.detail.value;
     // var indexx = event.currentTarget.id;
-    console.log("index:"+indexx);
+    // console.log("index:"+indexx);
 
 // 替换图片
     var imageUrlValue = this.data.swiperGoodsList[indexx].goods_image_url;

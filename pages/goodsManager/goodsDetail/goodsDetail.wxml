@@ -11,7 +11,7 @@
 
 <scroll-view scroll-y="true">
   <view class="detail">
-    <text class="title">{{goodsDetail[0].goods_tile}}</text>
+    <text class="title">{{goodsDetail[0].goods_title}}</text>
     </view>
                <text class="price">￥{{curDiplayPrice}}</text>
                 <text>请选择规格尺寸:</text>

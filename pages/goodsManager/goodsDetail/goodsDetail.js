@@ -93,7 +93,7 @@ Page({
         'openId': getApp().globalData.openId,
         "goodsId": this.data.goodsDetail[0].goods_id,
         'goodsPrice': this.data.curDiplayPrice,
-        'goodsTile': this.data.goodsDetail[0].goods_id,
+        'goodsTile': this.data.goodsDetail[0].goods_title,
         "goodsImageUrl": this.data.goodsDetail[0].goodsImageList[0].goods_image_url,
         "formatCode": this.data.formatSelectId,
         "buyNumber":this.data.num,
@@ -102,6 +102,12 @@ Page({
       header: { 'content-type': 'application/json' },
       success: function (res) {
         console.log('success-res' + ':' + res.data)
+        wx.showToast({
+          title: '加入购物车成功',
+          image: '../../images/suess.png',
+          duration: 4000
+        })
+
         // that.setData({
         //   goodsDetail: res.data,
         
