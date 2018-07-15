@@ -40,7 +40,7 @@
                             <!-- <text>{{i}}</text> -->
                                 <view id='{{item.id}}'  >
                                       <image style='width:100%;' src="{{item.goods_image_url_sl}}"  data-goodsid="{{item.goods_id}}"></image>
-                                       <image hidden='true' lazy-load='true' src="{{item.goods_image_url}}"  data-id='{{indexx}}' bindload="swiperImageOnLoad" 
+                                       <image hidden='true' lazy-load='true' src="{{item.goods_image_url}}"  data-index='{{indexx}}' bindload="swiperImageOnLoad" 
                         binderror="imageOnLoadError"></image>
                                       
                                 </view>

@@ -428,9 +428,9 @@ Page({
   swiperImageOnLoad: function (event)
   {
     var that = this;
-    console.log("come in imageOnLoad:");
-    console.log(this.data.swiperGoodsList);
-    var indexx = event.currentTarget.dataset.id;
+    // console.log("come in imageOnLoad:");
+    // console.log(this.data.swiperGoodsList);
+    var indexx = event.currentTarget.dataset.index;
     // var indexx = event.detail.value;
     // var indexx = event.currentTarget.id;
     console.log("index:"+indexx);

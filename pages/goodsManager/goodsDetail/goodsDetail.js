@@ -20,13 +20,13 @@ Page({
     curDiplayPrice:null,
     isLike: true,
     // banner
-    imgUrls: [
-      "http://mz.djmall.xmisp.cn/files/product/20161201/148057921620_middle.jpg",
-      "http://mz.djmall.xmisp.cn/files/product/20161201/148057922659_middle.jpg",
-      "http://mz.djmall.xmisp.cn/files/product/20161201/148057923813_middle.jpg",
-      "http://mz.djmall.xmisp.cn/files/product/20161201/148057924965_middle.jpg",
-      "http://mz.djmall.xmisp.cn/files/product/20161201/148057925958_middle.jpg"
-    ],
+    // imgUrls: [
+    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057921620_middle.jpg",
+    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057922659_middle.jpg",
+    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057923813_middle.jpg",
+    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057924965_middle.jpg",
+    //   "http://mz.djmall.xmisp.cn/files/product/20161201/148057925958_middle.jpg"
+    // ],
     indicatorDots: true, //是否显示面板指示点
     autoplay: true, //是否自动切换
     interval: 3000, //自动切换时间间隔,3s
@@ -91,9 +91,13 @@ Page({
       url: app.globalData.serviceIp + 'addToShoppingCart.do', //接口地址
       data: {
         'openId': getApp().globalData.openId,
-        'startIndex': 0,
-        'indexSize': 5,
-        "goodsId": goodsId
+        "goodsId": this.data.goodsDetail[0].goods_id,
+        'goodsPrice': this.data.curDiplayPrice,
+        'goodsTile': this.data.goodsDetail[0].goods_id,
+        "goodsImageUrl": this.data.goodsDetail[0].goodsImageList[0].goods_image_url,
+        "formatCode": this.data.formatSelectId,
+        "buyNumber":this.data.num,
+        "isSelect": "0"
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {

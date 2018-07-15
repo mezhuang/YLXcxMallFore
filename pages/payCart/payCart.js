@@ -1,4 +1,5 @@
 // pages/payCart/payCart.js
+const app = getApp();
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
   data: {
     isAllSelect: false,
     totalMoney: 0,
+    shoppingCartItems:null,//购物车数据
     //购买数量
     // input默认是1  
     
@@ -107,7 +109,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+  wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+    url: app.globalData.serviceIp + 'getShoppingCartListByOpenId.do', //接口地址
+      data: {
+        'openId': getApp().globalData.openId
+      },
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        console.log('success-res' + ':' + res.data)
+        that.setData({
+          shoppingCartItems: res.data
+        });
+
   },
 
   /**
