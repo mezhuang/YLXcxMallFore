@@ -86,7 +86,7 @@ Page({
 
     //加入购物车
     wx.request({
-      method: 'GET',
+      method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: app.globalData.serviceIp + 'addToShoppingCart.do', //接口地址
       data: {
@@ -99,7 +99,13 @@ Page({
         "buyNumber":this.data.num,
         "isSelect": "0"
       },
-      header: { 'content-type': 'application/json' },
+      
+      header:
+        {
+          //'content-type': "application/x-www-form-urlencoded" // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          //'content-type': 'application/json'
+        },
       success: function (res) {
         console.log('success-res' + ':' + res.data)
         wx.showToast({

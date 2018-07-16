@@ -8,7 +8,7 @@ Page({
   data: {
     isAllSelect: false,
     totalMoney: 0,
-    shoppingCartItems:null,//购物车数据
+    carts:null,//购物车数据
     //购买数量
     // input默认是1  
     
@@ -121,14 +121,14 @@ Page({
       success: function (res) {
         console.log('success-res' + ':' + res.data)
         that.setData({
-          shoppingCartItems: res.data
+          carts: res.data
         });
     },
 
     fail: function (res) {
       console.log('fail-res' + ':' + res)
       that.setData({
-        shoppingCartItems: res.data
+        carts: res.data
       });
       }
   });

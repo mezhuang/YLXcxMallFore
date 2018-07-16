@@ -97,6 +97,7 @@ App({
     openId:null,
     sessionKey:null,
     serviceIp:"https://192.168.1.102/YLXcxMallBack/",
-    shareOpenid:null
+    shareOpenid:null,
+    isConnected:true
   }
 })
