@@ -1,6 +1,5 @@
 {
   "pages": [
-
     "pages/index/index",
     "pages/logs/logs",
     "pages/report/report",
@@ -26,8 +25,9 @@
     "pages/payCart/payCart",
     "pages/goodsManager/goodsDetail/goodsDetail",
     "pages/goodsManager/goodsCate/goodsCate",
-    "pages/goodsManager/goodsClass/goodsClass"
-    
+    "pages/goodsManager/goodsClass/goodsClass",
+    "pages/myhome/addressManager/addressManager",
+    "pages/myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress"
   ],
   "window": {
     "backgroundTextStyle": "light",

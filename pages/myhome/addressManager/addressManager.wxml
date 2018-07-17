@@ -1,0 +1,2 @@
+
+<button bindtap="onReceiveGoodsAddress">添加收货地址</button>

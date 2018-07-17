@@ -14,8 +14,10 @@
   <view class="order" catchtap="toOrder">
     <image class="item-image" src="'../../images/icon/myhome/myorder.png"></image>
     <text class="myorder-text">我的订单</text>
+    <view class='allorder'>
     <text class="myorderlook-text">查看全部订单</text>
     <image class="next-image" src="../../images/icon/next.png"></image>
+    </view>
   </view>
   <view class="line"></view>
 
@@ -34,11 +36,13 @@
     <view class="list-item">
       <image class="item-image" src="../../images/person/personal_favorite.png"></image>
       <text class="item-text">我的收藏</text>
+      <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
     <view class="person-line"></view>
-    <view class="list-item">
+    <view class="list-item" bindtap='onAddressManager'>
       <image class="item-image" src="../../images/person/personal_site.png"></image>
       <text class="item-text">收货地址</text>
+      <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
     <!-- <view class="person-line"></view>
     <view class="list-item">
@@ -49,18 +53,22 @@
     <view class="list-item">
       <image class="item-image" src="../../images/person/personal_evaluated.png"></image>
       <text class="item-text">我的评价</text>
+      <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
     <view class="person-line"></view>
     <view class="list-item">
       <image class="item-image" src="../../images/person/personal_share.png"></image>
       <text class="item-text">推广邀请</text>
+      <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
 
     <view class="person-line"></view>
     <view class="list-item" class="refereeCenter" bindtap="applyRefereeChange"  wx:if="{{isGeneral}}">
       <image class="item-image" src="../../images/person/personal_share.png"></image>
       <text class="item-text" >申请分销</text>
+      <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
+     <view class="line"></view>
   </view>
   <view class="separate"></view>
 

@@ -84,7 +84,25 @@ Page({
   //加入购物车
   addCar:function(event)
   {
+    //校验字段
+    if (this.data.formatSelectId==null)
+    {
+      wx.showModal({
+        title: '温馨提示',
+        content: '请选择规格尺寸',
+        showCancel:false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
 
+
+      return;
+    }
   
     //显示加入购物车数量
     var displayNumTmp =this.data.displayNum+this.data.num;
@@ -123,8 +141,8 @@ Page({
         console.log('success-res' + ':' + res.data)
         wx.showToast({
           title: '加入购物车成功',
-          image: '../../images/suess.png',
-          duration: 4000
+          icon: 'success',
+          duration: 1000
         })
 
         // that.setData({

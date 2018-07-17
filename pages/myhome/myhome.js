@@ -219,6 +219,12 @@ Page({
         userInfo: userInfo
       })
     })
+  },
+  onAddressManager:function(){
+    wx.navigateTo({
+      url: './addressManager/addressManager',
+    })
   }
+
 
 })
