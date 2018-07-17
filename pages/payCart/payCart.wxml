@@ -3,17 +3,21 @@
   <view class="separate"></view>
   <view wx:for="{{carts}}">
     <view class="cart_container">
-      <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.is_select=='1'?'../../images/icon/cart/comment_select.png':'../../images/icon/cart/comment_normal.png'}}" />
+      <image class="item-select" bindtap="switchSelect" data-index="{{index}}" data-id="{{index}}" src="{{item.isSelect?'../../images/icon/cart/comment_select.png':'../../images/icon/cart/comment_normal.png'}}" />
 
-      <image class="item-image" src="{{item.goods_image_url}}"></image>
+      <image class="item-image" src="{{item.goods_image_server}}{{item.goods_image_url}}"></image>
 
+     
       <view class="column">
              <view>
-              <text class="title">{{item.goods_tile}}</text>
+              <text class="title">{{item.goods_title}}</text>
               </view>
+              <view>
+                    <text class="title">{{item.format_name}}</text>
+               </view>
           <view class="row">
           <text class="sku-price">￥</text>
-          <text class="sku-price">{{item.goods_price}}</text>
+          <text class="sku-price">{{item.price}}</text>
           
           <view class="sku">
             <!-- <template is="quantity" data="{{ ...item.count, componentId: index }}" /> -->
@@ -22,7 +26,7 @@
                     <!-- 减号 -->  
                     <text class="{{minusStatus}}" bindtap="bindMinus" data-index="{{index}}">-</text>  
                     <!-- 数值 -->  
-                    <input type="number" bindchange="bindManual" value="{{item.buy_number}}" />  
+                    <input type="number" bindchange="bindManual" value="{{item.num}}" />  
                     <!-- 加号 -->  
                     <text class="normal" bindtap="bindPlus" data-index="{{index}}">+</text>  
                 </view>

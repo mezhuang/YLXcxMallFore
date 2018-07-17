@@ -46,6 +46,8 @@ Page({
     //购买数量
     // input默认是1  
     num: 1,
+    displayNum:0,
+    isDisplayNum:true,
     // 使用data数据对象设置样式名  
     minusStatus: 'disabled'
   },
@@ -82,8 +84,18 @@ Page({
   //加入购物车
   addCar:function(event)
   {
-    //获取购物车字段值
 
+  
+    //显示加入购物车数量
+    var displayNumTmp =this.data.displayNum+this.data.num;
+    this.setData({
+      isDisplayNum: false,
+      displayNum: displayNumTmp
+
+        });
+
+    //获取购物车字段值
+    
     //加入购物车
     wx.request({
       method: 'POST',
@@ -93,8 +105,9 @@ Page({
         'openId': getApp().globalData.openId,
         "goodsId": this.data.goodsDetail[0].goods_id,
         'goodsPrice': this.data.curDiplayPrice,
-        'goodsTile': this.data.goodsDetail[0].goods_title,
-        "goodsImageUrl": this.data.goodsDetail[0].goodsImageList[0].goods_image_url,
+        'goodsTitle': this.data.goodsDetail[0].goods_title,
+        "goodsImageServer": this.data.goodsDetail[0].goodsImageList[0].goods_image_server,
+        "goodsImageUrl": this.data.goodsDetail[0].goodsImageList[0].goods_image_url_sl,
         "formatCode": this.data.formatSelectId,
         "buyNumber":this.data.num,
         "isSelect": "0"
@@ -130,7 +143,7 @@ Page({
         console.log('fail-res' + ':' + res.data)
       }
     }) 
-
+   
   },
 // 立即购买
   immeBuy: function (event) {

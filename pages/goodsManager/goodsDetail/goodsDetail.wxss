@@ -24,6 +24,9 @@ swiper-item image {
   color: black;
   text-align: justify;
 }
+/* .formatItem{
+  height: 30rpx;
+} */
 .price {
   color: red;
   font-size: 40rpx;
@@ -57,6 +60,17 @@ swiper-item image {
   z-index: 1;
   width: 100%;
   height: 100rpx;
+}
+.cartdisplayNum{
+  width: 2rpx;
+
+}
+.cartdisplayNumText{
+
+margin-top: -50rpx;
+margin-left: -50rpx;
+  font: 10rpx;
+  color: red;
 }
 .nextImage{
 width: 3%;
@@ -177,6 +191,8 @@ margin-left: 1rpx;
   border:1px dashed #b0b0b0;
   margin-top:15rpx;
   margin-right: 20rpx;
+  height: 30rpx;
+
 }
 .active{
   border:1px solid #ff6700;

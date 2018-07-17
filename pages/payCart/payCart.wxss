@@ -2,6 +2,7 @@
 .cart_container {
   display: flex;
   flex-direction: row;
+ 
 }
 .scroll {
   margin-bottom: 120rpx;
@@ -9,11 +10,15 @@
 .column {
   display: flex;
   flex-direction: column;
+    margin-top: 20rpx;
+  height: 40rpx;
+  /* margin-right: 30rpx; */
 }
 .row {
   display: flex;
   flex-direction: row;
   align-items: center;
+
 }
 .sku {
   margin-top: 60rpx;
@@ -50,7 +55,7 @@
 }
 .item-image {
   width: 180rpx;
-  height: 180rpx;
+  height: 150rpx;
   margin: 20rpx;
 }
 .bottom_line {
@@ -86,8 +91,8 @@ button {
 /**/
 /*主容器*/  
 .stepper {  
-    width: 200rpx;  
-    height: 60rpx;  
+    width: 150rpx;  
+    height: 51rpx;  
     /*给主容器设一个边框*/  
     border: 1px solid #ccc;  
     border-radius: 3px;  

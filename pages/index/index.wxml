@@ -39,8 +39,8 @@
                        
                             <!-- <text>{{i}}</text> -->
                                 <view id='{{item.id}}'  >
-                                      <image style='width:100%;' src="{{item.goods_image_url_sl}}"  data-goodsid="{{item.goods_id}}"></image>
-                                       <image hidden='true' lazy-load='true' src="{{item.goods_image_url}}"  data-index='{{indexx}}' bindload="swiperImageOnLoad" 
+                                      <image style='width:100%;' src="{{item.goods_image_server}}{{item.goods_image_url_sl}}"  data-goodsid="{{item.goods_id}}"></image>
+                                       <image hidden='true' lazy-load='true' src="{{item.goods_image_server+item.goods_image_url}}"  data-index='{{indexx}}' bindload="swiperImageOnLoad" 
                         binderror="imageOnLoadError"></image>
                                       
                                 </view>
@@ -68,7 +68,7 @@
               <!-- <block wx:for="{{hotSaleGoodsList}}" wx:for-item="item" wx:for-index="idx"> -->
                     <view class ="hotSaleProducts01">
                           
-                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[0].goods_image_url}}'></image>
+                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[0].goods_image_server}}{{hotSaleGoodsList[0].goods_image_url}}'></image>
                               <view class="imageAndText">
                                     <view class="hotSaleProducttext"  > 
                                               <text style='color:#F00' >￥{{hotSaleGoodsList[0].curr_price}}</text>
@@ -84,7 +84,7 @@
                     <view class ="hotSaleProducts02"  >
 
                               <view>  
-                                    <image class ="hotSaleProducts02-image" src='{{hotSaleGoodsList[1].goods_image_url}}'></image>
+                                    <image class ="hotSaleProducts02-image" src='{{hotSaleGoodsList[1].goods_image_server}}{{hotSaleGoodsList[1].goods_image_url}}'></image>
                                     <view class="imageAndText">
                                           <view class="hotSaleProducttext02"  > 
                                                     <text style='color:#F00' >￥{{hotSaleGoodsList[1].curr_price}}</text>
@@ -96,7 +96,7 @@
                                       </view>
                                </view>     
                                 <view>  
-                                    <image class ="hotSaleProducts02-image"  src='{{hotSaleGoodsList[2].goods_image_url}}'></image>
+                                    <image class ="hotSaleProducts02-image"  src='{{hotSaleGoodsList[2].goods_image_server}}{{hotSaleGoodsList[2].goods_image_url}}'></image>
                                     <view class="imageAndText">
                                           <view class="hotSaleProducttext02"  > 
                                                     <text style='color:#F00' >￥{{hotSaleGoodsList[2].curr_price}}</text>
@@ -114,7 +114,7 @@
                 </view>
           <view class ="hotSaleProducts04" >
                           
-                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[3].goods_image_url}}'></image>
+                              <image class ="hotSaleProducts01-image" src='{{hotSaleGoodsList[3].goods_image_server}}{{hotSaleGoodsList[3].goods_image_url}}'></image>
                               <view class="imageAndText">
                                     <view class="hotSaleProducttext04"  > 
                                               <text style='color:#F00' >￥{{hotSaleGoodsList[3].curr_price}}</text>
@@ -174,7 +174,7 @@
         <view class="nav_right_items">
         <!--界面跳转 -->
           <navigator url="../goodsManager/goodsDetail/goodsDetail?id={{item.goods_id}}">
-            <view><image src="{{item.goods_image_url}}"></image><text class="tileText">{{item.goods_tile}}</text></view>
+            <view><image src="{{item.goods_image_server}}{{item.goods_image_url}}"></image><text class="tileText">{{item.goods_title}}</text></view>
 
              <view >
                    <view  class="currpriceText"><text>¥{{item.curr_price}}</text>  </view>
