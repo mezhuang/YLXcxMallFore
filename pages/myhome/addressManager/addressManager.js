@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ReceiGoodsAdressList:null,
   
   },
 
@@ -12,7 +13,43 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getReceiGoodsAdressList.do', //接口地址
+      data: {
   
+        'openId': openIp
+      },
+      header:
+        {
+          //'content-type': "application/x-www-form-urlencoded" // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          //'content-type': 'application/json'
+        },
+      success: function (res) {
+        console.log("分销商申请成功，返回数据：");
+        console.log(res.data);
+        wx.showToast({
+          title: '申请分销成功',
+          image: '../../images/suess.png',
+          duration: 4000
+        })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../myhome/myhome',
+          })
+        }, 2000)
+        // //跳转至报备客户列表
+        // wx.redirectTo({
+        //   url: "../reportList/reportList"
+        // })
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
   },
 
   /**
