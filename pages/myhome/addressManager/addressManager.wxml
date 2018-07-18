@@ -1,13 +1,24 @@
 
+<view hidden='{{isdiplayReceiveAdress}}' >
+  <button class='addgoodsAdressId'>您还没有收货地址，请添加！</button>
 <button bindtap="onReceiveGoodsAddress">添加收货地址</button>
-<view>
-  <block wx:for="{{ReceiGoodsAdressList}}">
-              <!-- <template is="userManagerItem" data="{{.../item}}"/> -->
-              <!-- <template is="userManagerItem" data="{{item}}"/> -->
-<view><text>姓名</text><text>{{item.receive_name}}</text></view>
-<view><text>电话</text><text>{{item.receive_phone}}</text></view>
-<view><text>所在区域</text><text>{{item.receive_area}}</text></view>
-<view><text>详细地址</text><text>{{item.detailed_address}}</text></view>
+</view>
+<view class='receivegoodsListId'>
+          <view  hidden='{{isdiplayReceiveAdress!=true}}' >您的收货地址如下：</view>
+          <view> </view>
+          <form>            
+                <block wx:for="{{ReceiGoodsAdressList}}">
+                        <!-- <template is="userManagerItem" data="{{.../item}}"/> -->
+                        <!-- <template is="userManagerItem" data="{{item}}"/> -->
+                        <!-- {{item.receive_name} -->
+                  <view><text>姓    名:</text><text>{{item.receive_name}}</text>
+                  
+                   </view>
+                  <view><text>电    话:</text><text>{{item.receive_phone}}</text></view>
+                  <view><text>所在区域:</text><text>{{item.receive_area}}</text></view>
+                  <view><text>详细地址:</text><text>{{item.detailed_address}}</text></view>
 
               </block>
+          </form>
+
     </view>

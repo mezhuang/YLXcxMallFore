@@ -118,19 +118,21 @@ Page({
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
     // var tokend = wx.getStorageSync('tokend')
-    var userName = e.detail.value.applyUserName;         //获取input初始值
-    var userPhone = e.detail.value.applyUserPhone;    //获取input初始值
-    var ManagerPhone = e.detail.value.ManagerPhone;//获取input初始值
+    var receiveName = e.detail.value.receiveName;         //获取input初始值
+    var receivePhone = e.detail.value.receivePhone;    //获取input初始值
+    var receiveArea = e.detail.value.receiveArea;//获取input初始值
+    var detailedAddress = e.detail.value.detailedAddress;
     var openIp = app.globalData.openId;
 
     wx.request({
-      method: 'GET',
+      method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: app.globalData.serviceIp + '/YLXcxMallBack/applyToReferee.do', //接口地址
+      url: app.globalData.serviceIp + 'addReceiGoodsAdress.do', //接口地址
       data: {
-        'userName': userName,
-        'userPhone': userPhone,
-        'ManagerPhone': ManagerPhone,
+        'receiveName': receiveName,
+        'receivePhone': receivePhone,
+        'receiveArea': receiveArea,
+        'detailedAddress': detailedAddress,
         'openId': openIp
       },
       header:
@@ -140,23 +142,21 @@ Page({
           //'content-type': 'application/json'
         },
       success: function (res) {
-        console.log("分销商申请成功，返回数据：");
+        console.log("新增收货地址");
         console.log(res.data);
         wx.showToast({
-          title: '申请分销成功',
-          image: '../../images/suess.png',
-          duration: 4000
+          title: '保存收货地址成功',
+          icon:'success',
+          duration: 2000
         })
-        setTimeout(function () {
-          wx.switchTab({
-            url: '../myhome/myhome',
-          })
-        }, 2000)
+       
         // //跳转至报备客户列表
         // wx.redirectTo({
         //   url: "../reportList/reportList"
         // })
-
+        wx.navigateBack({
+          delta: 1
+        })
       },
       fail: function (res) {
         console.log('fail-res' + ':' + res)

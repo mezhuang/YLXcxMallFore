@@ -1,1 +1,12 @@
 /* pages/myhome/addressManager/addressManager.wxss */
+.addgoodsAdressId{
+  /* margin-left: 100rpx; */
+  margin: center;
+  background-color: #fff;
+
+  
+}
+
+.receivegoodsListId{
+  margin-left: 30rpx;
+}
