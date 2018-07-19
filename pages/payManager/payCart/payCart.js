@@ -9,6 +9,7 @@ Page({
     isAllSelect: false,
     totalMoney: 0,
     carts:null,//购物车数据
+    selectedCarts:null,//被选中商品数组
     //购买数量
     // input默认是1  
     
@@ -286,17 +287,6 @@ Page({
   //     totalMoney: this.data.totalMoney,
   //   })
   },
-  // 去结算
-  toBuy() {
-    wx.showToast({
-      title: '去结算',
-      icon: 'success',
-      duration: 3000
-    });
-    this.setData({
-      showDialog: !this.data.showDialog
-    });
-  },
   //数量变化处理
   handleQuantityChange(e) {
     var componentId = e.componentId;
@@ -389,6 +379,34 @@ Page({
     this.setData({
       num: num
     });
-  }  
+  },
+  // 去结算
+  onPayConfirm: function (event) {
+    //获取被选中的数据
+    var selectedData = new Array();
+    var index=0;
+    for (var i = 0; i < this.data.carts.length;i++)
+    {
+      if (this.data.carts[i].isSelect)
+      {
+        
+        selectedData[index] = this.data.carts[i];
+        index++;
+      } 
+    }
+
+    var payCartInfomodel = JSON.stringify(selectedData);
+    wx.navigateTo({
+      url: '../payConfirm/payConfirm?payCartInfomodel=' + payCartInfomodel,
+    })
+    // wx.showToast({
+    //   title: '去结算',
+    //   icon: 'success',
+    //   duration: 3000
+    // });
+    // this.setData({
+    //   showDialog: !this.data.showDialog
+    // });
+  }
 
 })

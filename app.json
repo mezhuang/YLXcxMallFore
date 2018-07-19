@@ -1,15 +1,26 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/report/report",
-    "pages/coustomerManager/coustomerManager",
-    "pages/test/testChoose/testChoose",
+    "pages/indexSearch/indexSearch",
+    "pages/indexSwiperdetail/indexSwiperdetail",
+   
+    "pages/goodsManager/goodsCate/goodsCate",
+    "pages/goodsManager/goodsClass/goodsClass",
+    "pages/goodsManager/goodsDetail/goodsDetail",
+
+    "pages/payManager/payConfirm/payConfirm",
+    "pages/payManager/pay/pay",
+    "pages/payManager/payCart/payCart",
+
     "pages/myhome/myhome",
+    "pages/myhome/addressManager/addressManager",
+    "pages/myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress",
+    "pages/report/report",
     "pages/reportList/reportList",
+    "pages/coustomerManager/coustomerManager",
+    "pages/refereeCenter/refereeCenter",
     "pages/refereeApply/refereeApply",
     "pages/saleManager/saleManager",
-    "pages/refereeCenter/refereeCenter",
     "pages/saleAddInfo/saleAddInfo",
     "pages/commission/commission",
     "pages/saleInfoList/saleInfoList",
@@ -18,16 +29,11 @@
     "pages/refereeManagerList/refereeManagerList",
     "pages/refereeDirectorList/refereeDirectorList",
     "pages/commissionList/commissionList",
-    "pages/indexSwiperdetail/indexSwiperdetail",
-    "pages/indexSearch/indexSearch",
+
     "pages/userGuideManager/userGuideManager",
-    "pages/pay/pay",
-    "pages/payCart/payCart",
-    "pages/goodsManager/goodsDetail/goodsDetail",
-    "pages/goodsManager/goodsCate/goodsCate",
-    "pages/goodsManager/goodsClass/goodsClass",
-    "pages/myhome/addressManager/addressManager",
-    "pages/myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress"
+  
+    "pages/logs/logs",
+    "pages/test/testChoose/testChoose"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -60,7 +66,7 @@
         "text": "申请分销"
       },
       {
-        "pagePath": "pages/payCart/payCart",
+        "pagePath": "pages/payManager/payCart/payCart",
         "iconPath": "images/icon/tabBar/cart.png",
         "selectedIconPath": "images/icon/tabBar/cart_select.png",
         "text": "购物车"

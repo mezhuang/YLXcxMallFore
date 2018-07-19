@@ -1,0 +1,13 @@
+<view>
+      <!-- 无地址 -->
+      <view>
+      <button bindtap='onReceiveAddress'>添加收货地址</button>
+      </view>
+
+      <!-- 显示地址 -->
+      <view hidden='{{isdiplayReceiveAdress}}'>
+             <view>收货人: </view><view> </view>
+
+      
+      </view>
+</view>

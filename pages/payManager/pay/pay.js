@@ -1,5 +1,5 @@
 // pages/pay/pay.js
-var MD5Util = require('../../utils/md5.js'); 
+var MD5Util = require('../../../utils/md5.js'); 
 const app = getApp()
 Page({
 
