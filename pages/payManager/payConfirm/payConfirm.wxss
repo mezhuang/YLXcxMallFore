@@ -28,6 +28,10 @@ width: 120%;
 }
 
 /* 订单确认信息 */
+.orderConfirmInfo{
+  height: 600rpx;
+  
+}
 .orderitemContainer{
  display: flex;
   flex-direction: row;
@@ -83,9 +87,66 @@ font-weight: bold;
   
   color: red
 }
+
+/* 提交订单 */
+.submitRow {
+  /* position: fixed; */
+  margin-top: -20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+
+}
+.button-red {
+  position: absolute;
+  right: 0rpx;
+  background-color: #f44336; /* 红色 */
+  width: 30%;
+
+}
+button {
+  position: fixed;
+  right: 0;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 30rpx;
+  border-radius: 0rpx;
+  width: 30%;
+  height: 90rpx;
+  line-height: 80rpx;
+}
 .bottom_line {
   width: 100%;
   height: 2rpx;
   margin-top: 50rpx;
   background: lightgray;
+}
+.bottom_total {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  line-height: 120rpx;
+  background: white;
+}
+.allCountfeev{
+  position: relative;
+  /* margin-top: 15rpx; */
+margin-left: 30rpx;
+  font-size: 36rpx;
+  font-weight: 10rpx;
+}
+.allCountfeeText{
+  position: relative;
+  /* margin-top: 15rpx; */
+  color: red;
+
+  
+
+
+
 }

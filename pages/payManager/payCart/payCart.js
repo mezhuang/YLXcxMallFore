@@ -384,6 +384,8 @@ Page({
   onPayConfirm: function (event) {
     //获取被选中的数据
     var selectedData = new Array();
+    //合计选中的费用
+    var countAllfee=0;
     var index=0;
     for (var i = 0; i < this.data.carts.length;i++)
     {
@@ -391,13 +393,14 @@ Page({
       {
         
         selectedData[index] = this.data.carts[i];
+        countAllfee = countAllfee + this.data.carts[i].price;
         index++;
       } 
     }
 
     var payCartInfomodel = JSON.stringify(selectedData);
     wx.navigateTo({
-      url: '../payConfirm/payConfirm?payCartInfomodel=' + payCartInfomodel,
+      url: '../payConfirm/payConfirm?payCartInfomodel=' + payCartInfomodel + '&countAllfee=' + countAllfee,
     })
     // wx.showToast({
     //   title: '去结算',

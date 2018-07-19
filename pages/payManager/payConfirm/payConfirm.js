@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 // var addressManager = require('../../myhome/addressManager/addressManager.js');      //引用外部的js文件
+var toPay = require('../../../utils/toPay.js'); 
 Page({
 
   /**
@@ -10,7 +11,20 @@ Page({
   data: {
     isHiddenAddAddressBn:false,
     ReceiGoodsAdressList:null,
-    payConfirmBean: null//从购物车传递过来的数组对象
+    payConfirmBean: null,//从购物车传递过来的数组对象
+    payOrderId:'123245555',
+    // 支付信息
+    appid: 'wx3e71fb7bb3e423a3',
+    mch_id: '1501941241',
+    device_info: '1000',
+    body: 'shafa',
+    total_fee: null,
+    spbill_create_ip: '203.195.200.199',
+    notify_url: 'https://www.yuanlianjj.com/YLXcxMallBack/views/success.jsp',
+    apiKey: 'kjjkhhjggghffg4384m1923279sdr352',
+    ret_noce_str: null,
+    prepay_id: null,//以上为支付相关
+
   },
 
   /**
@@ -23,8 +37,12 @@ Page({
     this.onGetReveiceAddress();
 
   
-
-    //将字符串转换成对象
+    //获取总费用
+    var countAllfeeTmp = options.countAllfee;
+    this.setData({
+      total_fee:countAllfeeTmp
+    })
+    //将商品字符串转换成对象
     var payConfirmBean = JSON.parse(options.payCartInfomodel);
     console.log("payConfirmBean");
     console.log(payConfirmBean);
@@ -131,5 +149,15 @@ Page({
         console.log('fail-res' + ':' + res)
       }
     })
+  },
+  // 提交订单
+
+  immeBuy: function (event) {
+    // console.log("e.currentTarget.dataset.totalFee:");
+    // console.log(event.target.dataset.totalfee);
+    // console.log("e.currentTarget.dataset.goodscode:");
+    // console.log(event.target.dataset.goodscode);
+    var payInfomodel = JSON.stringify(this.data);
+    toPay.onPrepay(payInfomodel);
   }
 })

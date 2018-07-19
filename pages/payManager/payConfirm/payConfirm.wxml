@@ -19,7 +19,7 @@
 </view>
 
 <!-- 订单确认信息 -->
-<sroll-view>
+<sroll-view class='orderConfirmInfo' scroll-y="true">
         <block wx:for="{{payConfirmBean}}">
             <view class='orderitemContainer'>
                    <view> <image class="item-image" src="{{item.goods_image_server}}{{item.goods_image_url}}"></image></view>
@@ -39,9 +39,18 @@
             </view>
             
             <view class='minCountPrice'>
-            <view class='minCountText'> <text  >小计:</text> <text class='minCountPriceText'>￥{{item.price}}</text></view>
+            <view class='minCountText'> <text  >小计:</text> <text class='minCountPriceText'>￥{{item.price*item.num}}</text></view>
             </view>
             <view class="bottom_line"></view>
         </block>
 
 </sroll-view>
+<!-- 提交订单 -->
+<view class="bottom_total">
+    <view class="">
+        <view class='submitRow'>
+              <text class='allCountfeev'>总计金额：</text> <text class='allCountfeeText'>￥{{total_fee}}</text> 
+              <button class="button-red" bindtap="immeBuy" formType="submit">提交订单</button>
+        </view>
+    </view>
+</view>
