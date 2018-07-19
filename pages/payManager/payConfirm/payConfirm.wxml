@@ -19,7 +19,7 @@
 </view>
 
 <!-- 订单确认信息 -->
-<view>
+<sroll-view>
         <block wx:for="{{payConfirmBean}}">
             <view class='orderitemContainer'>
                    <view> <image class="item-image" src="{{item.goods_image_server}}{{item.goods_image_url}}"></image></view>
@@ -44,4 +44,4 @@
             <view class="bottom_line"></view>
         </block>
 
-</view>
+</sroll-view>
