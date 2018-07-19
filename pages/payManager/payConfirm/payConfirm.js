@@ -1,23 +1,32 @@
 // pages/orderManager/orderConfirm/orderConfirm.js
 //获取应用实例
 const app = getApp()
+// var addressManager = require('../../myhome/addressManager/addressManager.js');      //引用外部的js文件
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isdiplayReceiveAdress:false,
+    isHiddenAddAddressBn:false,
     ReceiGoodsAdressList:null,
-    payCartInfomodel: null//从购物车传递过来的数组对象
+    payConfirmBean: null//从购物车传递过来的数组对象
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+//var openIp = app.globalData.openId;
+    var that = this;
+    //获取用户收货地址
+    this.onGetReveiceAddress();
+
+  
+
     //将字符串转换成对象
     var payConfirmBean = JSON.parse(options.payCartInfomodel);
+    console.log("payConfirmBean");
     console.log(payConfirmBean);
     if (options.payCartInfomodel == null) {
       wx.showToast({
@@ -41,41 +50,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var openIp = app.globalData.openId;
-    var that = this;
-
-    wx.request({
-      method: 'GET',
-      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
-      url: app.globalData.serviceIp + 'getReceiGoodsAdressList.do', //接口地址
-      data: {
-
-        'openId': openIp
-      },
-      header:
-        {
-          //'content-type': "application/x-www-form-urlencoded" // 默认值
-          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-          //'content-type': 'application/json'
-        },
-      success: function (res) {
-        console.log("查询地址记录：");
-        console.log(res.data);
-        //判断是否有地址记录
-        if (res.data.length > 0) {
-          that.setData({
-            isdiplayReceiveAdress: true
-          });
-        }
-        that.setData({
-          ReceiGoodsAdressList: res.data
-        });
-
-      },
-      fail: function (res) {
-        console.log('fail-res' + ':' + res)
-      }
-    })
+    
   },
 
   /**
@@ -117,6 +92,44 @@ Page({
   {
     wx.navigateTo({
       url: '../../myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress',
+    })
+  },
+  //获取用户收货地址
+  onGetReveiceAddress: function () {
+    var openIp = app.globalData.openId;
+    var that = this;
+
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'getReceiGoodsAdressList.do', //接口地址
+      data: {
+
+        'openId': openIp
+      },
+      header:
+        {
+          //'content-type': "application/x-www-form-urlencoded" // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          //'content-type': 'application/json'
+        },
+      success: function (res) {
+        console.log("查询地址记录：");
+        console.log(res.data);
+        //判断是否有地址记录
+        if (res.data.length > 0) {
+          that.setData({
+            isHiddenAddAddressBn: true
+          });
+        }
+        that.setData({
+          ReceiGoodsAdressList: res.data
+        });
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
     })
   }
 })

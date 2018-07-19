@@ -1,10 +1,10 @@
 
-<view hidden='{{isdiplayReceiveAdress}}' >
+<view hidden='{{isHiddenAddAddressBn}}' >
   <button class='addgoodsAdressId'>您还没有收货地址，请添加！</button>
 <button bindtap="onReceiveGoodsAddress">添加收货地址</button>
 </view>
 <view class='receivegoodsListId'>
-          <view  hidden='{{isdiplayReceiveAdress!=true}}' >您的收货地址如下：</view>
+          <view  hidden='{{isHiddenAddAddressBn!=true}}' >您的收货地址如下：</view>
           <view> </view>
           <form>            
                 <block wx:for="{{ReceiGoodsAdressList}}">

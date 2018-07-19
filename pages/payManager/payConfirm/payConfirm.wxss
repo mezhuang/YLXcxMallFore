@@ -1,1 +1,86 @@
 /* pages/orderManager/orderConfirm/orderConfirm.wxss */
+.receiveAddressContainer{
+
+  background-color: #ffffe5;
+}
+.receiveAddress{
+  /* margin-top: 60rpx; */
+  margin-left: 60rpx;
+}
+/* 地址图片 */
+.addressImageId{
+margin-left: -60rpx;
+height: 10rpx;
+width: 120%;
+
+}
+
+.receiveNameAndPhone{
+  margin-left: 10rpx;
+  font-size: 28rpx;
+
+}
+.detailed_address{
+  
+  margin :10rpx;
+  font-size: 24rpx;
+  color: #a6a6a6;
+}
+
+/* 订单确认信息 */
+.orderitemContainer{
+ display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 120rpx;
+  margin-top: 30rpx;
+  border-width: 30rpx;
+
+}
+.item-image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.titleText{
+
+  height: 20rpx;
+  font-size: 28rpx;
+
+} 
+.formatText{
+
+  height: 20rpx;
+font-size: 28rpx;
+color: #a6a6a6;
+}
+.row text{
+
+  height: 20rpx;
+  font-size: 22rpx;
+font-weight: bold;
+}
+.goodsNum{
+
+  height: 40rpx;
+  position: absolute;
+  right: 30rpx;
+}
+.minCountPrice{
+    width: 100%;
+    
+
+}
+.minCountText{
+  position: absolute;
+  right: 40rpx;
+
+  font-size: 22rpx;
+}
+.minCountPriceText{
+  color: red
+}
+.bottom_line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+}

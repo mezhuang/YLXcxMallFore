@@ -1,13 +1,47 @@
-<view>
+<view class ='receiveAddressContainer'>
       <!-- 无地址 -->
-      <view>
-      <button bindtap='onReceiveAddress'>添加收货地址</button>
-      </view>
+     <view hidden='{{isHiddenAddAddressBn}}'>
+            <button bindtap='onReceiveAddress'>添加收货地址</button>
+     </view>
+    <!-- 显示地址 -->
+    <view  class='receiveAddress' hidden='{{isHiddenAddAddressBn!=true}}'>
+          <view>　</view>
+          <block wx:for="{{ReceiGoodsAdressList}}">
+        
+             <view class='receiveNameAndPhone'>收货人: <text>{{item.receive_name}}</text> <text>　{{item.receive_phone}}</text> </view>
+             <view class='detailed_address'><text> </text><text>{{item.receive_area}}{{item.detailed_address}}</text></view>
+        
+        </block>
 
-      <!-- 显示地址 -->
-      <view hidden='{{isdiplayReceiveAdress}}'>
-             <view>收货人: </view><view> </view>
+        <image  class ="addressImageId" src='../../../images/order/address_border.PNG'></image>
+    </view>
 
-      
-      </view>
+</view>
+
+<!-- 订单确认信息 -->
+<view>
+        <block wx:for="{{payConfirmBean}}">
+            <view class='orderitemContainer'>
+                   <view> <image class="item-image" src="{{item.goods_image_server}}{{item.goods_image_url}}"></image></view>
+                  <view class="column">
+                        <view>
+                              <text class="titleText">{{item.goods_title}}</text>
+                        </view>
+                        <view>
+                              <text class="formatText">{{item.format_name}}</text>
+                        </view>
+                        <view class="row">
+                              
+                              <text class="sku-price">￥{{item.price}}</text>
+                              <text class="goodsNum">×{{item.num}}</text>
+                        </view>
+                  </view>
+            </view>
+            
+            <view class='minCountPrice'>
+            <view class='minCountText'> <text  >小计:</text> <text class='minCountPriceText'>￥{{item.price}}</text></view>
+            </view>
+            <view class="bottom_line"></view>
+        </block>
+
 </view>
