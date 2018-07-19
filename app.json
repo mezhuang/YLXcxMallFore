@@ -3,15 +3,12 @@
     "pages/index/index",
     "pages/indexSearch/indexSearch",
     "pages/indexSwiperdetail/indexSwiperdetail",
-   
     "pages/goodsManager/goodsCate/goodsCate",
     "pages/goodsManager/goodsClass/goodsClass",
     "pages/goodsManager/goodsDetail/goodsDetail",
-
     "pages/payManager/payConfirm/payConfirm",
     "pages/payManager/pay/pay",
     "pages/payManager/payCart/payCart",
-
     "pages/myhome/myhome",
     "pages/myhome/addressManager/addressManager",
     "pages/myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress",
@@ -29,9 +26,7 @@
     "pages/refereeManagerList/refereeManagerList",
     "pages/refereeDirectorList/refereeDirectorList",
     "pages/commissionList/commissionList",
-
     "pages/userGuideManager/userGuideManager",
-  
     "pages/logs/logs",
     "pages/test/testChoose/testChoose"
   ],

@@ -28,7 +28,7 @@
                               <text class="titleText">{{item.goods_title}}</text>
                         </view>
                         <view>
-                              <text class="formatText">{{item.format_name}}</text>
+                              <text class="formatText">规格:{{item.format_name}}</text>
                         </view>
                         <view class="row">
                               
@@ -43,13 +43,13 @@
             </view>
             <view class="bottom_line"></view>
         </block>
-
+<view class='nullRow'></view>
 </sroll-view>
 <!-- 提交订单 -->
 <view class="bottom_total">
     <view class="">
         <view class='submitRow'>
-              <text class='allCountfeev'>总计金额：</text> <text class='allCountfeeText'>￥{{total_fee}}</text> 
+              <text class='allCountfeev'>总额:</text> <text class='allCountfeeText'>￥{{total_fee}}</text> 
               <button class="button-red" bindtap="immeBuy" formType="submit">提交订单</button>
         </view>
     </view>

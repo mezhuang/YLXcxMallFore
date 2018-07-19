@@ -1,25 +1,24 @@
 <!--index.wxml-->
-<view class="container">
-    <view class="userinfo">
+ <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
-    </view>
-
-
+ </view>
+<view class="orderAndMycontainer">
+   
  <view class="separate"></view>
 
-  <view class="order" catchtap="toOrder">
-    <image class="item-image" src="'../../images/icon/myhome/myorder.png"></image>
-    <text class="myorder-text">我的订单</text>
-    <view class='allorder'>
-    <text class="myorderlook-text">查看全部订单</text>
-    <image class="next-image" src="../../images/icon/next.png"></image>
-    </view>
-  </view>
-  <view class="line"></view>
+            <view class="order" catchtap="toOrder">
+                <image class="item-image" src="../../images/icon/myhome/myorder.png"></image>
+                <text class="myorder-text">我的订单</text>
+                <view class='allorder'>
+                <text class="myorderlook-text">查看全部订单</text>
+                <image class="next-image" src="../../images/icon/next.png"></image>
+            </view>
+</view>
+  <view class="person-line"></view>
 
   <view class="navs">
     <block wx:for-items="{{orderItems}}" wx:key="name">
@@ -63,23 +62,23 @@
     </view>
 
     <view class="person-line"></view>
-    <view class="list-item" class="refereeCenter" bindtap="applyRefereeChange"  wx:if="{{isGeneral}}">
+    <view class="list-item"  bindtap="applyRefereeChange"  wx:if="{{isGeneral}}">
       <image class="item-image" src="../../images/person/personal_share.png"></image>
       <text class="item-text" >申请分销</text>
       <image class="next2-image" src="../../images/icon/next.png"></image>
     </view>
-     <view class="line"></view>
+     <view class="person-line"></view>
   </view>
   <view class="separate"></view>
 
 
 
 <!--分销管理  -->
-  <view class="container_manager">
+   <view class="container_manager">
      <!-- <button class="refereeCenter" bindtap="applyRefereeChange" types="primary" wx:if="{{isGeneral}}">申请分销</button>   -->
         <button class="refereeCenter" bindtap="onRefereeCenter" wx:if="{{isReferee}}"><text>分销中心</text></button>      
         <button class="saleManger" bindtap="onSaleManger" wx:if="{{isGuide}}"><text>销售管理</text></button>
         <button class="systemManger" bindtap="onSysMangerChange" wx:if="{{isSysManger}}">系统管理</button>
     </view>
-
 </view>
+

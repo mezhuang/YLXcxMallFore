@@ -3,15 +3,33 @@ var MD5Util = require('../utils/md5.js');
 var that = this;
 var globalNonceStr=null;
 var globalRepayId=null;
+
+//生成订单号
+function createOrderNo()
+{
+  var orderNum = Math.floor(Math.random() * 1000000 + 1);
+  var myDate = new Date();
+  var mytime = myDate.toLocaleString();
+  var currtYear = myDate.getFullYear().toString();
+  var MonthTmp = myDate.getMonth() + 1;
+  var currtMonth = MonthTmp > 9 ? MonthTmp.toString() : ("0" + MonthTmp.toString());
+  var currtDate = myDate.getDate() > 9 ? myDate.getDate().toString() : ("0" + myDate.getDate().toString());
+  var currtHours = myDate.getHours() > 9 ? myDate.getHours().toString() : ("0" + myDate.getHours());
+  var currtMinutes = myDate.getMinutes() > 9 ? myDate.getMinutes().toString() : ("0" + myDate.getMinutes());
+
+  console.log("商品订单号:" + currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString());
+  var currtOutTradeNo = currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString();
+   return currtOutTradeNo;
+}
 // 调用统一下单接口，获取预支付ID
 function onPrepay(paymodel) {
   var data = JSON.parse(paymodel);
 
   var currtTotalFee = null;
   var currtGoodsCode = null;
-  // currtTotalFee= wx.getStorageSync("totalFee");
-  currtTotalFee = data.total_fee*100;
-  // var currtGoodsCode = wx.getStorageSync("goodsCode");
+
+  // currtTotalFee = data.total_fee*100;
+  currtTotalFee =1;//测试使用，记得改回上一条代码。
   var currtGoodsCode = data.payOrderId;
 
   // console.log(currtTotalFee);
@@ -28,18 +46,19 @@ function onPrepay(paymodel) {
   console.log("nonce_str随机数:" + "yljj" + nonceNum.toString());
   var currtNonce_str = "yljj" + nonceNum.toString();
 
-  var orderNum = Math.floor(Math.random() * 1000000 + 1);
-  var myDate = new Date();
-  var mytime = myDate.toLocaleString();
-  var currtYear = myDate.getFullYear().toString();
-  var MonthTmp = myDate.getMonth() + 1;
-  var currtMonth = MonthTmp > 9 ? MonthTmp.toString() : ("0" + MonthTmp.toString());
-  var currtDate = myDate.getDate() > 9 ? myDate.getDate().toString() : ("0" + myDate.getDate().toString());
-  var currtHours = myDate.getHours() > 9 ? myDate.getHours().toString() : ("0" + myDate.getHours());
-  var currtMinutes = myDate.getMinutes() > 9 ? myDate.getMinutes().toString() : ("0" + myDate.getMinutes());
+  // var orderNum = Math.floor(Math.random() * 1000000 + 1);
+  // var myDate = new Date();
+  // var mytime = myDate.toLocaleString();
+  // var currtYear = myDate.getFullYear().toString();
+  // var MonthTmp = myDate.getMonth() + 1;
+  // var currtMonth = MonthTmp > 9 ? MonthTmp.toString() : ("0" + MonthTmp.toString());
+  // var currtDate = myDate.getDate() > 9 ? myDate.getDate().toString() : ("0" + myDate.getDate().toString());
+  // var currtHours = myDate.getHours() > 9 ? myDate.getHours().toString() : ("0" + myDate.getHours());
+  // var currtMinutes = myDate.getMinutes() > 9 ? myDate.getMinutes().toString() : ("0" + myDate.getMinutes());
 
-  console.log("商品订单号:" + currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString());
-  var currtOutTradeNo = currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString();
+  // console.log("商品订单号:" + currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString());
+  // var currtOutTradeNo = currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString();
+  var currtOutTradeNo = data.orderNo;
 
 
 
@@ -107,21 +126,6 @@ function onPrepay(paymodel) {
 
       //发起微信支付
       onPay(data);
-      // console.log(res.data.return_msg);
-      // wx.showToast({
-      //   title: '申请分销成功',
-      //   image: '../../images/suess.png',
-      //   duration: 4000
-      // })
-      // setTimeout(function () {
-      //   wx.switchTab({
-      //     url: '../myhome/myhome',
-      //   })
-      // }, 2000)
-      // //跳转至报备客户列表
-      // wx.redirectTo({
-      //   url: "../reportList/reportList"
-      // })
 
     },
     fail: function (res) {
@@ -149,6 +153,11 @@ function onPay(data) {
       'paySign': paySign,
       'success': function (res) {
         console.log("requestPayment-success返回:" + res.data);
+        wx.showToast({
+          title: '支付成功',
+          icon: 'success',
+          duration: 1000
+        })
       },
       'fail': function (res) {
         console.log("requestPayment-fail返回:" + res.data);
@@ -164,4 +173,5 @@ function onPay(data) {
 module.exports = {
 
   onPrepay:onPrepay,
+  createOrderNo: createOrderNo
 }

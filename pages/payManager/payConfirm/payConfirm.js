@@ -13,7 +13,9 @@ Page({
     ReceiGoodsAdressList:null,
     payConfirmBean: null,//从购物车传递过来的数组对象
     payOrderId:'123245555',
+
     // 支付信息
+    orderNo:null,
     appid: 'wx3e71fb7bb3e423a3',
     mch_id: '1501941241',
     device_info: '1000',
@@ -157,7 +159,13 @@ Page({
     // console.log(event.target.dataset.totalfee);
     // console.log("e.currentTarget.dataset.goodscode:");
     // console.log(event.target.dataset.goodscode);
+    var orderNo = toPay.createOrderNo();
+    this.setData({
+      orderNo: orderNo
+    });
     var payInfomodel = JSON.stringify(this.data);
     toPay.onPrepay(payInfomodel);
+    //插入订单表
+    
   }
 })

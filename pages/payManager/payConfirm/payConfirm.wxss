@@ -87,6 +87,10 @@ font-weight: bold;
   
   color: red
 }
+.nullRow{
+height: 100rpx;
+
+}
 
 /* 提交订单 */
 .submitRow {

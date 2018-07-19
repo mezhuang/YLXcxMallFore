@@ -1,11 +1,15 @@
 /**index.wxss**/
-.container{
+.orderAndMycontainer{
   background-color: #ffffff;
+  margin-top: 120rpx;
+  /* position: fixed; */
+  /* top: 200rpx; */
 }
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* height: 120rpx; */
 }
 
 .userinfo-avatar {
@@ -33,7 +37,7 @@
 /* 订单 */
 .order {
   display: flex;
-  margin-left: -100rpx;
+  /* margin-left: -100rpx; */
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -48,7 +52,7 @@
 .myorder-text {
   font-size: 30rpx;
   color: gray;
-  margin: 20rpx;
+  /* margin: 20rpx; */
   width: 40%;
 }
 
@@ -69,9 +73,11 @@
  
 
 }
+
 .navs {
   display: flex;
-  margin-left: -250rpx;
+  /* margin-left: -250rpx; */
+  /* margin-top: -60rpx; */
 }
 .nav-item {
   width: 25%;
@@ -90,15 +96,16 @@
   font-size: 25rpx;
   color: gray;
 }
-/* 列表 */
+/* 个人操作列表 */
 .person-list {
   display: flex;
   flex-direction: column;
   align-items: left;
-  position: fixed;
+  /* position: fixed; */
   top: 600rpx;
   left: -50rpx;
   background-color: #ffffff;
+  /* margin-top: -120rpx; */
 }
 .list-item {
   display: flex;
@@ -115,15 +122,18 @@
   color: gray;
   font-size: 25rpx;
   margin-left: 20rpx;
+  width: 100rpx;
 }
 .person-line {
   width: 400%;
   height: 2rpx;
   background: lightgray;
-  margin-left: 90rpx;
+  /* margin-left: 90rpx; */
+  margin-top: -20rpx;
 }
 .next2-image{
-  margin-left: 580rpx;
+  position: fixed;
+  right: 3rpx;
   width: 20rpx;
   height: 25rpx;
   /* position: relative; */
