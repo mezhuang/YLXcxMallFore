@@ -32,21 +32,7 @@ Page({
   },
 // 
   onLaunch:function(options) {
-    // 监听网络状态变化
-
-    wx.onNetworkStatusChange(res => {
-
-      this.globalData.isConnected = res.isConnected
-
-    })
-    console.log("this.globalData.isConnected:" + this.globalData.isConnected);
-    if (!this.globalData.isConnected){
-      wx.showToast({
-        title: '网络连接异常，请检查网络！',
-        image: '../../images/suess.png',
-        duration: 4000
-      })
-    }
+   
   },
   /**
    * 生命周期函数--监听页面加载

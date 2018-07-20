@@ -11,6 +11,21 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     console.log("come in app onLaunch");
+    // 监听网络状态
+    wx.onNetworkStatusChange(res => {
+
+      this.globalData.isConnected = res.isConnected
+
+    })
+    console.log("this.globalData.isConnected:" + this.globalData.isConnected);
+    if (!this.globalData.isConnected) {
+      wx.showToast({
+        title: '网络连接异常，请检查网络！',
+        icon: 'none',
+        duration: 4000
+      })
+      return;
+    }
     // 登录
     wx.login({
       success: res => {

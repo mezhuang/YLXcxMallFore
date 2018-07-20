@@ -13,6 +13,8 @@ Page({
     ReceiGoodsAdressList:null,
     payConfirmBean: null,//从购物车传递过来的数组对象
     payOrderId:'123245555',
+    totalNum:0,//总商品个数
+    receiveAddressId:null,
 
     // 支付信息
     orderNo:null,
@@ -41,8 +43,11 @@ Page({
   
     //获取总费用
     var countAllfeeTmp = options.countAllfee;
+    //获取总商品个数
+    var totalNumTmp= options.index;
     this.setData({
-      total_fee:countAllfeeTmp
+      total_fee:countAllfeeTmp,
+      totalNum: totalNumTmp
     })
     //将商品字符串转换成对象
     var payConfirmBean = JSON.parse(options.payCartInfomodel);
@@ -143,7 +148,8 @@ Page({
           });
         }
         that.setData({
-          ReceiGoodsAdressList: res.data
+          ReceiGoodsAdressList: res.data,
+          receiveAddressId: res.data[0].receive_goods_id
         });
 
       },
@@ -159,13 +165,73 @@ Page({
     // console.log(event.target.dataset.totalfee);
     // console.log("e.currentTarget.dataset.goodscode:");
     // console.log(event.target.dataset.goodscode);
+    var that =this;
     var orderNo = toPay.createOrderNo();
+    var order_status = '01';
     this.setData({
       orderNo: orderNo
     });
     var payInfomodel = JSON.stringify(this.data);
-    toPay.onPrepay(payInfomodel);
+    var payStatus =toPay.onPrepay(payInfomodel);
+
+    //已支付成功
+    if (payStatus)
+    {
+      order_status ='02';
+    }
+
+
+    // goods_order_id
+    // open_id
+    // order_status
+    // total_number
+    // total_fee
+    // receive_address_id
+    // buy_time
+    // create_time
+  //转换商品信息
+    var goodsOrderListStr = JSON.stringify(this.data.payConfirmBean);
     //插入订单表
-    
+    wx.request({
+      method: 'GET',
+      // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+      url: app.globalData.serviceIp + 'addOnlineGoodsOrder.do', //接口地址
+      data: {
+        'goodsOrderId': this.data.orderNo,
+        'openId': app.globalData.openId,
+        'orderStatus': this.data.order_status,
+        'totalFee': this.data.total_fee,
+        'totalNum': this.data.totalNum,
+        'receiveAddressId': this.data.receiveAddressId,
+        'goodsOrderListStr': goodsOrderListStr
+
+      },
+      header:
+        {
+          //'content-type': "application/x-www-form-urlencoded" // 默认值
+          'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+          //'content-type': 'application/json'
+        },
+      success: function (res) {
+        console.log("查询地址记录：");
+        console.log(res.data);
+        //判断是否有地址记录
+        if (res.data.length > 0) {
+          that.setData({
+            isHiddenAddAddressBn: true
+          });
+        }
+        that.setData({
+          ReceiGoodsAdressList: res.data
+        });
+
+      },
+      fail: function (res) {
+        console.log('fail-res' + ':' + res)
+      }
+    })
+
+    //删除购物车记录
+
   }
 })

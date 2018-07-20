@@ -23,6 +23,7 @@ function createOrderNo()
 }
 // 调用统一下单接口，获取预支付ID
 function onPrepay(paymodel) {
+  var payStatus = false;
   var data = JSON.parse(paymodel);
 
   var currtTotalFee = null;
@@ -123,20 +124,21 @@ function onPrepay(paymodel) {
 
 
       // })
-
       //发起微信支付
-      onPay(data);
+      payStatus =   onPay(data);
 
     },
     fail: function (res) {
       console.log('fail-res' + ':' + res.data)
     }
   })
+
+  return payStatus;
 }
 
 //小程序发起微信支付
 function onPay(data) {
-
+var payStatus=false;
   var timestamp = Date.parse(new Date());
   console.info("timestamp:" + timestamp);
   var paySignTemp = "appId=" + data.appid + "&nonceStr=" + globalNonceStr + "&package=prepay_id=" + globalRepayId + "&signType=MD5&timeStamp=" + timestamp + "&key=" + data.apiKey;
@@ -158,16 +160,20 @@ function onPay(data) {
           icon: 'success',
           duration: 1000
         })
+        payStatus= true;
       },
       'fail': function (res) {
         console.log("requestPayment-fail返回:" + res.data);
+        payStatus = false;
 
       },
       'complete': function (res) {
         console.log("requestPayment-complete返回:" + res.data);
+        payStatus = false;
 
       }
     })
+  return payStatus;
 }
 
 module.exports = {

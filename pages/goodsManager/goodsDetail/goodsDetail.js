@@ -69,7 +69,7 @@ Page({
   // 跳到购物车
   toCar() {
     wx.switchTab({
-      url: '/pages/payCart/payCart'
+      url: '/pages/payManger/payCart/payCart'
     })
   },
   

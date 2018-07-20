@@ -395,12 +395,13 @@ Page({
         selectedData[index] = this.data.carts[i];
         countAllfee = countAllfee + this.data.carts[i].price;
         index++;
+       
       } 
     }
 
     var payCartInfomodel = JSON.stringify(selectedData);
     wx.navigateTo({
-      url: '../payConfirm/payConfirm?payCartInfomodel=' + payCartInfomodel + '&countAllfee=' + countAllfee,
+      url: '../payConfirm/payConfirm?payCartInfomodel=' + payCartInfomodel + '&countAllfee=' + countAllfee + '&index=' + index,
     })
     // wx.showToast({
     //   title: '去结算',
