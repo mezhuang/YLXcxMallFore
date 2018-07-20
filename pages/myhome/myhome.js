@@ -206,7 +206,7 @@ Page({
   //事件处理函数
   toOrder: function () {
     wx.navigateTo({
-      url: '../order/order'
+      url: '../myhome/orderManager/orderManger'
     })
   },
   onLoad: function () {

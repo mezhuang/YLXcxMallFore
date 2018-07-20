@@ -76,15 +76,16 @@
 
 .navs {
   display: flex;
+  margin-left:30rpx;
   /* margin-left: -250rpx; */
-  /* margin-top: -60rpx; */
+  margin-top: 20rpx;
 }
 .nav-item {
-  width: 25%;
+  width: 15%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20rpx;
+  padding: 10rpx;
 }
 .nav-item .nav-image {
   width: 40rpx;

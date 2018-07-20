@@ -28,7 +28,8 @@
     "pages/commissionList/commissionList",
     "pages/userGuideManager/userGuideManager",
     "pages/logs/logs",
-    "pages/test/testChoose/testChoose"
+    "pages/test/testChoose/testChoose",
+    "pages/myhome/orderManager/orderManger"
   ],
   "window": {
     "backgroundTextStyle": "light",
