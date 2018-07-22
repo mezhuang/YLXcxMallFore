@@ -17,7 +17,7 @@
                </view>
           <view class="row">
           <text class="sku-price">￥</text>
-          <text class="sku-price">{{item.price}}</text>
+          <text class="sku-price">{{item.unit_price*item.num}}</text>
           
           <view class="sku">
             <!-- <template is="quantity" data="{{ ...item.count, componentId: index }}" /> -->

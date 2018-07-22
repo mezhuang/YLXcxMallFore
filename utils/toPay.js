@@ -1,8 +1,11 @@
 var app = getApp();
 var MD5Util = require('../utils/md5.js'); 
 var that = this;
+var appid = 'wx3e71fb7bb3e423a3';
+var apiKey = 'kjjkhhjggghffg4384m1923279sdr352';
 var globalNonceStr=null;
 var globalRepayId=null;
+var payStatus = false;//执行支付返回的状态
 
 //生成订单号
 function createOrderNo()
@@ -22,16 +25,16 @@ function createOrderNo()
    return currtOutTradeNo;
 }
 // 调用统一下单接口，获取预支付ID
-function onPrepay(paymodel) {
-  var payStatus = false;
-  var data = JSON.parse(paymodel);
+function onPrepay(total_fee, currtOutTradeNo) {
+  // var payStatus = false;
+  // var data = JSON.parse(paymodel);
 
-  var currtTotalFee = null;
-  var currtGoodsCode = null;
+  // var currtTotalFee = null;
+  // var currtGoodsCode = null;
 
   // currtTotalFee = data.total_fee*100;
-  currtTotalFee =1;//测试使用，记得改回上一条代码。
-  var currtGoodsCode = data.payOrderId;
+  total_fee =1;//测试使用，记得改回上一条代码。
+  // var currtGoodsCode = data.payOrderId;
 
   // console.log(currtTotalFee);
   // console.log(currtGoodsCode);
@@ -40,8 +43,8 @@ function onPrepay(paymodel) {
   //   total_fee: currtTotalFee,
   //   body: currtGoodsCode
   // });
-  data.total_fee = currtTotalFee;
-  data.body = currtGoodsCode;
+  // data.total_fee = currtTotalFee;
+  // data.body = currtGoodsCode;
 
   var nonceNum = Math.floor(Math.random() * 100000000000000 + 1);
   console.log("nonce_str随机数:" + "yljj" + nonceNum.toString());
@@ -59,38 +62,46 @@ function onPrepay(paymodel) {
 
   // console.log("商品订单号:" + currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString());
   // var currtOutTradeNo = currtYear + currtMonth + currtDate + currtHours + currtMinutes + orderNum.toString();
-  var currtOutTradeNo = data.orderNo;
+  // var currtOutTradeNo = data.orderNo;
+
+  var mch_id= '1501941241';
+  var device_info= '1000';
+  var body= 'shafa';
+
+  var spbill_create_ip= '203.195.200.199';
+  var notify_url= 'https://www.yuanlianjj.com/YLXcxMallBack/views/success.jsp';
+
 
 
 
 
   //参数签名
-  var stringA = "appid=" + data.appid + "&body=test&device_info=" +
-    data.device_info + "&mch_id=" + data.mch_id +
+  var stringA = "appid=" + appid + "&body=yuanlianjj&device_info=" +
+    device_info + "&mch_id=" + mch_id +
     "&nonce_str=" + currtNonce_str +
-    "&notify_url=" + data.notify_url +
+    "&notify_url=" +notify_url +
     "&openid=" + app.globalData.openId +
     "&out_trade_no=" + currtOutTradeNo +
-    "&sign_type=MD5&spbill_create_ip=" + data.spbill_create_ip +
-    "&total_fee=" + data.total_fee +
+    "&sign_type=MD5&spbill_create_ip=" + spbill_create_ip +
+    "&total_fee=" + total_fee +
     "&trade_type=JSAPI"
     ;
   console.log("stringA:" + stringA);
-  var stringSignTemp = stringA + "&key=" + data.apiKey + "";
+  var stringSignTemp = stringA + "&key=" + apiKey + "";
   console.log("stringSignTemp:" + stringSignTemp);
   // MD5加密
   var sign = MD5Util.MD5(stringSignTemp).toUpperCase();
   console.log("sign:" + sign);
   //转为XML格式数据
-  var dataXml = "<xml><appid>" + data.appid + "</appid>" +
-    "<body>test</body><device_info>" + data.device_info + "</device_info>" +
-    "<mch_id>" + data.mch_id + "</mch_id>" +
+  var dataXml = "<xml><appid>" + appid + "</appid>" +
+    "<body>yuanlianjj</body><device_info>" + device_info + "</device_info>" +
+    "<mch_id>" + mch_id + "</mch_id>" +
     "<nonce_str>" + currtNonce_str + "</nonce_str>" +
     "<out_trade_no>" + currtOutTradeNo + "</out_trade_no>" +
-    "<total_fee>" + data.total_fee + "</total_fee>" +
+    "<total_fee>" + total_fee + "</total_fee>" +
     "<sign_type>MD5</sign_type>" +
-    "<spbill_create_ip>" + data.spbill_create_ip + "</spbill_create_ip>" +
-    "<notify_url>" + data.notify_url + "</notify_url>" +
+    "<spbill_create_ip>" + spbill_create_ip + "</spbill_create_ip>" +
+    "<notify_url>" + notify_url + "</notify_url>" +
     "<openid>" + app.globalData.openId + "</openid>" +
     "<trade_type>JSAPI</trade_type>" +
     "<sign>" + sign + "</sign></xml>";
@@ -125,7 +136,7 @@ function onPrepay(paymodel) {
 
       // })
       //发起微信支付
-      payStatus =   onPay(data);
+      payStatus =   onPay();
 
     },
     fail: function (res) {
@@ -137,11 +148,11 @@ function onPrepay(paymodel) {
 }
 
 //小程序发起微信支付
-function onPay(data) {
-var payStatus=false;
+function onPay() {
+
   var timestamp = Date.parse(new Date());
   console.info("timestamp:" + timestamp);
-  var paySignTemp = "appId=" + data.appid + "&nonceStr=" + globalNonceStr + "&package=prepay_id=" + globalRepayId + "&signType=MD5&timeStamp=" + timestamp + "&key=" + data.apiKey;
+  var paySignTemp = "appId=" + appid + "&nonceStr=" + globalNonceStr + "&package=prepay_id=" + globalRepayId + "&signType=MD5&timeStamp=" + timestamp + "&key=" + apiKey;
 
   // MD5加密
   var paySign = MD5Util.MD5(paySignTemp).toUpperCase();

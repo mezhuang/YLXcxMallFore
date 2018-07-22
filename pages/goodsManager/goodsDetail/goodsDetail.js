@@ -3,21 +3,21 @@ var MD5Util = require('../../../utils/md5.js');
 Page({
   data: {
     appid: 'wx3e71fb7bb3e423a3',
-    mch_id: '1501941241',
-    device_info: '1000',
-    body: 'shafa',
+    // mch_id: '1501941241',
+    // device_info: '1000',
+    // body: 'shafa',
     total_fee: null,
-    spbill_create_ip: '203.195.200.199',
-    notify_url: 'https://www.yuanlianjj.com/YLXcxMallBack/views/success.jsp',
-    apiKey: 'kjjkhhjggghffg4384m1923279sdr352',
-    ret_noce_str: null,
-    prepay_id: null,//以上为支付相关
+    // spbill_create_ip: '203.195.200.199',
+    // notify_url: 'https://www.yuanlianjj.com/YLXcxMallBack/views/success.jsp',
+    // apiKey: 'kjjkhhjggghffg4384m1923279sdr352',
+    // ret_noce_str: null,
+    // prepay_id: null,//以上为支付相关
 
 
     swerposition:"07001",
     detailposition:"07002",
     curFormatPriceId:null,//被选中的规格编码
-    curDiplayPrice:null,
+    curDiplayPrice:0,
     isLike: true,
     // banner
     // imgUrls: [
@@ -69,7 +69,7 @@ Page({
   // 跳到购物车
   toCar() {
     wx.switchTab({
-      url: '/pages/payManger/payCart/payCart'
+      url: '../../payManager/payCart/payCart'
     })
   },
   
@@ -123,6 +123,7 @@ Page({
         'openId': getApp().globalData.openId,
         "goodsId": this.data.goodsDetail[0].goods_id,
         'goodsPrice': this.data.curDiplayPrice,
+        'goodsUnitPrice': this.data.curDiplayPrice,
         'goodsTitle': this.data.goodsDetail[0].goods_title,
         "goodsImageServer": this.data.goodsDetail[0].goodsImageList[0].goods_image_server,
         "goodsImageUrl": this.data.goodsDetail[0].goodsImageList[0].goods_image_url_sl,

@@ -13,7 +13,7 @@
   <view class="detail">
     <text class="title">{{goodsDetail[0].goods_title}}</text>
     </view>
-               <text class="price">￥{{curDiplayPrice}}</text>
+               <text class="price">￥{{curDiplayPrice*num}}</text>
                 <text>请选择规格尺寸:</text>
             <block wx:for="{{goodsDetail[0].goodsFormatList}}">
                     <view class='formatItem'>

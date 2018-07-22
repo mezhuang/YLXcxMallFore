@@ -34,6 +34,12 @@ border-radius: 16rpx;
 /* .order-item{
  border-bottom: 1px solid #F2F2F2; 
 } */
+.orderInfo{
+  display: flex;
+  flex: row;
+  width: 100%;
+  font-size: 22rpx;
+}
 .item-ans{ 
   /* margin-top: 15rpx; */
   width: 100%;
@@ -52,7 +58,11 @@ border-bottom: 1px solid lightgray;
 
   margin-right: 20rpx;
   height: 30rpx;
-  width: 30%;
+  width: 100%;
+}
+.totalmoney{
+  color: red;
+  width: 85%;
 }
 .person-line {
   width: 100%;
@@ -97,15 +107,16 @@ color: red;
   /* position: fixed; */
   /* left: 120rpx; */
 
-  color: red;
+  /* color: red; */
 }
-.onPayNow{
- width: 100%;
-}
+
 .payNowText{
   /* margin-top: -10rpx; */
-  position: fixed;
-  right: 40rpx;
+  /* position: fixed; */
+  /* right: 40rpx; */
+  /* position: relative; */
+  width: 50%;
+  margin-left: 150rpx;
   border: 1px solid #000; 
   color: black;
 }

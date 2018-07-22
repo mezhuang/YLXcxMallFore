@@ -315,7 +315,7 @@ Page({
     // 将数值与状态写回  
     this.data.carts[index].num = num;
     this.data.carts[index].minusStatus = minusStatus;
-    var unitPrice = (this.data.carts[index].price) / numTmp;
+    var unitPrice = this.data.carts[index].unit_price;
     var currentPrice = this.data.carts[index].price - unitPrice;
     this.data.carts[index].price = currentPrice;
 
@@ -355,8 +355,8 @@ Page({
     console.log("index:"+index);
     console.log("cart:" + this.data.carts[index].price);
     //单价
-    var unitPrice =this.data.carts[index].price / numTmp; 
-    var currentPrice = this.data.carts[index].price + unitPrice;
+    var unitPrice = this.data.carts[index].unit_price; 
+    var currentPrice = this.data.carts[index].price + this.data.carts[index].unit_price;
      this.data.carts[index].price = currentPrice;
 
   
@@ -386,6 +386,7 @@ Page({
     var selectedData = new Array();
     //合计选中的费用
     var countAllfee=0;
+    //订单总共商品数
     var index=0;
     for (var i = 0; i < this.data.carts.length;i++)
     {

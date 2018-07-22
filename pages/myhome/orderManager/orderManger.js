@@ -1,5 +1,6 @@
 // pages/myhome/orderManager/orderManger.js
 const app = getApp()
+var toPay = require('../../../utils/toPay.js'); 
 Page({
 
   /**
@@ -147,6 +148,10 @@ Page({
         scrollLeft: 0
       })
     }
+  },
+  onPayNow:function(){
+    var payInfomodel=null;
+    var payStatus = toPay.onPrepay(payInfomodel);
   },
   footerTap: app.footerTap
 })

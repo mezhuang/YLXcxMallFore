@@ -10,22 +10,29 @@
      style="height:{{winHeight}}rpx">
         <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
             <scroll-view scroll-y="true" class="scoll-h" >
-                <block wx:for="{{orderInfoList}}" >
-                
-                    <view class="item-ans">
-                        <view class="avatar">
-                            <image class="img" src="{{item.goods_image_url}}"></image>
-                        </view>
-                        <view class="expertInfo">
-                            <view class="name">{{item.goods_tile}}</view>
-                            <view class="tag">{{item.goods_format}}</view>
-                            <view class="answerHistory"><text>{{item.buy_number}}件　</text><text class='priceId' >¥{{item.goods_price}}</text>  <text class='payNowText'>立即支付</text> </view>
-                        </view>
+                <block wx:for="{{orderInfoList}}"  wx:for-index="groupindex"wx:for-item="oneitem" >
+                    <view class='orderInfo'>
+                        <view><text>{{oneitem.create_time}} 　 　 　 　 　 　</text></view>
+                        <view><text>{{oneitem.order_status}}</text></view>
                     </view>
-                      
+                    <block wx:for="{{oneitem.orderDeailList}}"  >
+                              <view class="item-ans">
+                                  <view class="avatar">
+                                      <image class="img" src="{{item.goods_image_url}}"></image>
+                                  </view>
+                                  <view class="expertInfo">
+                                      <view class="name">{{item.goods_tile}}</view>
+                                      <view class="tag">规格:{{item.goods_format}}</view>
+                                      <view class="answerHistory" bindtap='onPayNow'><text class='priceId' >¥{{item.goods_price}}</text> <text>×{{item.buy_number}}件　</text>  </view>
+                                  </view>
+                              </view>
+                      </block>
                 <!-- <view class="person-line"></view> -->
-                   
+                  <view class='payNow'>金额:<text class='totalmoney'>¥{{oneitem.total_fee}}</text> 　 　 　 　 　 <text class='payNowText'>立即支付</text></view>
                 </block>
+
+<view class='line'> 　</view>
+                
             </scroll-view>
         </swiper-item>
     </swiper>

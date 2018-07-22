@@ -2,22 +2,22 @@
 //获取应用实例
 const app = getApp()
 // var addressManager = require('../../myhome/addressManager/addressManager.js');      //引用外部的js文件
-var toPay = require('../../../utils/toPay.js'); 
+var toPay = require('../../../utils/toPay.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isHiddenAddAddressBn:false,
-    ReceiGoodsAdressList:null,
+    isHiddenAddAddressBn: false,
+    ReceiGoodsAdressList: null,
     payConfirmBean: null,//从购物车传递过来的数组对象
-    payOrderId:'123245555',
-    totalNum:0,//总商品个数
-    receiveAddressId:null,
+    payOrderId: '123245555',
+    totalNum: 0,//总商品个数
+    receiveAddressId: null,
 
     // 支付信息
-    orderNo:null,
+    orderNo: null,
     appid: 'wx3e71fb7bb3e423a3',
     mch_id: '1501941241',
     device_info: '1000',
@@ -35,18 +35,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-//var openIp = app.globalData.openId;
+    //var openIp = app.globalData.openId;
     var that = this;
     //获取用户收货地址
     this.onGetReveiceAddress();
 
-  
+
     //获取总费用
     var countAllfeeTmp = options.countAllfee;
     //获取总商品个数
-    var totalNumTmp= options.index;
+    var totalNumTmp = options.index;
     this.setData({
-      total_fee:countAllfeeTmp,
+      total_fee: countAllfeeTmp,
       totalNum: totalNumTmp
     })
     //将商品字符串转换成对象
@@ -61,60 +61,59 @@ Page({
     }
     this.setData({
       payConfirmBean: payConfirmBean
-    })    
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
   // 调整至新增收货地址页面
-  onReceiveAddress:function()
-  {
+  onReceiveAddress: function () {
     wx.navigateTo({
       url: '../../myhome/addressManager/receiveGoodsAddress/receiveGoodsAddress',
     })
@@ -165,19 +164,18 @@ Page({
     // console.log(event.target.dataset.totalfee);
     // console.log("e.currentTarget.dataset.goodscode:");
     // console.log(event.target.dataset.goodscode);
-    var that =this;
+    var that = this;
     var orderNo = toPay.createOrderNo();
     var order_status = '01';
     this.setData({
       orderNo: orderNo
     });
-    var payInfomodel = JSON.stringify(this.data);
-    var payStatus =toPay.onPrepay(payInfomodel);
+    // var payInfomodel = JSON.stringify(this.data);
+    var payStatus = toPay.onPrepay(this.data.total_fee, this.data.orderNo);
 
     //已支付成功
-    if (payStatus)
-    {
-      order_status ='02';
+    if (payStatus) {
+      order_status = '02';
     }
 
 
@@ -189,9 +187,9 @@ Page({
     // receive_address_id
     // buy_time
     // create_time
-  //转换商品信息
+    //转换商品信息
     var goodsOrderListStr = JSON.stringify(this.data.payConfirmBean);
-    //插入订单表
+    //提交订单
     wx.request({
       method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
