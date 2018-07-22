@@ -42,7 +42,7 @@ Page({
     //获取用户订单信息
     var that =this;
     wx.request({
-      method: 'GET',
+      method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: app.globalData.serviceIp + 'getGoodsOrderListByOpenId.do', //接口地址
       data: {

@@ -193,13 +193,13 @@ Page({
     var goodsOrderListStr = JSON.stringify(this.data.payConfirmBean);
     //插入订单表
     wx.request({
-      method: 'GET',
+      method: 'POST',
       // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
       url: app.globalData.serviceIp + 'addOnlineGoodsOrder.do', //接口地址
       data: {
         'goodsOrderId': this.data.orderNo,
         'openId': app.globalData.openId,
-        'orderStatus': this.data.order_status,
+        'orderStatus': order_status,
         'totalFee': this.data.total_fee,
         'totalNum': this.data.totalNum,
         'receiveAddressId': this.data.receiveAddressId,
