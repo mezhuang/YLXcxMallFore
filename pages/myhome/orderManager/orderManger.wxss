@@ -34,11 +34,31 @@ border-radius: 16rpx;
 /* .order-item{
  border-bottom: 1px solid #F2F2F2; 
 } */
+.separator{
+  width: 100%;
+  height: 2rpx;
+ background-color: #F2F2F2;
+}
 .orderInfo{
   display: flex;
   flex: row;
   width: 100%;
-  font-size: 22rpx;
+  font-size: 28rpx;
+ 
+  margin-top: 10rpx;
+  height: 40rpx;
+  background-color: #f2f2f2;
+  top:15rpx;
+
+}
+.gsName{
+margin-left: 20rpx;
+}
+.order_status{
+ position:absolute;
+right:27px;
+color: red;
+
 }
 .item-ans{ 
   /* margin-top: 15rpx; */
@@ -51,23 +71,26 @@ display: flex;
  /* height: 180rpx; */
 /* align-items: center; */
 border-bottom: 1px solid lightgray;
+
 }
 .payNow{
   /* margin-top: -60rpx; */
-  font-size: 22rpx;
+ font-size:28rpx;
+left:11px;
+height:50rpx;
+width:100%;
+position:relative;
 
-  margin-right: 20rpx;
-  height: 30rpx;
-  width: 100%;
 }
 .totalmoney{
   color: red;
   width: 85%;
+  margin-top: 10rpx;
 }
 .person-line {
   width: 100%;
-  height: 1rpx;
-  background: lightgray;
+  height: 2rpx;
+  background-color:#f2f2f2 ;
   /* margin-left: 90rpx; */
   /* margin-top: -20rpx; */
 }
@@ -76,7 +99,7 @@ border-bottom: 1px solid lightgray;
 height: 100rpx;
 position: relative;
 padding-right: 30rpx;
-border-bottom: 1px solid #F2F2F2; 
+border-bottom: 1px solid #e6e6e6; 
 }
 .avatar .img{
   width:130rpx;
@@ -108,6 +131,7 @@ color: red;
   /* left: 120rpx; */
 
   /* color: red; */
+
 }
 
 .payNowText{
@@ -116,9 +140,13 @@ color: red;
   /* right: 40rpx; */
   /* position: relative; */
   width: 50%;
-  margin-left: 150rpx;
+  margin-left: 410rpx;
+  margin-top: 2rpx;
   border: 1px solid #000; 
   color: black;
+  top:8rpx;
+  position:relative;
+
 }
 .askBtn{ width: 120rpx;
 height: 60rpx;

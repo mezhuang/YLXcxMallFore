@@ -6,14 +6,17 @@
         <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">待评价</view>
         <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">售后服务</view>
     </scroll-view>
+<!-- <view class='person-line'> 　</view> -->
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
      style="height:{{winHeight}}rpx">
         <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}">
             <scroll-view scroll-y="true" class="scoll-h" >
                 <block wx:for="{{orderInfoList}}"  wx:for-index="groupindex"wx:for-item="oneitem" >
+                  <view class='separator'></view>
                     <view class='orderInfo'>
-                        <view><text>{{oneitem.create_time}} 　 　 　 　 　 　</text></view>
-                        <view><text>{{oneitem.order_status}}</text></view>
+                        <view class='gsName'><text >远联家居</text></view>
+                        <view class='order_status'><text>{{oneitem.order_status_name}}</text></view>
+                        
                     </view>
                     <block wx:for="{{oneitem.orderDeailList}}"  >
                               <view class="item-ans">
@@ -23,15 +26,15 @@
                                   <view class="expertInfo">
                                       <view class="name">{{item.goods_tile}}</view>
                                       <view class="tag">规格:{{item.goods_format}}</view>
-                                      <view class="answerHistory" bindtap='onPayNow'><text class='priceId' >¥{{item.goods_price}}</text> <text>×{{item.buy_number}}件　</text>  </view>
+                                      <view class="answerHistory" ><text class='priceId' >¥{{item.goods_price}}</text> <text>×{{item.buy_number}}件　</text>  </view>
                                   </view>
                               </view>
                       </block>
                 <!-- <view class="person-line"></view> -->
-                  <view class='payNow'>金额:<text class='totalmoney'>¥{{oneitem.total_fee}}</text> 　 　 　 　 　 <text class='payNowText'>立即支付</text></view>
+                  <view class='payNow' bindtap='onPayNow'>金额:<text class='totalmoney'>¥{{oneitem.total_fee}}</text><text class='payNowText'>立即支付</text></view>
                 </block>
 
-<view class='line'> 　</view>
+<view class='person-line'> 　</view>
                 
             </scroll-view>
         </swiper-item>
