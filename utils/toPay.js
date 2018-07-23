@@ -6,6 +6,9 @@ var apiKey = 'kjjkhhjggghffg4384m1923279sdr352';
 var globalNonceStr=null;
 var globalRepayId=null;
 var payStatus = false;//执行支付返回的状态
+var globalOrderNo=null;
+
+var updateOrderStatus=false;
 
 //生成订单号
 function createOrderNo()
@@ -38,10 +41,11 @@ function onPrepay(total_fee, currtOutTradeNo) {
 
   // console.log(currtTotalFee);
   // console.log(currtGoodsCode);
-  //获取预支付金额
+  //记录订单号
+  globalOrderNo = currtOutTradeNo;
   // this.setData({
-  //   total_fee: currtTotalFee,
-  //   body: currtGoodsCode
+  //   globalOrderNo= total_fee
+
   // });
   // data.total_fee = currtTotalFee;
   // data.body = currtGoodsCode;
@@ -149,7 +153,7 @@ function onPrepay(total_fee, currtOutTradeNo) {
 
 //小程序发起微信支付
 function onPay() {
-
+  
   var timestamp = Date.parse(new Date());
   console.info("timestamp:" + timestamp);
   var paySignTemp = "appId=" + appid + "&nonceStr=" + globalNonceStr + "&package=prepay_id=" + globalRepayId + "&signType=MD5&timeStamp=" + timestamp + "&key=" + apiKey;
@@ -166,6 +170,7 @@ function onPay() {
       'paySign': paySign,
       'success': function (res) {
         console.log("requestPayment-success返回:" + res.data);
+        updateOrderPayStatus("02", globalOrderNo);
         wx.showToast({
           title: '支付成功',
           icon: 'success',
@@ -187,8 +192,42 @@ function onPay() {
   return payStatus;
 }
 
+function updateOrderPayStatus(orderStatus, goodsOrderId){
+
+  wx.request({
+    method: 'POST',
+    // url: 'www.yuanlianjj.com?token=' + tokend, //接口地址
+    url: app.globalData.serviceIp + 'updateOrderStatus.do', //接口地址
+    data: {
+
+      'openId': app.globalData.openId,
+      'orderStatus': orderStatus,
+        'goodsOrderId': goodsOrderId
+    },
+    header:
+      {
+        //'content-type': "application/x-www-form-urlencoded" // 默认值
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        //'content-type': 'application/json'
+      },
+    success: function (res) {
+      console.log("查询到的全部订单数据:");
+      console.log(res.data);
+
+    },
+    fail: function (res) {
+      console.log('fail-res' + ':' + res)
+    }
+  })
+
+  return updateOrderStatus;
+
+}
+
+
 module.exports = {
 
   onPrepay:onPrepay,
-  createOrderNo: createOrderNo
+  createOrderNo: createOrderNo,
+  updateOrderPayStatus: updateOrderPayStatus
 }

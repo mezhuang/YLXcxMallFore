@@ -136,6 +136,8 @@ Page({
         currentTab: cur
       })
     }
+
+    //设置
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor: function () {
@@ -149,9 +151,20 @@ Page({
       })
     }
   },
-  onPayNow:function(){
-    var payInfomodel=null;
-    var payStatus = toPay.onPrepay(payInfomodel);
+  onPayNow:function(e){
+   
+    var goodsOrderId = e.currentTarget.dataset.orderno;
+    var totalfee = e.currentTarget.dataset.totalfee;
+    console.log("商品订单号:"+goodsOrderId);
+    // var payStatus = toPay.onPrepay(totalfee, goodsOrderId);
+    var payStatus = toPay.onPrepay(e.currentTarget.dataset.totalfee, e.currentTarget.dataset.orderno);
+    console.log("payStatus:");
+    console.log(payStatus);
+    if (payStatus)
+    {
+      var reupdateStatus = toPay.updateOrderPayStatus("02", goodsOrderId);
+      console.log("reupdateStatus:" + reupdateStatus);
+    }
   },
   footerTap: app.footerTap
 })

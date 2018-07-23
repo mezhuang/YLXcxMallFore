@@ -6,29 +6,29 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
  </view>
-<view class="orderAndMycontainer">
-   
- <view class="separate"></view>
+<view class="orderAndMycontainer" >
+       <view catchtap="toOrder"> 
+            <view class="separate"></view>
 
-            <view class="order" catchtap="toOrder">
-                <image class="item-image" src="../../images/icon/myhome/myorder.png"></image>
-                <text class="myorder-text">我的订单</text>
-                <view class='allorder'>
-                <text class="myorderlook-text">查看全部订单</text>
-                <image class="next-image" src="../../images/icon/next.png"></image>
+                        <view class="order" catchtap="toOrder">
+                            <image class="item-image" src="../../images/icon/myhome/myorder.png"></image>
+                            <text class="myorder-text">我的订单</text>
+                            <view class='allorder'>
+                            <text class="myorderlook-text">查看全部订单</text>
+                            <image class="next-image" src="../../images/icon/next.png"></image>
+                        </view>
             </view>
-</view>
-  <view class="person-line"></view>
+              <view class="person-line"></view>
 
-  <view class="navs">
-    <block wx:for-items="{{orderItems}}" wx:key="name">
-      <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
-        <image src="{{item.imageurl}}" class="nav-image" />
-        <text>{{item.name}}</text>
-      </view>
-    </block>
-  </view>
-
+              <view class="navs">
+                <block wx:for-items="{{orderItems}}" wx:key="name">
+                  <view class="nav-item"  data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+                    <image src="{{item.imageurl}}" class="nav-image" />
+                    <text>{{item.name}}</text>
+                  </view>
+                </block>
+              </view>
+        </view> 
 <!--线上交易相关  -->
   <view class="separate"></view>
   <view class="person-list">
