@@ -49,7 +49,7 @@
                                         <view class='separator'></view>
                                           <view class='orderInfo'>
                                               <view class='gsName'><text >远联家居</text></view>
-                                              <view class='order_status'><text>{{oneitem.order_status_name}}</text></view>
+                                              <view class='order_status'><text style='color:#000'>{{oneitem.order_status_name}}</text></view>
                                               
                                           </view>
                                           <block wx:for="{{oneitem.orderDeailList}}"  >
@@ -65,7 +65,7 @@
                                                     </view>
                                             </block>
                                       <!-- <view class="person-line"></view> -->
-                                        <view class='payNow'  >金额:<text class='totalmoney' style='color:black;'>¥{{oneitem.total_fee}}</text><text class='payNowText' >待收货</text></view>
+                                        <view class='payNow'  >实付金额:<text class='totalmoney' style='color:black;'>¥{{oneitem.total_fee}}</text><text class='confirmGoods' >确认收货</text></view>
                              </view>
                       </block>
                                

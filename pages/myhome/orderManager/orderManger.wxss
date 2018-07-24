@@ -148,6 +148,16 @@ color: red;
   position:relative;
 
 }
+
+.confirmGoods{
+  width: 50%;
+  margin-left: 350rpx;
+  margin-top: 2rpx;
+  border: 1px solid #000; 
+  color: red;
+  top:8rpx;
+  position:relative;
+}
 .askBtn{ width: 120rpx;
 height: 60rpx;
 line-height: 60rpx;
