@@ -1,4 +1,4 @@
-// pages/goodsManager/goodsCate/goodsCate.js
+// pages/index/selectedMeal/discountActivity/discountActivity.js
 const app = getApp()
 Page({
 
@@ -6,26 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    curNav:"01",
-    curIndex: 0,
-    cateItems:null,
-    
-
+    discountActivityList:null,
+    goodsItems:null
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    var that = this;
- 
-    wx.login({
-      success: function (res) {
-
-
-      }
-    })
+  var that =this;
 
     wx.request({
       method: 'GET',
@@ -33,7 +23,7 @@ Page({
       url: app.globalData.serviceIp + 'getGoodsClassListByClassType.do', //接口地址
       data: {
         'openId': getApp().globalData.openId,
-        'classType':1,
+        'classType':2,
         'startIndex': 0,
         'indexSize': 5
       },
@@ -41,7 +31,7 @@ Page({
       success: function (res) {
         console.log('success-res' + ':' + res.data)
         that.setData({
-          cateItems: res.data
+          discountActivityList: res.data
         });
 
         //跳转至报备客户列表
@@ -54,8 +44,6 @@ Page({
         console.log('fail-res' + ':' + res.data)
       }
     })
-  
-  
   },
 
   /**
@@ -69,7 +57,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  this.onLoad();
+  
   },
 
   /**
@@ -106,19 +94,18 @@ Page({
   onShareAppMessage: function () {
   
   },
-  //事件处理函数  
-  switchRightTab: function (e) {
-   var that =this;
-    // 获取item项的id，和数组的下标值  
-   var onelevelcode = e.target.dataset.onelevelcode;
-   console.log(onelevelcode);
-      var index = parseInt(e.target.dataset.index);
-    // 把点击到的某一项，设为当前index  
-      var test = "01";
-      that.setData({
-        curNav: onelevelcode,
-        curIndex: index
-      });
+  //活动详情页
+  onActivityDetail:function(event){
+    var twolevelCode = event.currentTarget.dataset.twolevelcode;
+    var discounttitle = event.currentTarget.dataset.discounttitle;
+    var subtitle = event.currentTarget.dataset.subtitle;
+
+    console.log("twolevelcode:" + twolevelCode);
    
+    //调整至活动详情页
+    wx.navigateTo({
+      url: './activityDetail/activityDetail?twolevelCode=' + twolevelCode+'&discounttitle=' + discounttitle + '&subtitle=' + subtitle
+    })
+
   }
 })

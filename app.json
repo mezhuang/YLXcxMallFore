@@ -29,12 +29,17 @@
     "pages/userGuideManager/userGuideManager",
     "pages/logs/logs",
     "pages/test/testChoose/testChoose",
-    "pages/myhome/orderManager/orderManger"
+    "pages/myhome/orderManager/orderManger",
+    "pages/index/underLine/underLine",
+    "pages/index/lifeExpert/lifeExpert",
+    "pages/index/brandProduct/brandProduct",
+    "pages/index/discountActivity/discountActivity",
+    "pages/index/discountActivity/activityDetail/activityDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "远联家居商城",
+    "navigationBarTitleText": "美家团购网",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

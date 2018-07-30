@@ -53,7 +53,9 @@ Page({
         'openId': getApp().globalData.openId,
         'startIndex': 0,
         'indexSize': 5,
-        "twolevelCode": swiperTwolevelCode
+        "twolevelCode": swiperTwolevelCode,
+        "imagePositionCode":"07001"
+        
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
@@ -84,7 +86,8 @@ Page({
         'openId': getApp().globalData.openId,
         'startIndex': 0,
         'indexSize': 5,
-        "twolevelCode": hotgoodsTwoLevelCode
+        "twolevelCode": hotgoodsTwoLevelCode,
+        "imagePositionCode":"07001"
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
@@ -116,7 +119,8 @@ Page({
         'openId': getApp().globalData.openId,
         'startIndex': 0,
         'indexSize': 5,
-        "twolevelCode": recommendsTwolevelCode
+        "twolevelCode": recommendsTwolevelCode,
+        'imagePositionCode':"07001"
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {
@@ -404,7 +408,8 @@ Page({
           'openId': getApp().globalData.openId,
           'startIndex': 0,
           'indexSize': 5,
-          "twolevelCode": twolevelCode
+          "twolevelCode": twolevelCode,
+          'imagePositionCode':'07001'
         },
         header: { 'content-type': 'application/json' },
         success: function (res) {
@@ -450,6 +455,27 @@ Page({
   {
     console.log("come in imageOnLoadError");
     var index =event.target.dataset.idx;
+  },
+  onUnderLine:function()
+  {
+     wx.navigateTo({
+       url: './underLine/underLine',
+     }) 
+  },
+  onLifeExpert:function(){
+    wx.navigateTo({
+      url: './lifeExpert/lifeExpert',
+    })
+  },
+  onBrandProduct:function(){
+    wx.navigateTo({
+      url: './brandProduct/brandProduct',
+    })
+  },
+  onDiscountActivity:function(){
+    wx.navigateTo({
+      url: './discountActivity/discountActivity',
+    })
   },
   footerTap: app.footerTap
 

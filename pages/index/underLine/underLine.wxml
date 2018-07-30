@@ -1,0 +1,9 @@
+<view class='underLineContainer'>
+      <view class='areanAddress'>
+         <text class='areanAddressText'> 海口美兰区体验馆 </text>
+      </view>
+      <view class='detailAddress'>
+        海南省海口市新埠岛*新埠路2号*兴宜家家居博览中心(海鲜大世界正对面)
+      </view>
+      <view class='detailAddress'>电话:15208985488</view>
+</view>

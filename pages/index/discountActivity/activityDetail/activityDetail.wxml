@@ -1,0 +1,18 @@
+<scroll-view scroll-x="true">
+   <view class='activityName'>{{activityList[0].twolevel_name}}</view>
+    <block wx:for='{{activityList}}'>
+      
+               <image  class = 'activityImage' src='{{item.goods_image_server}}{{item.goods_image_url}}'></image>
+              <view class='activityNameText'><text>{{item.goods_image_text}}</text></view>
+      
+    </block>
+     <view  class='activityTitle'><text>{{discounttitle}}</text></view>
+    
+    <view  class='activitySubTitle'><text>{{subtitle}}</text></view>
+   
+   
+
+</scroll-view>
+ <view class='bottom_total'>
+          <button  class ='' bindtap='onAddPartCart' ><text class='button-red'>加入购物车</text></button>
+    </view>

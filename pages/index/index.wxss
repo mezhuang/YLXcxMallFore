@@ -96,6 +96,14 @@ margin-top: 1rpx;
    /* margin-top:10rpx;  */
   font-size: 24rpx;
 }
+.index-menu-text-online{
+     position: relative; 
+  /* margin-left: 20rpx; */
+   top: -30rpx; 
+   /* margin-top:10rpx;  */
+  font-size: 24rpx;
+  margin-left: 18rpx;
+}
 
 /*首页热销爆品布局  */
 .hotSaleProducts{

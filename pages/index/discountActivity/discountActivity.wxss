@@ -1,0 +1,45 @@
+/* pages/index/selectedMeal/discountActivity/discountActivity.wxss */
+page {  
+  display: block;  
+  min-height: 100%;  
+  background-color: #f2f2f2;  
+}  
+
+.discountContainer{
+  /* padding: 20rpx; */
+  /* margin-top: 20rpx;
+  margin-left: 20rpx; */
+  /* margin-right: 20rpx; */
+  margin: center;
+  background-color: #fff;
+}
+.activityItem{
+   /* top: 20rpx; */
+  width: 100%;
+  height: 550rpx;
+}
+.discountImage{
+
+  width: 100%;
+  height: 400rpx;
+}
+.activityTitle{
+  
+  margin-left: 10rpx;
+  line-height:34rpx;
+}
+.activityTitle text{
+  font-size: 30rpx;
+   
+
+}
+.activitySubTitle{
+  margin-left: 10rpx;
+  line-height:30rpx;
+}
+.activitySubTitle text{
+  font-size: 26rpx;
+  color:#888888; 
+  line-height:5rpx;
+  
+}

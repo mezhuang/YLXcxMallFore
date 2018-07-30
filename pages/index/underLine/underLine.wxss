@@ -1,0 +1,28 @@
+/* pages/index/underLine/underLine.wxss */
+.underLineContainer{
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+
+  background-color: #ffffff;
+  border:2rpx solid #a1a1a1;
+  border-radius:10rpx;
+}
+.areanAddress{
+
+  background-color:#ffa64d;
+  color: #ffffff;
+}
+.areanAddressText{
+
+margin-left: 10rpx;
+  
+}
+.detailAddress{
+
+  padding-left:10rpx;
+
+  font-size: 28rpx;
+  
+}
+

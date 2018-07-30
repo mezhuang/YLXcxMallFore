@@ -51,10 +51,10 @@
             <view><image class='index_02_003' src="/images/index/index_02_003.png"></image></view>
             <!--菜单栏  -->
             <view class="index-menu" >
-                    <view style='width:25%;' bindtap='onLine' ><image class ="index-menu-image" src='/images/icon/menuBar/tiyandian.png'></image><view class ="index-menu-image" ><text class="index-menu-text">线下体验</text></view></view> 
-                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02.png'></image><view class ="index-menu-image" ><text class="index-menu-text">精选套餐</text></view></view> 
-                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/1521759934613549145.png'></image><view class ="index-menu-image" ><text class="index-menu-text">实景美图</text></view></view> 
-                     <view style='width:25%;'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02_004.png'></image><view class ="index-menu-image" ><text class="index-menu-text">品牌专卖</text></view></view> 
+                    <view style='width:25%;' bindtap='onUnderLine' ><image class ="index-menu-image" src='/images/icon/menuBar/tiyandian.png'></image><view class ="index-menu-image" ><text class="index-menu-text">线下体验</text></view></view> 
+                     <view style='width:25%;' bindtap='onDiscountActivity'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02.png'></image><view class ="index-menu-image" ><text class="index-menu-text">精选套餐</text></view></view> 
+                     <view style='width:25%;' bindtap='onLifeExpert'><image class ="index-menu-image" src='/images/icon/menuBar/1521759934613549145.png'></image><view class ="index-menu-image"  ><text class="index-menu-text-online">生活家</text></view></view> 
+                     <view style='width:25%;' bindtap='onBrandProduct'><image class ="index-menu-image" src='/images/icon/menuBar/idx_02_004.png'></image><view class ="index-menu-image" ><text class="index-menu-text">品牌专卖</text></view></view> 
             </view>
             <!--爆销热品  -->
 <view class="hotSaleProducts">
