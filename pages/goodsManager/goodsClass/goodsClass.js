@@ -38,7 +38,8 @@ Page({
         'openId': getApp().globalData.openId,
         'startIndex': 0,
         'indexSize': 5,
-        "twolevelCode": twolevelCode
+        "twolevelCode": twolevelCode,
+        'imagePositionCode':"07001"
       },
       header: { 'content-type': 'application/json' },
       success: function (res) {

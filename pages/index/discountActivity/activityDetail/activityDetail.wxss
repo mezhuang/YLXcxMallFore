@@ -76,3 +76,10 @@ button {
   line-height: 120rpx;
   background: white;
 }
+.activityPriceText{
+  font-size: 30rpx;
+
+}
+.priceStyle{
+   color: red;
+}

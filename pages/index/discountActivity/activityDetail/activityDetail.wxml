@@ -1,18 +1,21 @@
-<scroll-view scroll-x="true">
-   <view class='activityName'>{{activityList[0].twolevel_name}}</view>
+<scroll-view scroll-x="true" >
+  <view class='activityName'>{{activityList[0].twolevel_name}}</view>
+    <view  class='activityTitle'><text>{{discounttitle}}</text></view>   
+    <view  class='activitySubTitle'><text>{{subtitle}}</text></view>
     <block wx:for='{{activityList}}'>
       
                <image  class = 'activityImage' src='{{item.goods_image_server}}{{item.goods_image_url}}'></image>
-              <view class='activityNameText'><text>{{item.goods_image_text}}</text></view>
+              <view><text class='activityPriceText'>{{item.goods_title}}</text></view>
+              <view><text class='activityPriceText'>团购价:</text><text class='priceStyle'> ¥{{item.curr_price}}</text></view>
+              <view class='activityNameText' wx:if='{{item.goods_image_text!=null}}'><text>{{item.goods_image_text}}</text></view>
       
     </block>
-     <view  class='activityTitle'><text>{{discounttitle}}</text></view>
-    
-    <view  class='activitySubTitle'><text>{{subtitle}}</text></view>
+     
+    <view><text class='activityPriceText'>以上产品套餐团购总价：</text><text class='priceStyle'>¥{{activityList[0].remark3}}</text></view>
    
    
 
 </scroll-view>
  <view class='bottom_total'>
-          <button  class ='' bindtap='onAddPartCart' ><text class='button-red'>加入购物车</text></button>
+          <button  class ='' bindtap='onAddPartCart' ><text class='button-red'>点击购买套餐</text></button>
     </view>

@@ -34,7 +34,8 @@
     "pages/index/lifeExpert/lifeExpert",
     "pages/index/brandProduct/brandProduct",
     "pages/index/discountActivity/discountActivity",
-    "pages/index/discountActivity/activityDetail/activityDetail"
+    "pages/index/discountActivity/activityDetail/activityDetail",
+    "pages/index/lifeExpert/lifeExpertDetail/lifeExpertDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -52,7 +53,7 @@
         "iconPath": "images/icon/tabBar/home.png",
         "selectedIconPath": "images/icon/tabBar/home_select.png",
         "pagePath": "pages/index/index",
-        "text": "发现"
+        "text": "首页"
       },
       {
         "iconPath": "images/icon/tabBar/classify.png",
@@ -64,7 +65,7 @@
         "iconPath": "images/icon/tabBar/tabBar_01_001.png",
         "selectedIconPath": "images/icon/tabBar/tabBar_01_001.png",
         "pagePath": "pages/test/testChoose/testChoose",
-        "text": "申请分销"
+        "text": "发现"
       },
       {
         "pagePath": "pages/payManager/payCart/payCart",
