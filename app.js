@@ -111,7 +111,7 @@ App({
     userInfo: null,
     openId:null,
     sessionKey:null,
-    serviceIp:"https://192.168.1.103/YLXcxMallBack/",
+    serviceIp:"https://www.yuanlianjj.com/YLXcxMallBack/",
     shareOpenid:null,
     isConnected:true
   }
