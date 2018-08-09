@@ -4,6 +4,14 @@
      <view class="nav_right">
     <!--如果有数据，才遍历项-->
     <!-- <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}"> -->
+<!--  晒选排序框-->
+    <view class='selectAreaContainer'>
+        
+         <view class='selectAreaV'><text>　　综合　　|</text></view>
+         <view class='selectAreaV'><text>　　销量　　|</text></view>
+         <view class='selectAreaV'><text>　　价格　　|</text></view>
+         <view class='selectAreaV'><text>　　筛选　</text></view>
+    </view>
 
       <block wx:for="{{goodsItems}}">
         <view class="nav_right_items">

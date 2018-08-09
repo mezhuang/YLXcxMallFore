@@ -382,17 +382,26 @@ Page({
       console.log(this.data.currentTab);
       switch (this.data.currentTab){
         case 1:
-          twolevelCode = "02001";
+          twolevelCode = "02000";
         break;
-        case 3:
+        case 2:
           twolevelCode = "02001";
-        break
+          break;
+        case 3:
+          twolevelCode = "02002";
+        break;
         case 4:
-          twolevelCode = "02002";
-          break
+          twolevelCode = "02003";
+          break;
         case 5:
-          twolevelCode = "02002";
-          break
+          twolevelCode = "02004";
+          break;
+        case 6:
+          twolevelCode = "02005";
+          break;
+        case 7:
+          twolevelCode = "02006";
+          break;
         default:
         console.log("没有匹配的标签页");
         break;

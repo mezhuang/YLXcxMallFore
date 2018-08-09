@@ -322,7 +322,7 @@ font-size: 14px;
 border: 1px solid #4675F9;
  color:#4675F9;
 }
-.tab-content{margin-top: 80rpx;
+.tab-content{margin-top: 20rpx;
 }
 .scoll-h{height: 100%;
 } 

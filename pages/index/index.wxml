@@ -17,11 +17,11 @@
    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">推荐</view>
          <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">热销精选</view>
-        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">小户型</view> 
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">北欧</view> 
         <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">现代中式</view>
-        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">北欧</view>
-        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">简美</view>
-        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">新中式</view>
+        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">简美</view>
+        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">新中式</view>
+        <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">儿童乐园</view>
         <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">其他</view>
     </scroll-view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab"
@@ -169,7 +169,7 @@
 
     <!--如果有数据，才遍历项-->
     <!-- <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}"> -->
-
+    
       <block wx:for="{{goodsItems}}">
         <view class="nav_right_items">
         <!--界面跳转 -->
