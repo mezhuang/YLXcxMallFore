@@ -17,7 +17,7 @@
    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
         <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">推荐</view>
          <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">热销精选</view>
-        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">北欧</view> 
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">北欧轻奢</view> 
         <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">现代中式</view>
         <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">简美</view>
         <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">新中式</view>
