@@ -82,4 +82,5 @@ button {
 }
 .priceStyle{
    color: red;
+   font-size: 30rpx;
 }

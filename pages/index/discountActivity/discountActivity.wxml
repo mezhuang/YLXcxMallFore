@@ -2,7 +2,7 @@
 <block wx:for='{{discountActivityList[0].twoClassList}}'>
       <view class='activityItem' bindtap='onActivityDetail' data-twolevelcode='{{item.twolevel_code}}' data-discounttitle='{{item.remark1}}'data-subtitle='{{item.remark2}}'>
           <image  class='discountImage' src='{{item.class_image_url}}'></image>
-            <view class='activityTitle'><text>{{item.remark1}}</text></view>
+            <view class='activityTitle'><text> {{item.remark1}}</text></view>
             <view class='activitySubTitle'><text>{{item.remark2}}</text></view>
        </view>
        
