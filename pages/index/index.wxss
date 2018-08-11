@@ -383,3 +383,9 @@ position: absolute;
   font-size: 14px;  
   margin-right: 10rpx;
 }
+/* 第二个标签 */
+.hotSelectedImage1{
+width: 100%;
+
+  
+}

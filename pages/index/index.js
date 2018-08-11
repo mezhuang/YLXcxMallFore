@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    basePath:null,
     swiperGoodsList: null,
     hotSaleGoodsList: null,
 
@@ -38,6 +38,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 设置根路径
+    this.setData({
+      basePath: app.globalData.serviceIp,
+    });
+    
+
     console.log("转发人员信息zfopenid:");
     console.log(options.shareOpenid);
 
@@ -155,6 +161,9 @@ Page({
         });
       }
     });
+
+
+
 
   },
 
@@ -382,7 +391,7 @@ Page({
       console.log(this.data.currentTab);
       switch (this.data.currentTab){
         case 1:
-          twolevelCode = "02000";
+          twolevelCode = "06004";
         break;
         case 2:
           twolevelCode = "02001";

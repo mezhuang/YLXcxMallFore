@@ -169,7 +169,14 @@
 
     <!--如果有数据，才遍历项-->
     <!-- <view wx:if="{{cateItems[curIndex].isHaveTwoCalss}}"> -->
-    
+    <!-- 第二个标签（热销精选） -->
+    <view wx:if="{{currentTab=='1'}}">
+          <view ><image class="hotSelectedImage1" src='{{basePath}}images/pagetab02_001.jpg'></image></view>
+          <import src="../twoListTemple/twoListTemple.wxml" />
+              <template is="twolistTemplate" data="{{recommendsItems}}" /> 
+    </view>
+
+    <!-- 第三个标签 -->
       <block wx:for="{{goodsItems}}">
         <view class="nav_right_items">
         <!--界面跳转 -->
